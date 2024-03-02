@@ -10,6 +10,8 @@
     border: .1vmin solid var(--lilac);
     border-radius: 1vmin;
     font-size: 4vmin;
+    font-family: 'Share Tech Mono', 'Roboto';
+
   }
 
   // must turn emoji into image
@@ -28,6 +30,7 @@
   }
 
   .MenuListItem .buy span {
+    margin-bottom: .5rem;
     font-size: 1.7vw;
     text-align: center;
     color: var(--fairyTale);

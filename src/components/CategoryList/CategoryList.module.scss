@@ -3,23 +3,33 @@
     list-style: none;
     padding: 0;
     font-size: 1.7vw;
+    background-color: var(--royalPurple);
+    padding: 1rem;
+    border: solid 2px var(--white);
+    border-radius: 5%;
     }
 
     .CategoryList li {
     padding: .6vmin;
     text-align: center;
-    border-radius: .5vmin;
-    margin-bottom: .5vmin;
+    border-radius: 5%;
+    margin: 1rem;
+    border: solid 2px var(--gunmetal);
+    background-color: var(--lilac);
+    box-shadow: 3px 1px 3px var(--spaceCadet);
+    font-family: 'Share Tech Mono', 'Roboto';
+
     }
 
     .CategoryList li:hover:not(.active) {
     cursor: pointer;
     background-color: var(--lilac);
     color: var(--gunmetal);
+    box-shadow: none;
     }
 
     .CategoryList li.active {
-    color: var(--royalPurple);
-    background-color: var(--fairyTale);
+    color: var(--lilac);
+    background-color: var(--royalPurple);
     border: .1vmin solid var(--spaceCadet);
     }

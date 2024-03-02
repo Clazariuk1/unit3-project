@@ -50,6 +50,8 @@ code {
   font-size: smaller;
 }
 
+// this will center the image into the allotted space
+// shifting / scaling size of images not effective, creates inconsistency. Examine site: unsplash.
 .flex-ctr-ctr {
   display: flex;
   justify-content: center;
@@ -135,15 +137,32 @@ code {
 //   cursor: pointer;
 // }
 
-// button.btn-sm {
-//   font-size: 1.5vmin;
-//   padding: .6vmin .8vmin;
-// }
+button.btn-sm {
+  font-size: 1.5vmin;
+  padding: .6vmin .8vmin;
+  background-color: var(--royalPurple);
+  border: solid 3px var(--fairyTale);
+  color: var(--spaceCadet);
+  font-size: 15pt;
+  font-weight: bold;
+  border-radius: 10%;
+  box-shadow: 3px 5px 4px var(--spaceCadet);
+}
 
-// button.btn-xs {
-//   font-size: 1vmin;
-//   padding: .4vmin .5vmin;
-// }
+button.btn-sm:hover {
+  cursor: grab;
+  box-shadow: none;
+}
+
+button.btn-xs {
+  font-size: 2vmin;
+  font-weight: bold;
+  padding: .4vmin .5vmin;
+  background-color: var(--lilac);
+  color: var(--gunmetal);
+  border: solid 1px var(--white);
+  border-radius: 5%;
+}
 
 // button:disabled, form:invalid button[type="submit"] {
 //   cursor: not-allowed;
