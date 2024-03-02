@@ -6,3 +6,14 @@
     padding: 3vmin;
     overflow-y: scroll;
     }
+
+    .catDescription {
+        text-align: center;
+        font-weight: bold;
+        font-size: 14pt;
+        border: solid 2px var(--fairyTale);
+        color: var(--gunmetal);
+        padding: .5rem;
+        margin: .5rem;
+        border-radius: 5%;
+      }

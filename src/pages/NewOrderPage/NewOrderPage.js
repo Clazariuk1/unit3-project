@@ -21,7 +21,10 @@ export default function NewOrderPage({ user, setUser }) {
       const items = await itemsAPI.getAll();
       categoriesRef.current = items.reduce((cats, item) => {
         const cat = item.category.name;
-        return cats.includes(cat) ? cats : [...cats, cat];
+        const description = item.category.description;
+        return cats.find((c)=>{
+          return c.name === cat
+        }) ? cats : [...cats, {name:cat, description}];
       }, []);
       setMenuItems(items);
       setActiveCat(categoriesRef.current[0]);
@@ -61,13 +64,17 @@ export default function NewOrderPage({ user, setUser }) {
           categories={categoriesRef.current}
           cart={setCart}
           setActiveCat={setActiveCat}
+          activeCat={activeCat}
         />
         <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
         <UserLogOut user={user} setUser={setUser} />
       </aside>
       <MenuList
-        menuItems={menuItems.filter(item => item.category.name === activeCat)}
+        categories={categoriesRef.current}
+        menuItems={menuItems.filter(item => item.category.name === activeCat.name)}
         handleAddToOrder={handleAddToOrder}
+        activeCat={activeCat}
+
       />
       <OrderDetail
         order={cart}

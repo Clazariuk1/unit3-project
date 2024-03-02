@@ -21,13 +21,13 @@ function CategoryList(_ref) {
     setActiveCat
   } = _ref;
   const cats = categories.map(cat => /*#__PURE__*/React.createElement("li", {
-    key: cat,
-    className: cat === activeCat ? _CategoryList_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].active : ''
+    key: cat.name,
+    className: cat.name === activeCat ? _CategoryList_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].active : ''
     // FYI, the below will also work, but will give a warning
     // className={cat === activeCat && 'active'}
     ,
     onClick: () => setActiveCat(cat)
-  }, cat));
+  }, cat.name));
   return /*#__PURE__*/React.createElement("ul", {
     className: _CategoryList_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].CategoryList
   }, cats);
@@ -222,24 +222,30 @@ function Logo() {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ MenuList)
 /* harmony export */ });
-/* harmony import */ var _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MenuList.module.scss */ "./src/components/MenuList/MenuList.module.scss");
-/* harmony import */ var _MenuListItem_MenuListItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../MenuListItem/MenuListItem */ "./src/components/MenuListItem/MenuListItem.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MenuList.module.scss */ "./src/components/MenuList/MenuList.module.scss");
+/* harmony import */ var _MenuListItem_MenuListItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../MenuListItem/MenuListItem */ "./src/components/MenuListItem/MenuListItem.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
 
 
 function MenuList(_ref) {
   let {
     menuItems,
-    handleAddToOrder
+    handleAddToOrder,
+    activeCat
   } = _ref;
-  const items = menuItems.map(item => /*#__PURE__*/React.createElement(_MenuListItem_MenuListItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  const items = menuItems.map(item => /*#__PURE__*/React.createElement(_MenuListItem_MenuListItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
     key: item._id,
     handleAddToOrder: handleAddToOrder,
     menuItem: item
   }));
   return /*#__PURE__*/React.createElement("main", {
-    className: _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].MenuList
-  }, items);
+    className: _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].MenuList
+  }, /*#__PURE__*/React.createElement("div", {
+    className: _MenuList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].catDescription
+  }, activeCat.description), items);
 }
 
 /***/ }),
@@ -681,7 +687,13 @@ function NewOrderPage(_ref) {
         const items = yield _utilities_items_api__WEBPACK_IMPORTED_MODULE_8__.getAll();
         categoriesRef.current = items.reduce((cats, item) => {
           const cat = item.category.name;
-          return cats.includes(cat) ? cats : [...cats, cat];
+          const description = item.category.description;
+          return cats.find(c => {
+            return c.name === cat;
+          }) ? cats : [...cats, {
+            name: cat,
+            description
+          }];
         }, []);
         setMenuItems(items);
         setActiveCat(categoriesRef.current[0]);
@@ -741,7 +753,8 @@ function NewOrderPage(_ref) {
   }, /*#__PURE__*/React.createElement("aside", null, /*#__PURE__*/React.createElement(_components_Logo_Logo__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/React.createElement(_components_CategoryList_CategoryList__WEBPACK_IMPORTED_MODULE_4__["default"], {
     categories: categoriesRef.current,
     cart: setCart,
-    setActiveCat: setActiveCat
+    setActiveCat: setActiveCat,
+    activeCat: activeCat
   }), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
     to: "/orders",
     className: "button btn-sm"
@@ -749,8 +762,10 @@ function NewOrderPage(_ref) {
     user: user,
     setUser: setUser
   })), /*#__PURE__*/React.createElement(_components_MenuList_MenuList__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    menuItems: menuItems.filter(item => item.category.name === activeCat),
-    handleAddToOrder: handleAddToOrder
+    categories: categoriesRef.current,
+    menuItems: menuItems.filter(item => item.category.name === activeCat.name),
+    handleAddToOrder: handleAddToOrder,
+    activeCat: activeCat
   }), /*#__PURE__*/React.createElement(_components_OrderDetail_OrderDetail__WEBPACK_IMPORTED_MODULE_5__["default"], {
     order: cart,
     handleChangeQty: handleChangeQty,
@@ -1223,7 +1238,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.HOxDM1MnhDHdRljxLXHP {
   margin: 2rem;
   padding: 1rem;
   text-align: center;
-}`, "",{"version":3,"sources":["webpack://./src/components/ItemDescription/ItemDescription.module.scss"],"names":[],"mappings":"AAEA;EACI,eAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;AADJ","sourcesContent":["\n\n.description {\n    font-size: 10pt;\n    margin: 2rem;\n    padding: 1rem;\n    text-align: center;\n}\n"],"sourceRoot":""}]);
+  border: solid 1px var(--white);
+  background-color: var(--spaceCadet);
+  color: var(--lilac);
+  font-weight: bold;
+  border-radius: 5%;
+}`, "",{"version":3,"sources":["webpack://./src/components/ItemDescription/ItemDescription.module.scss"],"names":[],"mappings":"AAEA;EACI,eAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;EACA,8BAAA;EACA,mCAAA;EACA,mBAAA;EACA,iBAAA;EACA,iBAAA;AADJ","sourcesContent":["\n\n.description {\n    font-size: 10pt;\n    margin: 2rem;\n    padding: 1rem;\n    text-align: center;\n    border: solid 1px var(--white);\n    background-color: var(--spaceCadet);\n    color: var(--lilac);\n    font-weight: bold;\n    border-radius: 5%;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"description": `HOxDM1MnhDHdRljxLXHP`
@@ -1449,10 +1469,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.eBz5FvD9TgyIgfFi1MdG {
   margin: 3vmin 0;
   padding: 3vmin;
   overflow-y: scroll;
-}`, "",{"version":3,"sources":["webpack://./src/components/MenuList/MenuList.module.scss"],"names":[],"mappings":"AAAA;EACI,oCAAA;EACA,sCAAA;EACA,oBAAA;EACA,eAAA;EACA,cAAA;EACA,kBAAA;AACJ","sourcesContent":[".MenuList {\n    background-color: var(--royalPurple);\n    border: .1vmin solid var(--fairyTale);\n    border-radius: 2vmin;\n    margin: 3vmin 0;\n    padding: 3vmin;\n    overflow-y: scroll;\n    }\n"],"sourceRoot":""}]);
+}
+
+.RDnZaTdbNdOSOq9FJHNx {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14pt;
+  border: solid 2px var(--fairyTale);
+  color: var(--gunmetal);
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 5%;
+}`, "",{"version":3,"sources":["webpack://./src/components/MenuList/MenuList.module.scss"],"names":[],"mappings":"AAAA;EACI,oCAAA;EACA,sCAAA;EACA,oBAAA;EACA,eAAA;EACA,cAAA;EACA,kBAAA;AACJ;;AAEI;EACI,kBAAA;EACA,iBAAA;EACA,eAAA;EACA,kCAAA;EACA,sBAAA;EACA,eAAA;EACA,cAAA;EACA,iBAAA;AACR","sourcesContent":[".MenuList {\n    background-color: var(--royalPurple);\n    border: .1vmin solid var(--fairyTale);\n    border-radius: 2vmin;\n    margin: 3vmin 0;\n    padding: 3vmin;\n    overflow-y: scroll;\n    }\n\n    .catDescription {\n        text-align: center;\n        font-weight: bold;\n        font-size: 14pt;\n        border: solid 2px var(--fairyTale);\n        color: var(--gunmetal);\n        padding: .5rem;\n        margin: .5rem;\n        border-radius: 5%;\n      }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"MenuList": `eBz5FvD9TgyIgfFi1MdG`
+	"MenuList": `eBz5FvD9TgyIgfFi1MdG`,
+	"catDescription": `RDnZaTdbNdOSOq9FJHNx`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
