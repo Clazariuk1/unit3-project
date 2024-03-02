@@ -1213,22 +1213,45 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.EDeinQzfS2N2rVW_Z1GP {
-  height: 12vmin;
-  width: 12vmin;
+___CSS_LOADER_EXPORT___.push([module.id, `@keyframes syTn_Dhu4rE4xL33QPMf {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.EDeinQzfS2N2rVW_Z1GP {
+  width: -moz-fit-content;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 10px 200px/100px;
   background-color: var(--royalPurple);
   color: var(--lilac);
   font-size: 2.7vmin;
   border: 0.6vmin solid var(--fairyTale);
-}`, "",{"version":3,"sources":["webpack://./src/components/Logo/Logo.module.scss"],"names":[],"mappings":"AAAA;EACI,cAAA;EACA,aAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,kBAAA;EACA,oCAAA;EACA,mBAAA;EACA,kBAAA;EACA,sCAAA;AACJ","sourcesContent":[".Logo {\n    height: 12vmin;\n    width: 12vmin;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    border-radius: 50%;\n    background-color: var(--royalPurple);\n    color: var(--lilac);\n    font-size: 2.7vmin;\n    border: .6vmin solid var(--fairyTale);\n    }\n"],"sourceRoot":""}]);
+  font-family: "Share Tech Mono";
+  padding: 2rem;
+  font-weight: bold;
+  font-size: 24pt;
+  box-shadow: 3px 5px 2px var(--gunmetal);
+  scale: 1;
+  transition: 0.5s;
+}
+
+.EDeinQzfS2N2rVW_Z1GP:hover {
+  animation: syTn_Dhu4rE4xL33QPMf 1s linear infinite;
+  scale: 2;
+  box-shadow: none;
+  transition: 0.5s;
+}`, "",{"version":3,"sources":["webpack://./src/components/Logo/Logo.module.scss"],"names":[],"mappings":"AAAA;EACI;IACI,uBAAA;EACN;EACE;IACI,yBAAA;EACN;AACF;AAEA;EACI,uBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,+BAAA;EACA,oCAAA;EACA,mBAAA;EACA,kBAAA;EACA,sCAAA;EACA,8BAAA;EACA,aAAA;EACA,iBAAA;EACA,eAAA;EACA,uCAAA;EACA,QAAA;EACA,gBAAA;AAAJ;;AAGA;EACI,kDAAA;EACA,QAAA;EACA,gBAAA;EACA,gBAAA;AAAJ","sourcesContent":["@keyframes spin {\n    from {\n        transform: rotate(0deg);\n    }\n    to {\n        transform: rotate(360deg);\n    }\n}\n\n.Logo {\n    width: -moz-fit-content;\n    width: fit-content;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    border-radius: 10px 200px / 100px;\n    background-color: var(--royalPurple);\n    color: var(--lilac);\n    font-size: 2.7vmin;\n    border: .6vmin solid var(--fairyTale);\n    font-family: 'Share Tech Mono';\n    padding: 2rem;\n    font-weight: bold;\n    font-size: 24pt;\n    box-shadow: 3px 5px 2px var(--gunmetal);\n    scale: 1;\n    transition: .5s;\n    }\n\n.Logo:hover {\n    animation: spin 1s linear infinite;\n    scale: 2;\n    box-shadow: none;\n    transition: .5s;\n    }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"Logo": `EDeinQzfS2N2rVW_Z1GP`
+	"Logo": `EDeinQzfS2N2rVW_Z1GP`,
+	"spin": `syTn_Dhu4rE4xL33QPMf`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

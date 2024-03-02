@@ -1,13 +1,35 @@
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .Logo {
-    height: 12vmin;
-    width: 12vmin;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
+    border-radius: 10px 200px / 100px;
     background-color: var(--royalPurple);
     color: var(--lilac);
     font-size: 2.7vmin;
     border: .6vmin solid var(--fairyTale);
+    font-family: 'Share Tech Mono';
+    padding: 2rem;
+    font-weight: bold;
+    font-size: 24pt;
+    box-shadow: 3px 5px 2px var(--gunmetal);
+    scale: 1;
+    transition: .5s;
+    }
+
+.Logo:hover {
+    animation: spin 1s linear infinite;
+    scale: 2;
+    box-shadow: none;
+    transition: .5s;
     }
