@@ -5,35 +5,36 @@
     align-items: center;
     margin-bottom: 3vmin;
     padding: 2vmin;
-    color: var(--text-light);
-    background-color: var(--white);
-    border: .1vmin solid var(--tan-3);
+    color: var(--fairyTale);
+    background-color: var(--gunmetal);
+    border: .1vmin solid var(--lilac);
     border-radius: 1vmin;
     font-size: 4vmin;
   }
-  
+
+  // must turn emoji into image
   .MenuListItem .emoji {
     height: 8vw;
     width: 8vw;
     font-size: 4vw;
-    background-color: var(--tan-1);
-    border: .1vmin solid var(--tan-3);
+    background-color: var(--lilac);
+    border: .1vmin solid var(--royalPurple);
     border-radius: 1vmin;
   }
-  
+
   .MenuListItem .buy {
     display: flex;
     flex-direction: column;
   }
-  
+
   .MenuListItem .buy span {
     font-size: 1.7vw;
     text-align: center;
-    color: var(--text-light);
+    color: var(--fairyTale);
   }
-  
+
   .MenuListItem .name {
     font-size: 2vw;
     text-align: center;
-    color: var(--text-light);
+    color: var(--fairyTale);
   }
