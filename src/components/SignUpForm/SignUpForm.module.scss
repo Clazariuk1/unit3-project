@@ -1,0 +1,37 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Share Tech Mono', 'Roboto';
+    align-items: center;
+    justify-content: center;
+
+    .submit {
+        font-family: 'Share Tech Mono', 'Roboto';
+        background-color: var(--spaceCadet);
+        border: solid 5px var(--fairyTale);
+        border-radius: 15%;
+        font-weight: bold;
+        color: var(--fairyTale);
+        padding: 2rem;
+        margin: 2rem;
+        font-size: 20pt;
+        width: fit-content;
+        box-shadow: 2px 3px 3px var(--darkness);
+    }
+    .submit:hover {
+        cursor: grab;
+        box-shadow: none;
+    }
+}
+
+.input {
+    padding: .5rem;
+    margin: 1rem;
+    border-radius: 10%;
+    background-color: var(--fairyTale);
+    font-size: 20pt;
+    width: 15rem;
+    color: var(--darkness);
+    border: solid 5px var(--lilac);
+    box-shadow: 1px 2px 2px var(--darkness);
+}

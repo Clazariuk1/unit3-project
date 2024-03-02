@@ -5,11 +5,31 @@
     align-items: center;
     background-color: var(--lilac);
     border-radius: 2vmin;
+    padding: 3rem;
   }
 
-  .AuthPage h3 {
-    margin-top: 4vmin;
+  .logoButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    color: var(--spaceCadet);
-    cursor: pointer;
+    h3 {
+      border: solid 2px var(--fairyTale);
+      margin-top: 4vmin;
+      text-align: center;
+      color: var(--lilac);
+      cursor: pointer;
+      padding: 1rem;
+      background-color: var(--gunmetal);
+      border-radius: 15%;
+      font-size: 20pt;
+      box-shadow: 1px 3px 1px var(--gunmetal);
+      font-family: 'Share Tech Mono', 'Roboto';
+    }
+
+    h3:hover {
+      cursor: grab;
+      box-shadow: none;
+    }
   }
