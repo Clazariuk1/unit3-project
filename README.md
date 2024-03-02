@@ -1,31 +1,52 @@
-# Big Poppa Code React Starter Kit
-This Starter Kit is being created for New Web Developers that want to get started with react
+Unit 3 Project MERN Ecommerce website design concepts / instructions for cloning, running and testing.
 
-Most people use a CLI Tool like Vue-Cli or Create React App and no idea what these things are doing
+Readme instructions:
+A Readme that fully explains to a user how to do the following:<br>
+How to install this app on their local machine<br>
+What global installations they need and what files do they need to create that didn't come in the github repo<br>
+How to start the app in dev mode<br>
+How to run tests<br>
+How to start the app without dev mode.<br>
 
-The goal of this is for it to be a tool that let's you learn JS at a new level because you have access to
-everything under the hood and no opinionated set up
+<h1>Dev Dependency</h1>
+<h2>a Freelance SaaS shoppe</h2>
+<h3>Christopher Lazariuk, General Assembly Unit 2</h3>
+<h4>Customer User Story: As a user, I want to make an account on the Dev Dependency website, browse their available products and services, find out more about the company and it's values, and ultimately purchase the goods that interest me via the cart-based order and check-out system.</h4>
+<br>
+<h3>Initial Setup Instructions</h3>
+<p>After successfully cloning into your desired local folder location from github, navigate to project folder via terminal command line.
+<br>
+type 'touch .env' to create a new env file. The two sets of data you must then enter are below, along with directions on what to insert within brackets: <br>
 
-I will base all my tutorials on this Starter Kit.
+```
+MONGO_URI=<enterLinkInformationToYourMongDBdatabase>
+SECRET=<enterSHA-256-SECRET-encryptionToPreferredSecretPassword>
+```
 
-# Who Am I?
+SECRET <strong>must</strong> be a sha256 hash. Link to hashing site: https://emn178.github.io/online-tools/sha256.html
+<br>Once your .env is correctly created, SAVE FILE<br><br>
+<h4>NODE VERSION REQUIREMENTS:</h4>
+In order to run this program you must have Node version 20 installed and running on your device.
+<br>
+<h5>Necessary packages to install<h5>
+<br> Type the following verbatim into terminal's command line while in working project folder to install relevant packages:<br>
 
-![arthurbernierjr.com](http://progressandfortune.com/smac_images/profile.jpg)
+```
+npm i
+```
+<br>
 
-I am Arthur Bernier Jr. I work as freelance fullstack web developer and attraction marketing consultant specializing in supporting e-commerce brands,
-subscription box sites, social activists, religious/non-profit leaders and creative entrepreneurs(i.e. barbers, artists, musicians, stylists, models and photographers).
-I have a passion for helping entrepreneurs reach their perfect audience and helping you communicate to that audience in a way that makes them know, like and trust you. I also am a Full-Time Instructor at General Assembly as well as a Software Engineer at Blavity Inc.
+<h6>Time to rock 'n roll!</h6>
+<br>
+Open up the project by typing 'code .' in the terminal while in the project folder if you haven't done so already. Then open terminal on project folder location within VS code.
+<br><br>
+Before initial rounds of testing, or to reset database per needs, type 'npm run seed' in command line while in project folder. This will plant pre-set inventory and categories into your database for easier testing and demo purposes.
+<br>
+Once you've grown tired of exploring the code, type 'npm run test' in terminal after verifying you're in the project's folder to run back-end testing. The test files in the tests folder will execute and return the corresponding results.
+</p>
+<br>
+*awaiting insertion of front-end testing materials. Must expand.
 
-
-# My Favorite Online Instructors
-
-[__Colt Steele__](https://www.youtube.com/channel/UCrqAGUPPMOdo0jfQ6grikZw)
-
-[__Brad Traversy__](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA)
-
-[__Jose Santos Garcia__](https://www.youtube.com/channel/UC46wWUso9H5KPQcoL9iE3Ug)
-
-[__Stephen Grider__](https://www.youtube.com/channel/UCQCaS3atWyNHEy5PkDXdpNg/)
 
 ## Steps
 
