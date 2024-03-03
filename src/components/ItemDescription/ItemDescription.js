@@ -7,5 +7,3 @@ export default function ItemDescription(MenuListItem){
         <p className={styles.description}>{MenuListItem.description}</p>
     )
 }
-
-// ultimately the content of the return must display true item description. {MenuListItem.description.display= 'block'}

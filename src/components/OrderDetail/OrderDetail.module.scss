@@ -8,6 +8,29 @@
     background-color: var(--lilac);
   }
 
+  .totalBox {
+    display: flex;
+    background-color: var(--royalPurple);
+    margin: .5rem;
+    width: fit-content;
+    border: solid 2px var(--white);
+
+
+    span {
+      padding: .5rem;
+      margin: .5rem;
+    }
+  }
+
+  .orderSpan {
+    margin: .25rem;
+    padding: .25rem;
+    background-color: var(--spaceCadet);
+    color: var(--fairyTale);
+    border-radius: 5%;
+    border: solid 1px var(--white);
+  }
+
   .OrderDetail .sectionHeading {
     width: 100%
   }
@@ -26,6 +49,7 @@
     padding: 1vmin 0;
     color: var(--royalPurple);
     border-top: .1vmin solid var(--fairyTale);
+    font-family: 'Share Tech Mono', 'Roboto';
   }
 
   .OrderDetail .total span {
@@ -41,8 +65,29 @@
     justify-content: flex-end;
   }
 
+  .totalWords {
+    display: flex;
+    justify-content: flex-end;
+    color: var(--fairyTale);
+    background-color: var(--royalPurple);
+    border: solid 2px var(--white);
+    text-align: right;
+
+  }
+
   .OrderDetail .hungry {
     position: absolute;
     top: 50vh;
     font-size: 2vmin;
+    color: var(--gunmetal);
+    font-weight: bold;
+    font-size: 24pt;
+    font-family: 'Share Tech Mono', 'Roboto';
+    background-color: var(--white);
+    border: solid 2px var(--fairyTale);
+    border-radius: 15%;
+    box-shadow: 2px 3px 1px var(--gunmetal);
+    text-align: center;
+    margin-right: 1rem;
+    padding: .5rem;
   }

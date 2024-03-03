@@ -4,6 +4,18 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-family: 'Share Tech Mono', 'Roboto';
+}
+
+label {
+    background-color: var(--white);
+    padding: 1rem;
+    margin: .5rem;
+    color: var(--gunmetal);
+    border: solid 2px var(--gunmetal);
+    font-size: 20pt;
+    box-shadow: 1px 5px 3px var(--gunmetal);
+    border-radius: 15%;
 }
 
 

@@ -15,13 +15,14 @@
 html {
   background-color: var(--gunmetal);
   font-size: 12pt;
+
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Share Tech Mono', 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  // font-family: -apple-system, BlinkMacSystemFont, 'Share Tech Mono', 'Segoe UI', 'Roboto', 'Oxygen',
+  // 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  // sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--spaceCadet);
@@ -122,20 +123,22 @@ code {
 //   border-color: var(--orange);
 // }
 
-// button, a.button {
-//   margin: 1vmin;
-//   padding: 1vmin;
-//   color: var(--white);
-//   background-color: var(--orange);
-//   font-size: 2vmin;
-//   font-weight: bold;
-//   text-decoration: none;
-//   text-align: center;
-//   border: .1vmin solid var(--tan-2);
-//   border-radius: .5vmin;
-//   outline: none;
-//   cursor: pointer;
-// }
+button, a.button {
+  margin: 1vmin;
+  padding: 1vmin;
+  color: var(--white);
+  background-color: var(--gunmetal);
+  box-shadow: 5px 5px 1px var(--white);
+  border-radius: 15%;
+  font-size: 2vmin;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: .1vmin solid var(--tan-2);
+  border-radius: .5vmin;
+  outline: none;
+  cursor: pointer;
+}
 
 button.btn-sm {
   font-size: 1.5vmin;
@@ -146,7 +149,8 @@ button.btn-sm {
   font-size: 15pt;
   font-weight: bold;
   border-radius: 10%;
-  box-shadow: 3px 5px 4px var(--spaceCadet);
+  box-shadow: 1px 5px 4px var(--spaceCadet);
+  font-family: 'Share Tech Mono', 'Roboto';
 }
 
 button.btn-sm:hover {
@@ -162,6 +166,10 @@ button.btn-xs {
   color: var(--gunmetal);
   border: solid 1px var(--white);
   border-radius: 5%;
+}
+
+button.btn-xs:hover {
+  cursor: grab;
 }
 
 // button:disabled, form:invalid button[type="submit"] {

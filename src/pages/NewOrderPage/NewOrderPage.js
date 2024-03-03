@@ -78,7 +78,7 @@ export default function NewOrderPage({ user, setUser }) {
         searchInput={searchInput}
         menuItems={menuItems}
         />
-        <Link to="/orders" className="button btn-sm">PREVIOUS ORDERS</Link>
+        <Link to="/orders" className="button btn-sm">VIEW PREVIOUS ORDERS</Link>
         <UserLogOut user={user} setUser={setUser} />
       </aside>
       <MenuList

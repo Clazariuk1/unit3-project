@@ -9,7 +9,7 @@ export default function AuthPage({ setUser }) {
 
   return (
     <main className={styles.AuthPage}>
-      <h1>Hire an Affordable Dev Team Today for All Your Software Needs!</h1>
+      <h1 className={styles.heading}>Hire an Affordable Dev Team Today for All Your Software Needs!</h1>
       <div className={styles.logoButton}>
         <Logo />
         <h3 onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'SIGN UP' : 'LOG IN'}</h3>

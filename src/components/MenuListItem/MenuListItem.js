@@ -19,4 +19,4 @@ export default function MenuListItem({ menuItem, handleAddToOrder }) {
   );
 }
 
-// must insert on click for style name
+// must update images to reflect better situation

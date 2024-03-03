@@ -1,4 +1,6 @@
 .AuthPage {
+  display: flex;
+  flex-direction: column;
     height: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -6,6 +8,15 @@
     background-color: var(--lilac);
     border-radius: 2vmin;
     padding: 3rem;
+  }
+
+  h1 {
+    padding: 1rem;
+    margin: 1rem;
+    color: var(--white);
+    background-color: rgba(1, 42, 54, .5);
+    border: solid 2px var(--royalPurple);
+    border-radius: 10%;
   }
 
   .logoButton {

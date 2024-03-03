@@ -16,7 +16,7 @@ return (
     {orderItems.length ?
       orderItems
       :
-      <span className={styles.noOrders}>No Previous Orders</span>
+      <span className={styles.noOrders}>You're a first timer! Thanks so much for becoming a client and patron!</span>
     }
   </main>
 );

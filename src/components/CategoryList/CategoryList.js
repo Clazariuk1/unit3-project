@@ -14,7 +14,6 @@ export default function CategoryList({ categories, activeCat, setActiveCat }) {
   );
   return (
     <ul className={styles.CategoryList}>
-      {/* {activeCat.description} */}
       {cats}
     </ul>
   );

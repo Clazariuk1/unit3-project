@@ -1,7 +1,40 @@
 .UserLogOut {
-    font-size: 1.5vmin;
+    font-size: 2vmin;
     color: var(--royalPurple);
+    background-color: var(--gunmetal);
     text-align: center;
+    border: solid 2px var(--white);
+    border-radius: 15%;
+    padding: 2rem;
+    margin: 2rem;
+    box-shadow: 2px 3px 2px var(--gunmetal);
+    font-family: 'Share Tech Mono', 'Roboto';
+
+    section {
+      background-color: var(--lilac);
+      border: solid 2px var(--white);
+      padding: .5rem;
+      margin: 1rem;
+      padding-bottom: 2rem;
+      border-radius: 15%;
+    }
+
+
+    div {
+      padding: .25rem;
+
+    }
+
+    button {
+      margin: .25rem;
+    }
+
+    button:hover {
+      box-shadow: none;
+      cursor: pointer;
+      border: solid 2px var(--gunmetal);
+    }
+
     }
 
     .UserLogOut .email {

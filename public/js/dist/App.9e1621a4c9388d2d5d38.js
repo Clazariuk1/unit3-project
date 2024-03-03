@@ -55,8 +55,6 @@ function ItemDescription(MenuListItem) {
   }, MenuListItem.description);
 }
 
-// ultimately the content of the return must display true item description. {MenuListItem.description.display= 'block'}
-
 /***/ }),
 
 /***/ "./src/components/LineItem/LineItem.js":
@@ -85,7 +83,7 @@ function LineItem(_ref) {
     className: "flex-ctr-ctr flex-col"
   }, /*#__PURE__*/React.createElement("span", {
     className: "align-ctr"
-  }, lineItem.item.name), /*#__PURE__*/React.createElement("span", null, lineItem.item.price.toFixed(2))), /*#__PURE__*/React.createElement("div", {
+  }, lineItem.item.name)), /*#__PURE__*/React.createElement("div", {
     className: _LineItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].qty,
     style: {
       justifyContent: isPaid && 'center'
@@ -290,7 +288,7 @@ function MenuListItem(_ref) {
   }, "ADD")));
 }
 
-// must insert on click for style name
+// must update images to reflect better situation
 
 /***/ }),
 
@@ -327,23 +325,31 @@ function OrderDetail(_ref) {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].OrderDetail
   }, /*#__PURE__*/React.createElement("div", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].sectionHeading
-  }, order.isPaid ? /*#__PURE__*/React.createElement("span", null, "ORDER ", /*#__PURE__*/React.createElement("span", {
+  }, order.isPaid ? /*#__PURE__*/React.createElement("span", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].orderSpan
+  }, "ORDER ", /*#__PURE__*/React.createElement("span", {
     className: "smaller"
-  }, order.orderId)) : /*#__PURE__*/React.createElement("span", null, "NEW ORDER"), /*#__PURE__*/React.createElement("span", null, new Date(order.updatedAt).toLocaleDateString())), /*#__PURE__*/React.createElement("div", {
+  }, order.orderId)) : /*#__PURE__*/React.createElement("span", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].orderSpan
+  }, "NEW ORDER"), /*#__PURE__*/React.createElement("span", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].orderSpan
+  }, new Date(order.updatedAt).toLocaleDateString())), /*#__PURE__*/React.createElement("div", {
     className: "".concat(_OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].lineItemContainer, " flex-ctr-ctr flex-col scroll-y")
   }, lineItems.length ? /*#__PURE__*/React.createElement(React.Fragment, null, lineItems, /*#__PURE__*/React.createElement("section", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].total
   }, order.isPaid ? /*#__PURE__*/React.createElement("span", {
-    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].right
-  }, "TOTAL\xA0\xA0") : /*#__PURE__*/React.createElement("button", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].totalWords
+  }, "ORDER TOTAL\xA0\xA0") : /*#__PURE__*/React.createElement("button", {
     className: "btn-sm",
     onClick: handleCheckout,
     disabled: !lineItems.length
-  }, "CHECKOUT"), /*#__PURE__*/React.createElement("span", null, order.totalQty), /*#__PURE__*/React.createElement("span", {
+  }, "CHECKOUT"), /*#__PURE__*/React.createElement("div", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].totalBox
+  }, /*#__PURE__*/React.createElement("span", null, order.totalQty, "\xA0|"), /*#__PURE__*/React.createElement("span", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].right
-  }, "$", order.orderTotal.toFixed(2)))) : /*#__PURE__*/React.createElement("div", {
+  }, "$", order.orderTotal.toFixed(2))))) : /*#__PURE__*/React.createElement("div", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].hungry
-  }, "Hungry?")));
+  }, "Your cart! It's Empty! Tragic!")));
 }
 
 /***/ }),
@@ -378,7 +384,7 @@ function OrderList(_ref) {
     className: _OrderList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].OrderList
   }, orderItems.length ? orderItems : /*#__PURE__*/React.createElement("span", {
     className: _OrderList_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].noOrders
-  }, "No Previous Orders"));
+  }, "You're a first timer! Thanks so much for becoming a client and patron!"));
 }
 
 /***/ }),
@@ -597,12 +603,12 @@ function UserLogOut(_ref) {
   }
   return /*#__PURE__*/React.createElement("div", {
     className: _UserLogOut_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].UserLogOut
-  }, /*#__PURE__*/React.createElement("div", null, user.name), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("section", null, /*#__PURE__*/React.createElement("div", null, "Signed in As:"), /*#__PURE__*/React.createElement("div", null, user.name), /*#__PURE__*/React.createElement("div", {
     className: _UserLogOut_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].email
   }, user.email), /*#__PURE__*/React.createElement("button", {
     className: "btn-sm",
     onClick: handleLogOut
-  }, "LOG OUT"));
+  }, "LOG OUT")));
 }
 
 /***/ }),
@@ -654,7 +660,9 @@ function AuthPage(_ref) {
   const [showLogin, setShowLogin] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
   return /*#__PURE__*/React.createElement("main", {
     className: _AuthPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].AuthPage
-  }, /*#__PURE__*/React.createElement("h1", null, "Hire an Affordable Dev Team Today for All Your Software Needs!"), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("h1", {
+    className: _AuthPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].heading
+  }, "Hire an Affordable Dev Team Today for All Your Software Needs!"), /*#__PURE__*/React.createElement("div", {
     className: _AuthPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].logoButton
   }, /*#__PURE__*/React.createElement(_components_Logo_Logo__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/React.createElement("h3", {
     onClick: () => setShowLogin(!showLogin)
@@ -801,7 +809,7 @@ function NewOrderPage(_ref) {
   }), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, {
     to: "/orders",
     className: "button btn-sm"
-  }, "PREVIOUS ORDERS"), /*#__PURE__*/React.createElement(_components_UserLogOut_UserLogOut__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, "VIEW PREVIOUS ORDERS"), /*#__PURE__*/React.createElement(_components_UserLogOut_UserLogOut__WEBPACK_IMPORTED_MODULE_6__["default"], {
     user: user,
     setUser: setUser
   })), /*#__PURE__*/React.createElement(_components_MenuList_MenuList__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1320,9 +1328,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.ZeRW57PNaWpYVsw6JlaC {
   grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;
   padding: 1vmin 0;
   color: var(--fairyTale);
-  background-color: var(--royalPurple);
+  background-color: rgba(126, 82, 160, 0.75);
   border-top: 0.1vmin solid var(--spaceCadet);
   font-size: 1.5vw;
+  border: solid 1px var(--gunmetal);
+  border-radius: 5%;
+  margin: 0.5rem;
+  font-family: "Share Tech Mono", "Roboto";
 }
 
 .ZeRW57PNaWpYVsw6JlaC:last-child {
@@ -1340,12 +1352,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.ZeRW57PNaWpYVsw6JlaC {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-size: 1.3vw;
+  font-size: 1vw;
 }
 
 .ZeRW57PNaWpYVsw6JlaC button {
   margin: 0;
-}`, "",{"version":3,"sources":["webpack://./src/components/LineItem/LineItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,gDAAA;EACA,gBAAA;EACA,uBAAA;EACA,oCAAA;EACA,2CAAA;EACA,gBAAA;AACJ;;AAEI;EACA,8CAAA;AACJ;;AAEI;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,gBAAA;AACJ;;AAEI;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,gBAAA;AACJ;;AAEI;EACA,SAAA;AACJ","sourcesContent":[".LineItem {\n    width: 100%;\n    display: grid;\n    grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;\n    padding: 1vmin 0;\n    color: var(--fairyTale);\n    background-color: var(--royalPurple);\n    border-top: .1vmin solid var(--spaceCadet);\n    font-size: 1.5vw;\n    }\n\n    .LineItem:last-child {\n    border-bottom: .1vmin solid var(--spaceCadet);\n    }\n\n    .LineItem .qty {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    font-size: 1.3vw;\n    }\n\n    .LineItem .extPrice {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    font-size: 1.3vw;\n    }\n\n    .LineItem button {\n    margin: 0;\n    }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/LineItem/LineItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,gDAAA;EACA,gBAAA;EACA,uBAAA;EACA,0CAAA;EACA,2CAAA;EACA,gBAAA;EACA,iCAAA;EACA,iBAAA;EACA,cAAA;EACA,wCAAA;AACJ;;AAEI;EACA,8CAAA;AACJ;;AAEI;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,gBAAA;AACJ;;AAEI;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,cAAA;AACJ;;AAEI;EACA,SAAA;AACJ","sourcesContent":[".LineItem {\n    width: 100%;\n    display: grid;\n    grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;\n    padding: 1vmin 0;\n    color: var(--fairyTale);\n    background-color: rgba(126, 82, 160, .75);\n    border-top: .1vmin solid var(--spaceCadet);\n    font-size: 1.5vw;\n    border: solid 1px var(--gunmetal);\n    border-radius: 5%;\n    margin: .5rem;\n    font-family: 'Share Tech Mono', 'Roboto';\n    }\n\n    .LineItem:last-child {\n    border-bottom: .1vmin solid var(--spaceCadet);\n    }\n\n    .LineItem .qty {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    font-size: 1.3vw;\n    }\n\n    .LineItem .extPrice {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    font-size: 1vw;\n    }\n\n    .LineItem button {\n    margin: 0;\n    }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"LineItem": `ZeRW57PNaWpYVsw6JlaC`,
@@ -1381,6 +1393,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.O2NCX3pelTmVHMEJzuh5 {
   font-family: "Share Tech Mono", "Roboto";
   align-items: center;
   justify-content: center;
+  background-color: var(--fairyTale);
+  border-radius: 10%;
+  box-shadow: 1px 1px 1px var(--gunmetal);
+  border: solid 2px var(--spaceCadet);
 }
 .O2NCX3pelTmVHMEJzuh5 .mobj7JcQmGdMIFBGaXRS {
   font-family: "Share Tech Mono", "Roboto";
@@ -1411,7 +1427,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.O2NCX3pelTmVHMEJzuh5 {
   color: var(--darkness);
   border: solid 5px var(--lilac);
   box-shadow: 1px 2px 2px var(--darkness);
-}`, "",{"version":3,"sources":["webpack://./src/components/LoginForm/LoginForm.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,wCAAA;EACA,mBAAA;EACA,uBAAA;AACJ;AACI;EACI,wCAAA;EACA,mCAAA;EACA,kCAAA;EACA,kBAAA;EACA,iBAAA;EACA,uBAAA;EACA,aAAA;EACA,YAAA;EACA,eAAA;EACA,uBAAA;EACA,kBAAA;EACA,uCAAA;AACR;AACI;EACI,YAAA;EACA,gBAAA;AACR;;AAGA;EACI,eAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,eAAA;EACA,YAAA;EACA,sBAAA;EACA,8BAAA;EACA,uCAAA;AAAJ","sourcesContent":[".form {\n    display: flex;\n    flex-direction: column;\n    font-family: 'Share Tech Mono', 'Roboto';\n    align-items: center;\n    justify-content: center;\n\n    .submit {\n        font-family: 'Share Tech Mono', 'Roboto';\n        background-color: var(--spaceCadet);\n        border: solid 5px var(--fairyTale);\n        border-radius: 15%;\n        font-weight: bold;\n        color: var(--fairyTale);\n        padding: 2rem;\n        margin: 2rem;\n        font-size: 20pt;\n        width: -moz-fit-content;\n        width: fit-content;\n        box-shadow: 2px 3px 3px var(--darkness);\n    }\n    .submit:hover {\n        cursor: grab;\n        box-shadow: none;\n    }\n}\n\n.input {\n    padding: .5rem;\n    margin: 1rem;\n    border-radius: 10%;\n    background-color: var(--fairyTale);\n    font-size: 20pt;\n    width: 15rem;\n    color: var(--darkness);\n    border: solid 5px var(--lilac);\n    box-shadow: 1px 2px 2px var(--darkness);\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/LoginForm/LoginForm.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,wCAAA;EACA,mBAAA;EACA,uBAAA;EACA,kCAAA;EACA,kBAAA;EACA,uCAAA;EACA,mCAAA;AACJ;AACI;EACI,wCAAA;EACA,mCAAA;EACA,kCAAA;EACA,kBAAA;EACA,iBAAA;EACA,uBAAA;EACA,aAAA;EACA,YAAA;EACA,eAAA;EACA,uBAAA;EACA,kBAAA;EACA,uCAAA;AACR;AACI;EACI,YAAA;EACA,gBAAA;AACR;;AAGA;EACI,eAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,eAAA;EACA,YAAA;EACA,sBAAA;EACA,8BAAA;EACA,uCAAA;AAAJ","sourcesContent":[".form {\n    display: flex;\n    flex-direction: column;\n    font-family: 'Share Tech Mono', 'Roboto';\n    align-items: center;\n    justify-content: center;\n    background-color: var(--fairyTale);\n    border-radius: 10%;\n    box-shadow: 1px 1px 1px var(--gunmetal);\n    border: solid 2px var(--spaceCadet);\n\n    .submit {\n        font-family: 'Share Tech Mono', 'Roboto';\n        background-color: var(--spaceCadet);\n        border: solid 5px var(--fairyTale);\n        border-radius: 15%;\n        font-weight: bold;\n        color: var(--fairyTale);\n        padding: 2rem;\n        margin: 2rem;\n        font-size: 20pt;\n        width: -moz-fit-content;\n        width: fit-content;\n        box-shadow: 2px 3px 3px var(--darkness);\n    }\n    .submit:hover {\n        cursor: grab;\n        box-shadow: none;\n    }\n}\n\n.input {\n    padding: .5rem;\n    margin: 1rem;\n    border-radius: 10%;\n    background-color: var(--fairyTale);\n    font-size: 20pt;\n    width: 15rem;\n    color: var(--darkness);\n    border: solid 5px var(--lilac);\n    box-shadow: 1px 2px 2px var(--darkness);\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"form": `O2NCX3pelTmVHMEJzuh5`,
@@ -1472,11 +1488,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@keyframes syTn_Dhu4rE4xL33QPMf {
 }
 
 .EDeinQzfS2N2rVW_Z1GP:hover {
-  animation: syTn_Dhu4rE4xL33QPMf 1s linear infinite;
+  animation: syTn_Dhu4rE4xL33QPMf 1s linear;
   scale: 2;
   box-shadow: none;
   transition: 0.5s;
-}`, "",{"version":3,"sources":["webpack://./src/components/Logo/Logo.module.scss"],"names":[],"mappings":"AAAA;EACI;IACI,uBAAA;EACN;EACE;IACI,yBAAA;EACN;AACF;AAEA;EACI,uBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,+BAAA;EACA,oCAAA;EACA,mBAAA;EACA,kBAAA;EACA,sCAAA;EACA,wCAAA;EACA,aAAA;EACA,kBAAA;EACA,iBAAA;EACA,eAAA;EACA,uCAAA;EACA,QAAA;EACA,gBAAA;AAAJ;;AAGA;EACI,kDAAA;EACA,QAAA;EACA,gBAAA;EACA,gBAAA;AAAJ","sourcesContent":["@keyframes spin {\n    from {\n        transform: rotate(0deg);\n    }\n    to {\n        transform: rotate(360deg);\n    }\n}\n\n.Logo {\n    width: -moz-fit-content;\n    width: fit-content;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    border-radius: 10px 200px / 100px;\n    background-color: var(--royalPurple);\n    color: var(--lilac);\n    font-size: 2.7vmin;\n    border: .6vmin solid var(--fairyTale);\n    font-family: 'Share Tech Mono', 'Roboto';\n    padding: 2rem;\n    margin-right: 3rem;\n    font-weight: bold;\n    font-size: 24pt;\n    box-shadow: 3px 5px 2px var(--gunmetal);\n    scale: 1;\n    transition: .5s;\n    }\n\n.Logo:hover {\n    animation: spin 1s linear infinite;\n    scale: 2;\n    box-shadow: none;\n    transition: .5s;\n    }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/Logo/Logo.module.scss"],"names":[],"mappings":"AAAA;EACI;IACI,uBAAA;EACN;EACE;IACI,yBAAA;EACN;AACF;AAEA;EACI,uBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,+BAAA;EACA,oCAAA;EACA,mBAAA;EACA,kBAAA;EACA,sCAAA;EACA,wCAAA;EACA,aAAA;EACA,kBAAA;EACA,iBAAA;EACA,eAAA;EACA,uCAAA;EACA,QAAA;EACA,gBAAA;AAAJ;;AAGA;EACI,yCAAA;EACA,QAAA;EACA,gBAAA;EACA,gBAAA;AAAJ","sourcesContent":["@keyframes spin {\n    from {\n        transform: rotate(0deg);\n    }\n    to {\n        transform: rotate(360deg);\n    }\n}\n\n.Logo {\n    width: -moz-fit-content;\n    width: fit-content;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    border-radius: 10px 200px / 100px;\n    background-color: var(--royalPurple);\n    color: var(--lilac);\n    font-size: 2.7vmin;\n    border: .6vmin solid var(--fairyTale);\n    font-family: 'Share Tech Mono', 'Roboto';\n    padding: 2rem;\n    margin-right: 3rem;\n    font-weight: bold;\n    font-size: 24pt;\n    box-shadow: 3px 5px 2px var(--gunmetal);\n    scale: 1;\n    transition: .5s;\n    }\n\n.Logo:hover {\n    animation: spin 1s linear;\n    scale: 2;\n    box-shadow: none;\n    transition: .5s;\n    }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"Logo": `EDeinQzfS2N2rVW_Z1GP`,
@@ -1566,6 +1582,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.X4tFBfG4MKknHvd01CKE {
   border-radius: 1vmin;
   font-size: 4vmin;
   font-family: "Share Tech Mono", "Roboto";
+  box-shadow: 1px 3px 5px var(--white);
 }
 
 .X4tFBfG4MKknHvd01CKE .GqkE12RHPdZZg1360W4p {
@@ -1590,10 +1607,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.X4tFBfG4MKknHvd01CKE {
 }
 
 .X4tFBfG4MKknHvd01CKE .VR1OCl60qOXrRx1IzVEa {
+  padding: 0.25rem;
   font-size: 2vw;
   text-align: center;
   color: var(--fairyTale);
-}`, "",{"version":3,"sources":["webpack://./src/components/MenuListItem/MenuListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,oBAAA;EACA,cAAA;EACA,uBAAA;EACA,iCAAA;EACA,kCAAA;EACA,oBAAA;EACA,gBAAA;EACA,wCAAA;AACJ;;AAIE;EACE,WAAA;EACA,UAAA;EACA,cAAA;EACA,8BAAA;EACA,wCAAA;EACA,oBAAA;AADJ;;AAIE;EACE,aAAA;EACA,sBAAA;AADJ;;AAIE;EACE,qBAAA;EACA,gBAAA;EACA,kBAAA;EACA,uBAAA;AADJ;;AAIE;EACE,cAAA;EACA,kBAAA;EACA,uBAAA;AADJ","sourcesContent":[".MenuListItem {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 3vmin;\n    padding: 2vmin;\n    color: var(--fairyTale);\n    background-color: var(--gunmetal);\n    border: .1vmin solid var(--lilac);\n    border-radius: 1vmin;\n    font-size: 4vmin;\n    font-family: 'Share Tech Mono', 'Roboto';\n\n  }\n\n  // must turn emoji into image\n  .MenuListItem .emoji {\n    height: 8vw;\n    width: 8vw;\n    font-size: 4vw;\n    background-color: var(--lilac);\n    border: .1vmin solid var(--royalPurple);\n    border-radius: 1vmin;\n  }\n\n  .MenuListItem .buy {\n    display: flex;\n    flex-direction: column;\n  }\n\n  .MenuListItem .buy span {\n    margin-bottom: .5rem;\n    font-size: 1.7vw;\n    text-align: center;\n    color: var(--fairyTale);\n  }\n\n  .MenuListItem .name {\n    font-size: 2vw;\n    text-align: center;\n    color: var(--fairyTale);\n  }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/MenuListItem/MenuListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,oBAAA;EACA,cAAA;EACA,uBAAA;EACA,iCAAA;EACA,kCAAA;EACA,oBAAA;EACA,gBAAA;EACA,wCAAA;EACA,oCAAA;AACJ;;AAIE;EACE,WAAA;EACA,UAAA;EACA,cAAA;EACA,8BAAA;EACA,wCAAA;EACA,oBAAA;AADJ;;AAIE;EACE,aAAA;EACA,sBAAA;AADJ;;AAIE;EACE,qBAAA;EACA,gBAAA;EACA,kBAAA;EACA,uBAAA;AADJ;;AAIE;EACE,gBAAA;EACA,cAAA;EACA,kBAAA;EACA,uBAAA;AADJ","sourcesContent":[".MenuListItem {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 3vmin;\n    padding: 2vmin;\n    color: var(--fairyTale);\n    background-color: var(--gunmetal);\n    border: .1vmin solid var(--lilac);\n    border-radius: 1vmin;\n    font-size: 4vmin;\n    font-family: 'Share Tech Mono', 'Roboto';\n    box-shadow: 1px 3px 5px var(--white);\n\n  }\n\n  // must turn emoji into image\n  .MenuListItem .emoji {\n    height: 8vw;\n    width: 8vw;\n    font-size: 4vw;\n    background-color: var(--lilac);\n    border: .1vmin solid var(--royalPurple);\n    border-radius: 1vmin;\n  }\n\n  .MenuListItem .buy {\n    display: flex;\n    flex-direction: column;\n  }\n\n  .MenuListItem .buy span {\n    margin-bottom: .5rem;\n    font-size: 1.7vw;\n    text-align: center;\n    color: var(--fairyTale);\n  }\n\n  .MenuListItem .name {\n    padding: .25rem;\n    font-size: 2vw;\n    text-align: center;\n    color: var(--fairyTale);\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"MenuListItem": `X4tFBfG4MKknHvd01CKE`,
@@ -1634,6 +1652,28 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
   background-color: var(--lilac);
 }
 
+.K1UTgBLuPxBbkWjJle4c {
+  display: flex;
+  background-color: var(--royalPurple);
+  margin: 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: solid 2px var(--white);
+}
+.K1UTgBLuPxBbkWjJle4c span {
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.bi2vZ148B48PqQb9A7XD {
+  margin: 0.25rem;
+  padding: 0.25rem;
+  background-color: var(--spaceCadet);
+  color: var(--fairyTale);
+  border-radius: 5%;
+  border: solid 1px var(--white);
+}
+
 .cPR75kdAXDGVxib0PszB .ap70fWT3eETsAtLlRQKl {
   width: 100%;
 }
@@ -1652,6 +1692,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
   padding: 1vmin 0;
   color: var(--royalPurple);
   border-top: 0.1vmin solid var(--fairyTale);
+  font-family: "Share Tech Mono", "Roboto";
 }
 
 .cPR75kdAXDGVxib0PszB .V5OAbv7QFHo6WglNx0m0 span {
@@ -1667,18 +1708,41 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
   justify-content: flex-end;
 }
 
+.ZDZB7UYtkW2ycTRohGaX {
+  display: flex;
+  justify-content: flex-end;
+  color: var(--fairyTale);
+  background-color: var(--royalPurple);
+  border: solid 2px var(--white);
+  text-align: right;
+}
+
 .cPR75kdAXDGVxib0PszB .dyrUhYTujwEUiMzpjxWX {
   position: absolute;
   top: 50vh;
   font-size: 2vmin;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,2BAAA;EACA,mBAAA;EACA,cAAA;EACA,gBAAA;EACA,yBAAA;EACA,8BAAA;AACJ;;AAEE;EACE,WAAA;AACJ;;AAEE;EACE,iBAAA;EACA,2BAAA;EACA,4BAAA;EACA,WAAA;AACJ;;AAEE;EACE,WAAA;EACA,aAAA;EACA,4CAAA;EACA,gBAAA;EACA,yBAAA;EACA,0CAAA;AACJ;;AAEE;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;EACA,sBAAA;AACJ;;AAEE;EACE,aAAA;EACA,yBAAA;AACJ;;AAEE;EACE,kBAAA;EACA,SAAA;EACA,gBAAA;AACJ","sourcesContent":[".OrderDetail {\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    padding: 3vmin;\n    font-size: 2vmin;\n    color: var(--royalPurple);\n    background-color: var(--lilac);\n  }\n\n  .OrderDetail .sectionHeading {\n    width: 100%\n  }\n\n  .OrderDetail .lineItemContainer {\n    margin-top: 3vmin;\n    justify-content: flex-start;\n    height: calc(100vh - 18vmin);\n    width: 100%;\n  }\n\n  .OrderDetail .total {\n    width: 100%;\n    display: grid;\n    grid-template-columns: 18.35vw 5.75vw 5.25vw;\n    padding: 1vmin 0;\n    color: var(--royalPurple);\n    border-top: .1vmin solid var(--fairyTale);\n  }\n\n  .OrderDetail .total span {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 1.5vw;\n    color: var(--gunmetal);\n  }\n\n  .OrderDetail .total span.right {\n    display: flex;\n    justify-content: flex-end;\n  }\n\n  .OrderDetail .hungry {\n    position: absolute;\n    top: 50vh;\n    font-size: 2vmin;\n  }\n"],"sourceRoot":""}]);
+  color: var(--gunmetal);
+  font-weight: bold;
+  font-size: 24pt;
+  font-family: "Share Tech Mono", "Roboto";
+  background-color: var(--white);
+  border: solid 2px var(--fairyTale);
+  border-radius: 15%;
+  box-shadow: 2px 3px 1px var(--gunmetal);
+  text-align: center;
+  margin-right: 1rem;
+  padding: 0.5rem;
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,2BAAA;EACA,mBAAA;EACA,cAAA;EACA,gBAAA;EACA,yBAAA;EACA,8BAAA;AACJ;;AAEE;EACE,aAAA;EACA,oCAAA;EACA,cAAA;EACA,uBAAA;EACA,kBAAA;EACA,8BAAA;AACJ;AAEI;EACE,eAAA;EACA,cAAA;AAAN;;AAIE;EACE,eAAA;EACA,gBAAA;EACA,mCAAA;EACA,uBAAA;EACA,iBAAA;EACA,8BAAA;AADJ;;AAIE;EACE,WAAA;AADJ;;AAIE;EACE,iBAAA;EACA,2BAAA;EACA,4BAAA;EACA,WAAA;AADJ;;AAIE;EACE,WAAA;EACA,aAAA;EACA,4CAAA;EACA,gBAAA;EACA,yBAAA;EACA,0CAAA;EACA,wCAAA;AADJ;;AAIE;EACE,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;EACA,sBAAA;AADJ;;AAIE;EACE,aAAA;EACA,yBAAA;AADJ;;AAIE;EACE,aAAA;EACA,yBAAA;EACA,uBAAA;EACA,oCAAA;EACA,8BAAA;EACA,iBAAA;AADJ;;AAKE;EACE,kBAAA;EACA,SAAA;EACA,gBAAA;EACA,sBAAA;EACA,iBAAA;EACA,eAAA;EACA,wCAAA;EACA,8BAAA;EACA,kCAAA;EACA,kBAAA;EACA,uCAAA;EACA,kBAAA;EACA,kBAAA;EACA,eAAA;AAFJ","sourcesContent":[".OrderDetail {\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    padding: 3vmin;\n    font-size: 2vmin;\n    color: var(--royalPurple);\n    background-color: var(--lilac);\n  }\n\n  .totalBox {\n    display: flex;\n    background-color: var(--royalPurple);\n    margin: .5rem;\n    width: -moz-fit-content;\n    width: fit-content;\n    border: solid 2px var(--white);\n\n\n    span {\n      padding: .5rem;\n      margin: .5rem;\n    }\n  }\n\n  .orderSpan {\n    margin: .25rem;\n    padding: .25rem;\n    background-color: var(--spaceCadet);\n    color: var(--fairyTale);\n    border-radius: 5%;\n    border: solid 1px var(--white);\n  }\n\n  .OrderDetail .sectionHeading {\n    width: 100%\n  }\n\n  .OrderDetail .lineItemContainer {\n    margin-top: 3vmin;\n    justify-content: flex-start;\n    height: calc(100vh - 18vmin);\n    width: 100%;\n  }\n\n  .OrderDetail .total {\n    width: 100%;\n    display: grid;\n    grid-template-columns: 18.35vw 5.75vw 5.25vw;\n    padding: 1vmin 0;\n    color: var(--royalPurple);\n    border-top: .1vmin solid var(--fairyTale);\n    font-family: 'Share Tech Mono', 'Roboto';\n  }\n\n  .OrderDetail .total span {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 1.5vw;\n    color: var(--gunmetal);\n  }\n\n  .OrderDetail .total span.right {\n    display: flex;\n    justify-content: flex-end;\n  }\n\n  .totalWords {\n    display: flex;\n    justify-content: flex-end;\n    color: var(--fairyTale);\n    background-color: var(--royalPurple);\n    border: solid 2px var(--white);\n    text-align: right;\n\n  }\n\n  .OrderDetail .hungry {\n    position: absolute;\n    top: 50vh;\n    font-size: 2vmin;\n    color: var(--gunmetal);\n    font-weight: bold;\n    font-size: 24pt;\n    font-family: 'Share Tech Mono', 'Roboto';\n    background-color: var(--white);\n    border: solid 2px var(--fairyTale);\n    border-radius: 15%;\n    box-shadow: 2px 3px 1px var(--gunmetal);\n    text-align: center;\n    margin-right: 1rem;\n    padding: .5rem;\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderDetail": `cPR75kdAXDGVxib0PszB`,
+	"totalBox": `K1UTgBLuPxBbkWjJle4c`,
+	"orderSpan": `bi2vZ148B48PqQb9A7XD`,
 	"sectionHeading": `ap70fWT3eETsAtLlRQKl`,
 	"lineItemContainer": `vVkqXbRqxMYDCnUttflb`,
 	"total": `V5OAbv7QFHo6WglNx0m0`,
 	"right": `GtULiQQdndLNSQN4Yc97`,
+	"totalWords": `ZDZB7UYtkW2ycTRohGaX`,
 	"hungry": `dyrUhYTujwEUiMzpjxWX`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -1714,14 +1778,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.l6Ner7C7O5I4V69HVVgW {
   margin: 3vmin 0;
   padding: 3vmin;
   overflow-y: scroll;
+  font-family: "Share Tech Mono", "Roboto";
 }
 
 .l6Ner7C7O5I4V69HVVgW .zqVYKU3SzotKremHzxQ_ {
-  color: var(--fairyTale);
+  color: var(--royalPurple);
+  background-color: var(--fairyTale);
+  border-radius: 15%;
   font-size: 2vmin;
   position: absolute;
   top: 50vh;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderList/OrderList.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,oCAAA;EACA,sCAAA;EACA,oBAAA;EACA,eAAA;EACA,cAAA;EACA,kBAAA;AACJ;;AAEI;EACA,uBAAA;EACA,gBAAA;EACA,kBAAA;EACA,SAAA;AACJ","sourcesContent":[".OrderList {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background-color: var(--royalPurple);\n    border: .1vmin solid var(--fairyTale);\n    border-radius: 2vmin;\n    margin: 3vmin 0;\n    padding: 3vmin;\n    overflow-y: scroll;\n    }\n\n    .OrderList .noOrders {\n    color: var(--fairyTale);\n    font-size: 2vmin;\n    position: absolute;\n    top: calc(50vh);\n    }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderList/OrderList.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,oCAAA;EACA,sCAAA;EACA,oBAAA;EACA,eAAA;EACA,cAAA;EACA,kBAAA;EACA,wCAAA;AACJ;;AAEI;EACA,yBAAA;EACA,kCAAA;EACA,kBAAA;EACA,gBAAA;EACA,kBAAA;EACA,SAAA;AACJ","sourcesContent":[".OrderList {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background-color: var(--royalPurple);\n    border: .1vmin solid var(--fairyTale);\n    border-radius: 2vmin;\n    margin: 3vmin 0;\n    padding: 3vmin;\n    overflow-y: scroll;\n    font-family: 'Share Tech Mono', 'Roboto';\n    }\n\n    .OrderList .noOrders {\n    color: var(--royalPurple);\n    background-color: var(--fairyTale);\n    border-radius: 15%;\n    font-size: 2vmin;\n    position: absolute;\n    top: calc(50vh);\n    }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderList": `l6Ner7C7O5I4V69HVVgW`,
@@ -1758,11 +1825,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.SbDKL2bctOyC5ZgA0KfW {
   margin-bottom: 3vmin;
   padding: 2vmin;
   color: var(--gunmetal);
-  background-color: var(--white);
-  border: 0.2vmin solid var(--royalPurple);
+  background-color: var(--fairyTale);
+  border: 0.2vmin solid var(--white);
   border-radius: 1vmin;
   font-size: 2vmin;
   cursor: pointer;
+  box-shadow: 1px 1px 3px var(--fairyTale);
 }
 
 .SbDKL2bctOyC5ZgA0KfW > div > div:first-child {
@@ -1778,7 +1846,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.SbDKL2bctOyC5ZgA0KfW {
 .SbDKL2bctOyC5ZgA0KfW:not(.mOA_Z5p05rn7VW_2oU68):hover {
   border-color: var(--fairyTale);
   border-width: 0.2vmin;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderListItem/OrderListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,oBAAA;EACA,cAAA;EACA,sBAAA;EACA,8BAAA;EACA,wCAAA;EACA,oBAAA;EACA,gBAAA;EACA,eAAA;AACJ;;AAEI;EACA,sBAAA;AACJ;;AAEI;EACA,8BAAA;EACA,qBAAA;EACA,eAAA;AACJ;;AAEI;EACA,8BAAA;EACA,qBAAA;AACJ","sourcesContent":[".OrderListItem {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 3vmin;\n    padding: 2vmin;\n    color: var(--gunmetal);\n    background-color: var(--white);\n    border: .2vmin solid var(--royalPurple);\n    border-radius: 1vmin;\n    font-size: 2vmin;\n    cursor: pointer;\n    }\n\n    .OrderListItem > div> div:first-child {\n    margin-bottom: .5vmin;\n    }\n\n    .OrderListItem.selected {\n    border-color: var(--fairyTale);\n    border-width: .2vmin;\n    cursor: default;\n    }\n\n    .OrderListItem:not(.selected):hover {\n    border-color: var(--fairyTale);\n    border-width: .2vmin;\n    }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderListItem/OrderListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,oBAAA;EACA,cAAA;EACA,sBAAA;EACA,kCAAA;EACA,kCAAA;EACA,oBAAA;EACA,gBAAA;EACA,eAAA;EACA,wCAAA;AACJ;;AAEI;EACA,sBAAA;AACJ;;AAEI;EACA,8BAAA;EACA,qBAAA;EACA,eAAA;AACJ;;AAEI;EACA,8BAAA;EACA,qBAAA;AACJ","sourcesContent":[".OrderListItem {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 3vmin;\n    padding: 2vmin;\n    color: var(--gunmetal);\n    background-color: var(--fairyTale);\n    border: .2vmin solid var(--white);\n    border-radius: 1vmin;\n    font-size: 2vmin;\n    cursor: pointer;\n    box-shadow: 1px 1px 3px var(--fairyTale);\n    }\n\n    .OrderListItem > div> div:first-child {\n    margin-bottom: .5vmin;\n    }\n\n    .OrderListItem.selected {\n    border-color: var(--fairyTale);\n    border-width: .2vmin;\n    cursor: default;\n    }\n\n    .OrderListItem:not(.selected):hover {\n    border-color: var(--fairyTale);\n    border-width: .2vmin;\n    }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderListItem": `SbDKL2bctOyC5ZgA0KfW`,
@@ -1813,6 +1881,18 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.PGJV9BRhtmwkVpWtrJ5F {
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-family: "Share Tech Mono", "Roboto";
+}
+
+label {
+  background-color: var(--white);
+  padding: 1rem;
+  margin: 0.5rem;
+  color: var(--gunmetal);
+  border: solid 2px var(--gunmetal);
+  font-size: 20pt;
+  box-shadow: 1px 5px 3px var(--gunmetal);
+  border-radius: 15%;
 }
 
 .lgstOQj5cZ4c81Jc_3ic {
@@ -1824,7 +1904,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.PGJV9BRhtmwkVpWtrJ5F {
   margin: 0.5rem;
   font-weight: bold;
   box-shadow: 1px 2px 1px var(--darkness);
-}`, "",{"version":3,"sources":["webpack://./src/components/SearchBar/SearchBar.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;AACJ;;AAIA;EACI,eAAA;EACA,8BAAA;EACA,sBAAA;EACA,iCAAA;EACA,eAAA;EACA,cAAA;EACA,iBAAA;EACA,uCAAA;AADJ","sourcesContent":[".searchData {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    text-align: center;\n}\n\n\n\n.search {\n    font-size: 14pt;\n    background-color: var(--lilac);\n    color: var(--gunmetal);\n    border: solid 3px var(--gunmetal);\n    padding: .5rem;\n    margin: .5rem;\n    font-weight: bold;\n    box-shadow: 1px 2px 1px var(--darkness);\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/SearchBar/SearchBar.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;EACA,wCAAA;AACJ;;AAEA;EACI,8BAAA;EACA,aAAA;EACA,cAAA;EACA,sBAAA;EACA,iCAAA;EACA,eAAA;EACA,uCAAA;EACA,kBAAA;AACJ;;AAIA;EACI,eAAA;EACA,8BAAA;EACA,sBAAA;EACA,iCAAA;EACA,eAAA;EACA,cAAA;EACA,iBAAA;EACA,uCAAA;AADJ","sourcesContent":[".searchData {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    text-align: center;\n    font-family: 'Share Tech Mono', 'Roboto';\n}\n\nlabel {\n    background-color: var(--white);\n    padding: 1rem;\n    margin: .5rem;\n    color: var(--gunmetal);\n    border: solid 2px var(--gunmetal);\n    font-size: 20pt;\n    box-shadow: 1px 5px 3px var(--gunmetal);\n    border-radius: 15%;\n}\n\n\n\n.search {\n    font-size: 14pt;\n    background-color: var(--lilac);\n    color: var(--gunmetal);\n    border: solid 3px var(--gunmetal);\n    padding: .5rem;\n    margin: .5rem;\n    font-weight: bold;\n    box-shadow: 1px 2px 1px var(--darkness);\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"searchData": `PGJV9BRhtmwkVpWtrJ5F`,
@@ -1859,6 +1939,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.z46LtMWJNGdkU_17AlVX {
   font-family: "Share Tech Mono", "Roboto";
   align-items: center;
   justify-content: center;
+  background-color: var(--fairyTale);
+  border-radius: 10%;
+  box-shadow: 1px 1px 1px var(--gunmetal);
+  border: solid 2px var(--spaceCadet);
 }
 .z46LtMWJNGdkU_17AlVX .SRRUoVqVQ_8OC7C8Uk9r {
   font-family: "Share Tech Mono", "Roboto";
@@ -1889,7 +1973,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.z46LtMWJNGdkU_17AlVX {
   color: var(--darkness);
   border: solid 5px var(--lilac);
   box-shadow: 1px 2px 2px var(--darkness);
-}`, "",{"version":3,"sources":["webpack://./src/components/SignUpForm/signUpForm.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,wCAAA;EACA,mBAAA;EACA,uBAAA;AACJ;AACI;EACI,wCAAA;EACA,mCAAA;EACA,kCAAA;EACA,kBAAA;EACA,iBAAA;EACA,uBAAA;EACA,aAAA;EACA,YAAA;EACA,eAAA;EACA,uBAAA;EACA,kBAAA;EACA,uCAAA;AACR;AACI;EACI,YAAA;EACA,gBAAA;AACR;;AAGA;EACI,eAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,eAAA;EACA,YAAA;EACA,sBAAA;EACA,8BAAA;EACA,uCAAA;AAAJ","sourcesContent":[".form {\n    display: flex;\n    flex-direction: column;\n    font-family: 'Share Tech Mono', 'Roboto';\n    align-items: center;\n    justify-content: center;\n\n    .submit {\n        font-family: 'Share Tech Mono', 'Roboto';\n        background-color: var(--spaceCadet);\n        border: solid 5px var(--fairyTale);\n        border-radius: 15%;\n        font-weight: bold;\n        color: var(--fairyTale);\n        padding: 2rem;\n        margin: 2rem;\n        font-size: 20pt;\n        width: -moz-fit-content;\n        width: fit-content;\n        box-shadow: 2px 3px 3px var(--darkness);\n    }\n    .submit:hover {\n        cursor: grab;\n        box-shadow: none;\n    }\n}\n\n.input {\n    padding: .5rem;\n    margin: 1rem;\n    border-radius: 10%;\n    background-color: var(--fairyTale);\n    font-size: 20pt;\n    width: 15rem;\n    color: var(--darkness);\n    border: solid 5px var(--lilac);\n    box-shadow: 1px 2px 2px var(--darkness);\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/SignUpForm/signUpForm.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,wCAAA;EACA,mBAAA;EACA,uBAAA;EACA,kCAAA;EACA,kBAAA;EACA,uCAAA;EACA,mCAAA;AACJ;AACI;EACI,wCAAA;EACA,mCAAA;EACA,kCAAA;EACA,kBAAA;EACA,iBAAA;EACA,uBAAA;EACA,aAAA;EACA,YAAA;EACA,eAAA;EACA,uBAAA;EACA,kBAAA;EACA,uCAAA;AACR;AACI;EACI,YAAA;EACA,gBAAA;AACR;;AAGA;EACI,eAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,eAAA;EACA,YAAA;EACA,sBAAA;EACA,8BAAA;EACA,uCAAA;AAAJ","sourcesContent":[".form {\n    display: flex;\n    flex-direction: column;\n    font-family: 'Share Tech Mono', 'Roboto';\n    align-items: center;\n    justify-content: center;\n    background-color: var(--fairyTale);\n    border-radius: 10%;\n    box-shadow: 1px 1px 1px var(--gunmetal);\n    border: solid 2px var(--spaceCadet);\n\n    .submit {\n        font-family: 'Share Tech Mono', 'Roboto';\n        background-color: var(--spaceCadet);\n        border: solid 5px var(--fairyTale);\n        border-radius: 15%;\n        font-weight: bold;\n        color: var(--fairyTale);\n        padding: 2rem;\n        margin: 2rem;\n        font-size: 20pt;\n        width: -moz-fit-content;\n        width: fit-content;\n        box-shadow: 2px 3px 3px var(--darkness);\n    }\n    .submit:hover {\n        cursor: grab;\n        box-shadow: none;\n    }\n}\n\n.input {\n    padding: .5rem;\n    margin: 1rem;\n    border-radius: 10%;\n    background-color: var(--fairyTale);\n    font-size: 20pt;\n    width: 15rem;\n    color: var(--darkness);\n    border: solid 5px var(--lilac);\n    box-shadow: 1px 2px 2px var(--darkness);\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"form": `z46LtMWJNGdkU_17AlVX`,
@@ -1920,14 +2004,40 @@ ___CSS_LOADER_EXPORT___.locals = {
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.x80Y_LltA5PliUAZlphe {
-  font-size: 1.5vmin;
+  font-size: 2vmin;
   color: var(--royalPurple);
+  background-color: var(--gunmetal);
   text-align: center;
+  border: solid 2px var(--white);
+  border-radius: 15%;
+  padding: 2rem;
+  margin: 2rem;
+  box-shadow: 2px 3px 2px var(--gunmetal);
+  font-family: "Share Tech Mono", "Roboto";
+}
+.x80Y_LltA5PliUAZlphe section {
+  background-color: var(--lilac);
+  border: solid 2px var(--white);
+  padding: 0.5rem;
+  margin: 1rem;
+  padding-bottom: 2rem;
+  border-radius: 15%;
+}
+.x80Y_LltA5PliUAZlphe div {
+  padding: 0.25rem;
+}
+.x80Y_LltA5PliUAZlphe button {
+  margin: 0.25rem;
+}
+.x80Y_LltA5PliUAZlphe button:hover {
+  box-shadow: none;
+  cursor: pointer;
+  border: solid 2px var(--gunmetal);
 }
 
 .x80Y_LltA5PliUAZlphe .qHiYGQB1ZEMvrGOQoBrO {
   font-size: smaller;
-}`, "",{"version":3,"sources":["webpack://./src/components/UserLogOut/UserLogOut.module.scss"],"names":[],"mappings":"AAAA;EACI,kBAAA;EACA,yBAAA;EACA,kBAAA;AACJ;;AAEI;EACE,kBAAA;AACN","sourcesContent":[".UserLogOut {\n    font-size: 1.5vmin;\n    color: var(--royalPurple);\n    text-align: center;\n    }\n\n    .UserLogOut .email {\n      font-size: smaller;\n    }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/UserLogOut/UserLogOut.module.scss"],"names":[],"mappings":"AAAA;EACI,gBAAA;EACA,yBAAA;EACA,iCAAA;EACA,kBAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,YAAA;EACA,uCAAA;EACA,wCAAA;AACJ;AACI;EACE,8BAAA;EACA,8BAAA;EACA,eAAA;EACA,YAAA;EACA,oBAAA;EACA,kBAAA;AACN;AAGI;EACE,gBAAA;AADN;AAKI;EACE,eAAA;AAHN;AAMI;EACE,gBAAA;EACA,eAAA;EACA,iCAAA;AAJN;;AASI;EACE,kBAAA;AANN","sourcesContent":[".UserLogOut {\n    font-size: 2vmin;\n    color: var(--royalPurple);\n    background-color: var(--gunmetal);\n    text-align: center;\n    border: solid 2px var(--white);\n    border-radius: 15%;\n    padding: 2rem;\n    margin: 2rem;\n    box-shadow: 2px 3px 2px var(--gunmetal);\n    font-family: 'Share Tech Mono', 'Roboto';\n\n    section {\n      background-color: var(--lilac);\n      border: solid 2px var(--white);\n      padding: .5rem;\n      margin: 1rem;\n      padding-bottom: 2rem;\n      border-radius: 15%;\n    }\n\n\n    div {\n      padding: .25rem;\n\n    }\n\n    button {\n      margin: .25rem;\n    }\n\n    button:hover {\n      box-shadow: none;\n      cursor: pointer;\n      border: solid 2px var(--gunmetal);\n    }\n\n    }\n\n    .UserLogOut .email {\n      font-size: smaller;\n    }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"UserLogOut": `x80Y_LltA5PliUAZlphe`,
@@ -1957,6 +2067,8 @@ ___CSS_LOADER_EXPORT___.locals = {
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.RygkJgZmBHTETlLP3C3i {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -1964,6 +2076,15 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.RygkJgZmBHTETlLP3C3i {
   background-color: var(--lilac);
   border-radius: 2vmin;
   padding: 3rem;
+}
+
+h1 {
+  padding: 1rem;
+  margin: 1rem;
+  color: var(--white);
+  background-color: rgba(1, 42, 54, 0.5);
+  border: solid 2px var(--royalPurple);
+  border-radius: 10%;
 }
 
 .xz_RCVZIfvL4Y7V6NMdH {
@@ -1989,7 +2110,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.RygkJgZmBHTETlLP3C3i {
 .xz_RCVZIfvL4Y7V6NMdH h3:hover {
   cursor: grab;
   box-shadow: none;
-}`, "",{"version":3,"sources":["webpack://./src/pages/AuthPage/AuthPage.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,8BAAA;EACA,oBAAA;EACA,aAAA;AACJ;;AAEE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,kBAAA;AACJ;AAAI;EACE,kCAAA;EACA,iBAAA;EACA,kBAAA;EACA,mBAAA;EACA,eAAA;EACA,aAAA;EACA,iCAAA;EACA,kBAAA;EACA,eAAA;EACA,uCAAA;EACA,wCAAA;AAEN;AACI;EACE,YAAA;EACA,gBAAA;AACN","sourcesContent":[".AuthPage {\n    height: 100%;\n    display: flex;\n    justify-content: space-evenly;\n    align-items: center;\n    background-color: var(--lilac);\n    border-radius: 2vmin;\n    padding: 3rem;\n  }\n\n  .logoButton {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    text-align: center;\n    h3 {\n      border: solid 2px var(--fairyTale);\n      margin-top: 4vmin;\n      text-align: center;\n      color: var(--lilac);\n      cursor: pointer;\n      padding: 1rem;\n      background-color: var(--gunmetal);\n      border-radius: 15%;\n      font-size: 20pt;\n      box-shadow: 1px 3px 1px var(--gunmetal);\n      font-family: 'Share Tech Mono', 'Roboto';\n    }\n\n    h3:hover {\n      cursor: grab;\n      box-shadow: none;\n    }\n  }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/pages/AuthPage/AuthPage.module.scss"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,sBAAA;EACE,YAAA;EACA,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,8BAAA;EACA,oBAAA;EACA,aAAA;AACJ;;AAEE;EACE,aAAA;EACA,YAAA;EACA,mBAAA;EACA,sCAAA;EACA,oCAAA;EACA,kBAAA;AACJ;;AAEE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,kBAAA;AACJ;AAAI;EACE,kCAAA;EACA,iBAAA;EACA,kBAAA;EACA,mBAAA;EACA,eAAA;EACA,aAAA;EACA,iCAAA;EACA,kBAAA;EACA,eAAA;EACA,uCAAA;EACA,wCAAA;AAEN;AACI;EACE,YAAA;EACA,gBAAA;AACN","sourcesContent":[".AuthPage {\n  display: flex;\n  flex-direction: column;\n    height: 100%;\n    display: flex;\n    justify-content: space-evenly;\n    align-items: center;\n    background-color: var(--lilac);\n    border-radius: 2vmin;\n    padding: 3rem;\n  }\n\n  h1 {\n    padding: 1rem;\n    margin: 1rem;\n    color: var(--white);\n    background-color: rgba(1, 42, 54, .5);\n    border: solid 2px var(--royalPurple);\n    border-radius: 10%;\n  }\n\n  .logoButton {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    text-align: center;\n    h3 {\n      border: solid 2px var(--fairyTale);\n      margin-top: 4vmin;\n      text-align: center;\n      color: var(--lilac);\n      cursor: pointer;\n      padding: 1rem;\n      background-color: var(--gunmetal);\n      border-radius: 15%;\n      font-size: 20pt;\n      box-shadow: 1px 3px 1px var(--gunmetal);\n      font-family: 'Share Tech Mono', 'Roboto';\n    }\n\n    h3:hover {\n      cursor: grab;\n      box-shadow: none;\n    }\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"AuthPage": `RygkJgZmBHTETlLP3C3i`,
@@ -2033,7 +2154,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.RZqTJBeYN7RXwcHgPFys {
   justify-content: space-between;
   align-items: center;
   margin: 3vmin 2vmin;
-}`, "",{"version":3,"sources":["webpack://./src/pages/NewOrderPage/NewOrderPage.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,aAAA;EACA,sCAAA;EACA,uBAAA;EACA,kCAAA;EACA,oBAAA;AACJ;;AAEE;EACE,aAAA;EACA,sBAAA;EACA,8BAAA;EACA,mBAAA;EACA,mBAAA;AACJ","sourcesContent":[".NewOrderPage {\n    height: 100%;\n    display: grid;\n    grid-template-columns: 1.6fr 3.5fr 3fr;\n    grid-template-rows: 1fr;\n    background-color: var(--fairyTale);\n    border-radius: 2vmin;\n  }\n\n  .NewOrderPage aside {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    align-items: center;\n    margin: 3vmin 2vmin;\n  }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/pages/NewOrderPage/NewOrderPage.module.scss"],"names":[],"mappings":"AAAA;EACI,YAAA;EACA,aAAA;EACA,sCAAA;EACA,uBAAA;EACA,kCAAA;EACA,oBAAA;AACJ;;AAGE;EACE,aAAA;EACA,sBAAA;EACA,8BAAA;EACA,mBAAA;EACA,mBAAA;AAAJ","sourcesContent":[".NewOrderPage {\n    height: 100%;\n    display: grid;\n    grid-template-columns: 1.6fr 3.5fr 3fr;\n    grid-template-rows: 1fr;\n    background-color: var(--fairyTale);\n    border-radius: 2vmin;\n\n  }\n\n  .NewOrderPage aside {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    align-items: center;\n    margin: 3vmin 2vmin;\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"NewOrderPage": `RZqTJBeYN7RXwcHgPFys`

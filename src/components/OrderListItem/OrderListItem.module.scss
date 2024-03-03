@@ -6,11 +6,12 @@
     margin-bottom: 3vmin;
     padding: 2vmin;
     color: var(--gunmetal);
-    background-color: var(--white);
-    border: .2vmin solid var(--royalPurple);
+    background-color: var(--fairyTale);
+    border: .2vmin solid var(--white);
     border-radius: 1vmin;
     font-size: 2vmin;
     cursor: pointer;
+    box-shadow: 1px 1px 3px var(--fairyTale);
     }
 
     .OrderListItem > div> div:first-child {
