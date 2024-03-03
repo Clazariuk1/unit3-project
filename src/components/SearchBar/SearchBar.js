@@ -8,7 +8,7 @@ export default function SearchBar({
 }){
     return (
         <div className={styles.searchData}>
-        <label>Search our catalogue here
+        <label>Search our catalogue below
         <input className={styles.search}
             type="text"
             value={searchInput}

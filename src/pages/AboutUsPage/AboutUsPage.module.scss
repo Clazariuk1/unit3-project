@@ -1,0 +1,19 @@
+.AboutUsPage {
+    font-family: 'Share Tech Mono', 'Roboto';
+
+    h1 {
+        background-color: white;
+        color: black;
+        }
+}
+
+.stories {
+    background-color: var(--royalPurple);
+    border: solid 2px var(--white);
+    font-size: 20pt;
+    color: var(--fairyTale);
+}
+
+.story {
+    background-color: black;
+}

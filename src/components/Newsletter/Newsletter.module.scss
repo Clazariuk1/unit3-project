@@ -1,0 +1,11 @@
+.newsletter {
+    background-color: var(--fairyTale);
+    border: solid 2px var(--white);
+    margin: 1rem;
+    input {
+        padding: 2rem;
+        margin: 1rem;
+        border: solid 2px var(--gunmetal);
+        box-shadow: 2px 3px 1px var(--gunmetal);
+    }
+}
