@@ -1,0 +1,23 @@
+.NavBar {
+    background-color: var(--gunmetal);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    button {
+        text-align: center;
+        background-color: var(--white);
+        color: var(--gunmetal);
+        font-size: 24pt;
+        font-weight: bold;
+        height: 1vmin;
+    }
+}
+.NavButton {
+    text-align: center;
+    background-color: var(--white);
+    color: var(--gunmetal);
+    font-size: 24pt;
+    font-weight: bold;
+    height: 1vmin;
+}

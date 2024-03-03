@@ -9,6 +9,8 @@ import CategoryList from '../../components/CategoryList/CategoryList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import SearchBar from '../../components/SearchBar/SearchBar';
+// import NavBar from '../../components/NavBar'
+
 
 export default function NewOrderPage({ user, setUser }) {
   const [menuItems, setMenuItems] = useState([]);

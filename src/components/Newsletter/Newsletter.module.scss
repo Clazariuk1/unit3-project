@@ -3,9 +3,11 @@
     border: solid 2px var(--white);
     margin: 1rem;
     input {
-        padding: 2rem;
+        padding: 1rem;
+        border-radius: 5%;
         margin: 1rem;
         border: solid 2px var(--gunmetal);
         box-shadow: 2px 3px 1px var(--gunmetal);
+        font-size: 16pt;
     }
 }

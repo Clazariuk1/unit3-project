@@ -1,19 +1,79 @@
 .AboutUsPage {
     font-family: 'Share Tech Mono', 'Roboto';
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 
-    h1 {
-        background-color: white;
-        color: black;
+    .title {
+        background-color: var(--white);
+        padding: 1rem;
+        color: var(--gunmetal);
+        text-align: center;
         }
 }
 
+.column {
+    border: solid 5pt var(--lilac);
+    background-color: var(--darkness);
+    img {
+        margin: 1rem;
+        padding: 1rem;
+        border: solid 3px var(--lilac);
+        border-radius: 5%;
+    }
+}
+
+.subtitle {
+    background-color: var(--lilac);
+    padding: 1rem;
+    margin: 1rem;
+    width: fit-content;
+    border-radius: 5%;
+}
 .stories {
     background-color: var(--royalPurple);
     border: solid 2px var(--white);
     font-size: 20pt;
     color: var(--fairyTale);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .story {
-    background-color: black;
+    background-color: var(--fairyTale);
+    color: var(--gunmetal);
+    padding: 1rem;
+    margin: 1rem;
+    border: solid 2px var(--lilac);
+    box-shadow: 2pt 2pt 1pt var(--);
+    border-radius: 5%;
+    font-weight: bold;
+}
+
+.titles {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 15%;
+    background-color: var(--fairyTale);
+    color: var(--gunmetal);
+    box-shadow: 3pt 3pt 1pt var(--white);
+}
+
+.subHeader {
+    display: flex;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.creed {
+    background-color: var(--royalPurple);
+    color: var(--white);
+    border: solid 3px var(--white);
+    border-radius: 5%;
+    padding: 1rem;
+    margin: 1rem;
+    width: fit-content;
 }

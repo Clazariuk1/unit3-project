@@ -1,11 +1,18 @@
+// .OrderHistoryPage {
+//   height: 100%;
+//   display: grid;
+//   grid-template-columns: 1.6fr 3.5fr 3fr;
+//   grid-template-rows: 1fr;
+//   background-color: var(--fairyTale);
+//   border-radius: 2vmin;
+// }
 .OrderHistoryPage {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1.6fr 3.5fr 3fr;
-    grid-template-rows: 1fr;
-    background-color: var(--fairyTale);
-    border-radius: 2vmin;
-  }
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fairyTale);
+  border-radius: 2vmin;
+}
 
   .OrderHistoryPage .aside {
     display: flex;

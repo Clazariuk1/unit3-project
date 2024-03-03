@@ -6,6 +6,7 @@ import Logo from '../../components/Logo/Logo';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import OrderList from '../../components/OrderList/OrderList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
+import NavBar from '../../components/NavBar/NavBar'
 
 export default function OrderHistoryPage({ user, setUser }) {
   /*--- State --- */
@@ -32,6 +33,8 @@ export default function OrderHistoryPage({ user, setUser }) {
   /*--- Rendered UI --- */
   return (
     <main className={styles.OrderHistoryPage}>
+      <NavBar />
+      <div class={styles.container}>
       <aside className={styles.aside}>
         <Logo />
         <Link to="/orders/new" className="button btn-sm">NEW ORDER</Link>
@@ -45,6 +48,7 @@ export default function OrderHistoryPage({ user, setUser }) {
       <OrderDetail
         order={activeOrder}
       />
+      </div>
     </main>
   );
 }
