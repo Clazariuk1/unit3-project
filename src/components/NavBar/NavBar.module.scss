@@ -1,23 +1,21 @@
 .NavBar {
-    background-color: var(--gunmetal);
+    background-color: none;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    button {
-        text-align: center;
-        background-color: var(--white);
-        color: var(--gunmetal);
-        font-size: 24pt;
-        font-weight: bold;
-        height: 1vmin;
-    }
+    background-color: var(--gunmetal);
+    padding: 5rem;
 }
 .NavButton {
+    padding: 1rem;
+    margin: 1rem;
     text-align: center;
     background-color: var(--white);
+    border-radius: 5%;
     color: var(--gunmetal);
     font-size: 24pt;
     font-weight: bold;
     height: 1vmin;
+    box-shadow: 3px 3px 2px var(--gunmetal);
 }

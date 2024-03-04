@@ -9,7 +9,7 @@ import CategoryList from '../../components/CategoryList/CategoryList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import SearchBar from '../../components/SearchBar/SearchBar';
-// import NavBar from '../../components/NavBar'
+import NavBar from '../../components/NavBar/NavBar'
 
 
 export default function NewOrderPage({ user, setUser }) {
@@ -67,6 +67,9 @@ export default function NewOrderPage({ user, setUser }) {
 
   return (
     <main className={styles.NewOrderPage}>
+
+      <NavBar />
+      <div class={styles.container}>
       <aside>
         <Logo />
         <CategoryList
@@ -95,6 +98,7 @@ export default function NewOrderPage({ user, setUser }) {
         handleChangeQty={handleChangeQty}
         handleCheckout={handleCheckout}
       />
+      </div>
     </main>
   );
 }

@@ -1,11 +1,9 @@
 .NewOrderPage {
     height: 100%;
-    display: grid;
-    grid-template-columns: 1.6fr 3.5fr 3fr;
-    grid-template-rows: 1fr;
+    display: flex;
+    flex-direction: column;
     background-color: var(--fairyTale);
     border-radius: 2vmin;
-
   }
 
   .NewOrderPage aside {
@@ -14,4 +12,8 @@
     justify-content: space-between;
     align-items: center;
     margin: 3vmin 2vmin;
+  }
+
+  .container {
+    display: flex;
   }
