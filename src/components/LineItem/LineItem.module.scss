@@ -13,6 +13,12 @@
     font-family: 'Share Tech Mono', 'Roboto';
     }
 
+    .image {
+        margin: 0 auto;
+        width: 2vw;
+        height: 2vw;
+    }
+
     .LineItem:last-child {
     border-bottom: .1vmin solid var(--spaceCadet);
     }

@@ -78,8 +78,10 @@ function LineItem(_ref) {
   return /*#__PURE__*/React.createElement("div", {
     className: _LineItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].LineItem
   }, /*#__PURE__*/React.createElement("div", {
-    className: "flex-ctr-ctr"
-  }, lineItem.item.emoji), /*#__PURE__*/React.createElement("div", {
+    className: _LineItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].image + ' ' + 'flex-ctr-ctr'
+  }, /*#__PURE__*/React.createElement("img", {
+    src: lineItem.item.image
+  })), /*#__PURE__*/React.createElement("div", {
     className: "flex-ctr-ctr flex-col"
   }, /*#__PURE__*/React.createElement("span", {
     className: "align-ctr"
@@ -115,8 +117,6 @@ function LineItem(_ref) {
 /* harmony import */ var _utilities_users_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilities/users-service */ "./src/utilities/users-service.js");
 /* harmony import */ var _LoginForm_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LoginForm.module.scss */ "./src/components/LoginForm/LoginForm.module.scss");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -140,24 +140,18 @@ function LoginForm(_ref) {
     }));
     setError('');
   }
-  function handleSubmit(_x) {
-    return _handleSubmit.apply(this, arguments);
-  }
-  function _handleSubmit() {
-    _handleSubmit = _asyncToGenerator(function* (evt) {
-      // Prevent form from being submitted to the server
-      evt.preventDefault();
-      try {
-        // The promise returned by the signUp service method
-        // will resolve to the user object included in the
-        // payload of the JSON Web Token (JWT)
-        const user = yield _utilities_users_service__WEBPACK_IMPORTED_MODULE_2__.login(credentials);
-        setUser(user);
-      } catch (_unused) {
-        setError('Log In Failed - Try Again');
-      }
-    });
-    return _handleSubmit.apply(this, arguments);
+  async function handleSubmit(evt) {
+    // Prevent form from being submitted to the server
+    evt.preventDefault();
+    try {
+      // The promise returned by the signUp service method
+      // will resolve to the user object included in the
+      // payload of the JSON Web Token (JWT)
+      const user = await _utilities_users_service__WEBPACK_IMPORTED_MODULE_2__.login(credentials);
+      setUser(user);
+    } catch (_unused) {
+      setError('Log In Failed - Try Again');
+    }
   }
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: _LoginForm_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].formContainer
@@ -274,8 +268,10 @@ function MenuListItem(_ref) {
   return /*#__PURE__*/React.createElement("div", {
     className: _MenuListItem_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].MenuListItem
   }, /*#__PURE__*/React.createElement("div", {
-    className: _MenuListItem_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].emoji + ' ' + 'flex-ctr-ctr'
-  }, menuItem.emoji), /*#__PURE__*/React.createElement("div", {
+    className: _MenuListItem_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].image + ' ' + 'flex-ctr-ctr'
+  }, /*#__PURE__*/React.createElement("img", {
+    src: menuItem.image
+  })), /*#__PURE__*/React.createElement("div", {
     className: _MenuListItem_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].name,
     onClick: () => setShowDescription(!showDescription)
   }, menuItem.name), showDescription ? /*#__PURE__*/React.createElement(_ItemDescription_ItemDescription__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -572,53 +568,44 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
 
 class SignUpForm extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   constructor() {
-    var _this;
     super(...arguments);
-    _this = this;
-    this.state = {
+    _defineProperty(this, "state", {
       name: '',
       email: '',
       password: '',
       confirm: '',
       error: ''
-    };
-    this.handleChange = evt => {
+    });
+    _defineProperty(this, "handleChange", evt => {
       this.setState({
         [evt.target.name]: evt.target.value,
         error: ''
       });
-    };
-    this.handleSubmit = /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator(function* (evt) {
-        evt.preventDefault();
-        try {
-          const formData = _objectSpread({}, _this.state);
-          delete formData.confirm;
-          delete formData.error;
-          // The promise returned by the signUp service method
-          // will resolve to the user object included in the
-          // payload of the JSON Web Token (JWT)
-          const user = yield (0,_utilities_users_service__WEBPACK_IMPORTED_MODULE_2__.signUp)(formData);
-          // Baby step
-          _this.props.setUser(user);
-        } catch (_unused) {
-          // An error happened on the server
-          _this.setState({
-            error: 'Sign Up Failed - Try Again'
-          });
-        }
-      });
-      return function (_x) {
-        return _ref.apply(this, arguments);
-      };
-    }();
+    });
+    _defineProperty(this, "handleSubmit", async evt => {
+      evt.preventDefault();
+      try {
+        const formData = _objectSpread({}, this.state);
+        delete formData.confirm;
+        delete formData.error;
+        // The promise returned by the signUp service method
+        // will resolve to the user object included in the
+        // payload of the JSON Web Token (JWT)
+        const user = await (0,_utilities_users_service__WEBPACK_IMPORTED_MODULE_2__.signUp)(formData);
+        // Baby step
+        this.props.setUser(user);
+      } catch (_unused) {
+        // An error happened on the server
+        this.setState({
+          error: 'Sign Up Failed - Try Again'
+        });
+      }
+    });
   }
   // We must override the render method
   // The render method is the equivalent to a function-based component
@@ -822,7 +809,9 @@ function AuthPage(_ref) {
     className: _AuthPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].AuthPage
   }, /*#__PURE__*/React.createElement("h1", {
     className: _AuthPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].heading
-  }, "Hire an Affordable Dev Team Today for All Your Software Needs!"), /*#__PURE__*/React.createElement("div", {
+  }, "Hire an Affordable Dev Team Today for All Your Software Needs!"), /*#__PURE__*/React.createElement("img", {
+    src: "/images/dog.jpeg"
+  }), /*#__PURE__*/React.createElement("div", {
     className: _AuthPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].logoButton
   }, /*#__PURE__*/React.createElement(_components_Logo_Logo__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/React.createElement("h3", {
     onClick: () => setShowLogin(!showLogin)
@@ -859,8 +848,6 @@ function AuthPage(_ref) {
 /* harmony import */ var _components_SearchBar_SearchBar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/SearchBar/SearchBar */ "./src/components/SearchBar/SearchBar.js");
 /* harmony import */ var _components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/NavBar/NavBar */ "./src/components/NavBar/NavBar.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
 
@@ -888,37 +875,25 @@ function NewOrderPage(_ref) {
     return !searchInput ? menuItems.filter(item => item.category.name === activeCat.name) : menuItems.filter(item => item.name.toLowerCase().includes(searchInput.toLowerCase().trim()));
   };
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    function getItems() {
-      return _getItems.apply(this, arguments);
-    }
-    function _getItems() {
-      _getItems = _asyncToGenerator(function* () {
-        const items = yield _utilities_items_api__WEBPACK_IMPORTED_MODULE_10__.getAll();
-        categoriesRef.current = items.reduce((cats, item) => {
-          const cat = item.category.name;
-          const description = item.category.description;
-          return cats.find(c => {
-            return c.name === cat;
-          }) ? cats : [...cats, {
-            name: cat,
-            description
-          }];
-        }, []);
-        setMenuItems(items);
-        setActiveCat(categoriesRef.current[0]);
-      });
-      return _getItems.apply(this, arguments);
+    async function getItems() {
+      const items = await _utilities_items_api__WEBPACK_IMPORTED_MODULE_10__.getAll();
+      categoriesRef.current = items.reduce((cats, item) => {
+        const cat = item.category.name;
+        const description = item.category.description;
+        return cats.find(c => {
+          return c.name === cat;
+        }) ? cats : [...cats, {
+          name: cat,
+          description
+        }];
+      }, []);
+      setMenuItems(items);
+      setActiveCat(categoriesRef.current[0]);
     }
     getItems();
-    function getCart() {
-      return _getCart.apply(this, arguments);
-    }
-    function _getCart() {
-      _getCart = _asyncToGenerator(function* () {
-        const cart = yield _utilities_orders_api__WEBPACK_IMPORTED_MODULE_11__.getCart();
-        setCart(cart);
-      });
-      return _getCart.apply(this, arguments);
+    async function getCart() {
+      const cart = await _utilities_orders_api__WEBPACK_IMPORTED_MODULE_11__.getCart();
+      setCart(cart);
     }
     getCart();
   }, []);
@@ -927,40 +902,22 @@ function NewOrderPage(_ref) {
   // the FIRST render only
 
   /*-- Event Handlers --*/
-  function handleAddToOrder(_x) {
-    return _handleAddToOrder.apply(this, arguments);
+  async function handleAddToOrder(itemId) {
+    const updatedCart = await _utilities_orders_api__WEBPACK_IMPORTED_MODULE_11__.addItemToCart(itemId);
+    setCart(updatedCart);
   }
-  function _handleAddToOrder() {
-    _handleAddToOrder = _asyncToGenerator(function* (itemId) {
-      const updatedCart = yield _utilities_orders_api__WEBPACK_IMPORTED_MODULE_11__.addItemToCart(itemId);
-      setCart(updatedCart);
-    });
-    return _handleAddToOrder.apply(this, arguments);
+  async function handleChangeQty(itemId, newQty) {
+    const updatedCart = await _utilities_orders_api__WEBPACK_IMPORTED_MODULE_11__.setItemQtyInCart(itemId, newQty);
+    setCart(updatedCart);
   }
-  function handleChangeQty(_x2, _x3) {
-    return _handleChangeQty.apply(this, arguments);
-  }
-  function _handleChangeQty() {
-    _handleChangeQty = _asyncToGenerator(function* (itemId, newQty) {
-      const updatedCart = yield _utilities_orders_api__WEBPACK_IMPORTED_MODULE_11__.setItemQtyInCart(itemId, newQty);
-      setCart(updatedCart);
-    });
-    return _handleChangeQty.apply(this, arguments);
-  }
-  function handleCheckout() {
-    return _handleCheckout.apply(this, arguments);
-  }
-  function _handleCheckout() {
-    _handleCheckout = _asyncToGenerator(function* () {
-      yield _utilities_orders_api__WEBPACK_IMPORTED_MODULE_11__.checkout();
-      navigate('/orders');
-    });
-    return _handleCheckout.apply(this, arguments);
+  async function handleCheckout() {
+    await _utilities_orders_api__WEBPACK_IMPORTED_MODULE_11__.checkout();
+    navigate('/orders');
   }
   return /*#__PURE__*/React.createElement("main", {
     className: _NewOrderPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].NewOrderPage
   }, /*#__PURE__*/React.createElement(_components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/React.createElement("div", {
-    class: _NewOrderPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].container
+    className: _NewOrderPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].container
   }, /*#__PURE__*/React.createElement("aside", null, /*#__PURE__*/React.createElement(_components_Logo_Logo__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/React.createElement(_components_CategoryList_CategoryList__WEBPACK_IMPORTED_MODULE_4__["default"], {
     categories: categoriesRef.current,
     cart: setCart,
@@ -1010,8 +967,6 @@ function NewOrderPage(_ref) {
 /* harmony import */ var _components_OrderDetail_OrderDetail__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/OrderDetail/OrderDetail */ "./src/components/OrderDetail/OrderDetail.js");
 /* harmony import */ var _components_NavBar_NavBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/NavBar/NavBar */ "./src/components/NavBar/NavBar.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
 
@@ -1033,17 +988,11 @@ function OrderHistoryPage(_ref) {
   /*--- Side Effects --- */
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     // Load previous orders (paid)
-    function fetchOrderHistory() {
-      return _fetchOrderHistory.apply(this, arguments);
-    }
-    function _fetchOrderHistory() {
-      _fetchOrderHistory = _asyncToGenerator(function* () {
-        const orders = yield _utilities_orders_api__WEBPACK_IMPORTED_MODULE_7__.getOrderHistory();
-        setOrders(orders);
-        // If no orders, activeOrder will be set to null below
-        setActiveOrder(orders[0] || null);
-      });
-      return _fetchOrderHistory.apply(this, arguments);
+    async function fetchOrderHistory() {
+      const orders = await _utilities_orders_api__WEBPACK_IMPORTED_MODULE_7__.getOrderHistory();
+      setOrders(orders);
+      // If no orders, activeOrder will be set to null below
+      setActiveOrder(orders[0] || null);
     }
     fetchOrderHistory();
   }, []);
@@ -1248,43 +1197,33 @@ function getOrderHistory() {
 /* harmony export */   "default": () => (/* binding */ sendRequest)
 /* harmony export */ });
 /* harmony import */ var _users_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./users-service */ "./src/utilities/users-service.js");
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function sendRequest(_x) {
-  return _sendRequest.apply(this, arguments);
-}
-function _sendRequest() {
-  _sendRequest = _asyncToGenerator(function (url) {
-    let method = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'GET';
-    let payload = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
-    return function* () {
-      // Fetch takes an optional options object as the 2nd argument
-      // used to include a data payload, set headers, etc.
-      const options = {
-        method
-      };
-      if (payload) {
-        options.headers = {
-          'Content-Type': 'application/json'
-        };
-        options.body = JSON.stringify(payload);
-      }
-      const token = (0,_users_service__WEBPACK_IMPORTED_MODULE_0__.getToken)();
-      if (token) {
-        // Ensure headers object exists
-        options.headers = options.headers || {};
-        // Add token to an Authorization header
-        // Prefacing with 'Bearer' is recommended in the HTTP specification
-        options.headers.Authorization = "Bearer ".concat(token);
-      }
-      const res = yield fetch(url, options);
-      // res.ok will be false if the status code set to 4xx in the controller action
-      if (res.ok) return res.json();
-      throw new Error('Bad Request');
-    }();
-  });
-  return _sendRequest.apply(this, arguments);
+async function sendRequest(url) {
+  let method = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'GET';
+  let payload = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+  // Fetch takes an optional options object as the 2nd argument
+  // used to include a data payload, set headers, etc.
+  const options = {
+    method
+  };
+  if (payload) {
+    options.headers = {
+      'Content-Type': 'application/json'
+    };
+    options.body = JSON.stringify(payload);
+  }
+  const token = (0,_users_service__WEBPACK_IMPORTED_MODULE_0__.getToken)();
+  if (token) {
+    // Ensure headers object exists
+    options.headers = options.headers || {};
+    // Add token to an Authorization header
+    // Prefacing with 'Bearer' is recommended in the HTTP specification
+    options.headers.Authorization = "Bearer ".concat(token);
+  }
+  const res = await fetch(url, options);
+  // res.ok will be false if the status code set to 4xx in the controller action
+  if (res.ok) return res.json();
+  throw new Error('Bad Request');
 }
 
 /***/ }),
@@ -1325,35 +1264,21 @@ function login(credentials) {
 /* harmony export */   signUp: () => (/* binding */ signUp)
 /* harmony export */ });
 /* harmony import */ var _users_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./users-api */ "./src/utilities/users-api.js");
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function signUp(_x) {
-  return _signUp.apply(this, arguments);
+async function signUp(userData) {
+  // Delete the network request code to the
+  // users-api.js module which will ultimately
+  // return the JWT
+  const token = await _users_api__WEBPACK_IMPORTED_MODULE_0__.signUp(userData);
+  // Persist the token to localStorage
+  localStorage.setItem('token', token);
+  return getUser();
 }
-function _signUp() {
-  _signUp = _asyncToGenerator(function* (userData) {
-    // Delete the network request code to the
-    // users-api.js module which will ultimately
-    // return the JWT
-    const token = yield _users_api__WEBPACK_IMPORTED_MODULE_0__.signUp(userData);
-    // Persist the token to localStorage
-    localStorage.setItem('token', token);
-    return getUser();
-  });
-  return _signUp.apply(this, arguments);
-}
-function login(_x2) {
-  return _login.apply(this, arguments);
-}
-function _login() {
-  _login = _asyncToGenerator(function* (credentials) {
-    const token = yield _users_api__WEBPACK_IMPORTED_MODULE_0__.login(credentials);
-    // Persist the token to localStorage
-    localStorage.setItem('token', token);
-    return getUser();
-  });
-  return _login.apply(this, arguments);
+async function login(credentials) {
+  const token = await _users_api__WEBPACK_IMPORTED_MODULE_0__.login(credentials);
+  // Persist the token to localStorage
+  localStorage.setItem('token', token);
+  return getUser();
 }
 function getToken() {
   const token = localStorage.getItem('token');
@@ -1511,6 +1436,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.ZeRW57PNaWpYVsw6JlaC {
   font-family: "Share Tech Mono", "Roboto";
 }
 
+.AvgB_cwyK_7iUj3oCanH {
+  margin: 0 auto;
+  width: 2vw;
+  height: 2vw;
+}
+
 .ZeRW57PNaWpYVsw6JlaC:last-child {
   border-bottom: 0.1vmin solid var(--spaceCadet);
 }
@@ -1531,10 +1462,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.ZeRW57PNaWpYVsw6JlaC {
 
 .ZeRW57PNaWpYVsw6JlaC button {
   margin: 0;
-}`, "",{"version":3,"sources":["webpack://./src/components/LineItem/LineItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,gDAAA;EACA,gBAAA;EACA,uBAAA;EACA,0CAAA;EACA,2CAAA;EACA,gBAAA;EACA,iCAAA;EACA,iBAAA;EACA,cAAA;EACA,wCAAA;AACJ;;AAEI;EACA,8CAAA;AACJ;;AAEI;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,gBAAA;AACJ;;AAEI;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,cAAA;AACJ;;AAEI;EACA,SAAA;AACJ","sourcesContent":[".LineItem {\n    width: 100%;\n    display: grid;\n    grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;\n    padding: 1vmin 0;\n    color: var(--fairyTale);\n    background-color: rgba(126, 82, 160, .75);\n    border-top: .1vmin solid var(--spaceCadet);\n    font-size: 1.5vw;\n    border: solid 1px var(--gunmetal);\n    border-radius: 5%;\n    margin: .5rem;\n    font-family: 'Share Tech Mono', 'Roboto';\n    }\n\n    .LineItem:last-child {\n    border-bottom: .1vmin solid var(--spaceCadet);\n    }\n\n    .LineItem .qty {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    font-size: 1.3vw;\n    }\n\n    .LineItem .extPrice {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    font-size: 1vw;\n    }\n\n    .LineItem button {\n    margin: 0;\n    }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/LineItem/LineItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,gDAAA;EACA,gBAAA;EACA,uBAAA;EACA,0CAAA;EACA,2CAAA;EACA,gBAAA;EACA,iCAAA;EACA,iBAAA;EACA,cAAA;EACA,wCAAA;AACJ;;AAEI;EACI,cAAA;EACA,UAAA;EACA,WAAA;AACR;;AAEI;EACA,8CAAA;AACJ;;AAEI;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,gBAAA;AACJ;;AAEI;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,cAAA;AACJ;;AAEI;EACA,SAAA;AACJ","sourcesContent":[".LineItem {\n    width: 100%;\n    display: grid;\n    grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;\n    padding: 1vmin 0;\n    color: var(--fairyTale);\n    background-color: rgba(126, 82, 160, .75);\n    border-top: .1vmin solid var(--spaceCadet);\n    font-size: 1.5vw;\n    border: solid 1px var(--gunmetal);\n    border-radius: 5%;\n    margin: .5rem;\n    font-family: 'Share Tech Mono', 'Roboto';\n    }\n\n    .image {\n        margin: 0 auto;\n        width: 2vw;\n        height: 2vw;\n    }\n\n    .LineItem:last-child {\n    border-bottom: .1vmin solid var(--spaceCadet);\n    }\n\n    .LineItem .qty {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    font-size: 1.3vw;\n    }\n\n    .LineItem .extPrice {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    font-size: 1vw;\n    }\n\n    .LineItem button {\n    margin: 0;\n    }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"LineItem": `ZeRW57PNaWpYVsw6JlaC`,
+	"image": `AvgB_cwyK_7iUj3oCanH`,
 	"qty": `Z_MQzAiRjTlxboCrh9om`,
 	"extPrice": `iZ6oJDRJlBAjRnxPhUy5`
 };
@@ -1745,27 +1677,30 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.X4tFBfG4MKknHvd01CKE {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-bottom: 3vmin;
   padding: 2vmin;
   color: var(--fairyTale);
   background-color: var(--gunmetal);
   border: 0.1vmin solid var(--lilac);
   border-radius: 1vmin;
-  font-size: 4vmin;
+  font-size: 2vmin;
   font-family: "Share Tech Mono", "Roboto";
   box-shadow: 1px 3px 5px var(--white);
 }
 
-.X4tFBfG4MKknHvd01CKE .GqkE12RHPdZZg1360W4p {
-  height: 8vw;
-  width: 8vw;
-  font-size: 4vw;
-  background-color: var(--lilac);
-  border: 0.1vmin solid var(--royalPurple);
-  border-radius: 1vmin;
+/*don't use view width, use hard coding to ensure image scaling. must turn emoji into image. examine this for resizing issues.
+
+BELOW WAS THE MEGA FIX DISPLAY FLEX KILLED IT*/
+.dTwdG1Vxh_kNAcuyMLbz {
+  margin: 0 auto;
+  height: 10vw;
+  width: 10vw;
+}
+
+.dTwdG1Vxh_kNAcuyMLbz > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
 }
 
 .X4tFBfG4MKknHvd01CKE .fO9kiPygtr0vmzsXoUxA {
@@ -1785,11 +1720,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.X4tFBfG4MKknHvd01CKE {
   font-size: 2vw;
   text-align: center;
   color: var(--fairyTale);
-}`, "",{"version":3,"sources":["webpack://./src/components/MenuListItem/MenuListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,oBAAA;EACA,cAAA;EACA,uBAAA;EACA,iCAAA;EACA,kCAAA;EACA,oBAAA;EACA,gBAAA;EACA,wCAAA;EACA,oCAAA;AACJ;;AAIE;EACE,WAAA;EACA,UAAA;EACA,cAAA;EACA,8BAAA;EACA,wCAAA;EACA,oBAAA;AADJ;;AAIE;EACE,aAAA;EACA,sBAAA;AADJ;;AAIE;EACE,qBAAA;EACA,gBAAA;EACA,kBAAA;EACA,uBAAA;AADJ;;AAIE;EACE,gBAAA;EACA,cAAA;EACA,kBAAA;EACA,uBAAA;AADJ","sourcesContent":[".MenuListItem {\n    width: 100%;\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    margin-bottom: 3vmin;\n    padding: 2vmin;\n    color: var(--fairyTale);\n    background-color: var(--gunmetal);\n    border: .1vmin solid var(--lilac);\n    border-radius: 1vmin;\n    font-size: 4vmin;\n    font-family: 'Share Tech Mono', 'Roboto';\n    box-shadow: 1px 3px 5px var(--white);\n\n  }\n\n  // must turn emoji into image\n  .MenuListItem .emoji {\n    height: 8vw;\n    width: 8vw;\n    font-size: 4vw;\n    background-color: var(--lilac);\n    border: .1vmin solid var(--royalPurple);\n    border-radius: 1vmin;\n  }\n\n  .MenuListItem .buy {\n    display: flex;\n    flex-direction: column;\n  }\n\n  .MenuListItem .buy span {\n    margin-bottom: .5rem;\n    font-size: 1.7vw;\n    text-align: center;\n    color: var(--fairyTale);\n  }\n\n  .MenuListItem .name {\n    padding: .25rem;\n    font-size: 2vw;\n    text-align: center;\n    color: var(--fairyTale);\n  }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/MenuListItem/MenuListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,oBAAA;EACA,cAAA;EACA,uBAAA;EACA,iCAAA;EACA,kCAAA;EACA,oBAAA;EACA,gBAAA;EACA,wCAAA;EACA,oCAAA;AACJ;;AAGE;;8CAAA;AAGE;EACA,cAAA;EACA,YAAA;EACA,WAAA;AAAJ;;AAGE;EACI,YAAA;EACA,WAAA;EACA,kBAAA;AAAN;;AAGE;EACE,aAAA;EACA,sBAAA;AAAJ;;AAGE;EACE,qBAAA;EACA,gBAAA;EACA,kBAAA;EACA,uBAAA;AAAJ;;AAGE;EACE,gBAAA;EACA,cAAA;EACA,kBAAA;EACA,uBAAA;AAAJ","sourcesContent":[".MenuListItem {\n    width: 100%;\n    margin-bottom: 3vmin;\n    padding: 2vmin;\n    color: var(--fairyTale);\n    background-color: var(--gunmetal);\n    border: .1vmin solid var(--lilac);\n    border-radius: 1vmin;\n    font-size: 2vmin;\n    font-family: 'Share Tech Mono', 'Roboto';\n    box-shadow: 1px 3px 5px var(--white);\n\n  }\n\n  /*don't use view width, use hard coding to ensure image scaling. must turn emoji into image. examine this for resizing issues.\n\n  BELOW WAS THE MEGA FIX DISPLAY FLEX KILLED IT*/\n    .image {\n    margin: 0 auto;\n    height: 10vw;\n    width: 10vw;\n  }\n\n  .image>img {\n      height: 100%;\n      width: 100%;\n      border-radius: 50%;\n  }\n\n  .MenuListItem .buy {\n    display: flex;\n    flex-direction: column;\n  }\n\n  .MenuListItem .buy span {\n    margin-bottom: .5rem;\n    font-size: 1.7vw;\n    text-align: center;\n    color: var(--fairyTale);\n  }\n\n  .MenuListItem .name {\n    padding: .25rem;\n    font-size: 2vw;\n    text-align: center;\n    color: var(--fairyTale);\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"MenuListItem": `X4tFBfG4MKknHvd01CKE`,
-	"emoji": `GqkE12RHPdZZg1360W4p`,
+	"image": `dTwdG1Vxh_kNAcuyMLbz`,
 	"buy": `fO9kiPygtr0vmzsXoUxA`,
 	"name": `VR1OCl60qOXrRx1IzVEa`
 };
@@ -2298,10 +2233,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.x80Y_LltA5PliUAZlphe {
   cursor: pointer;
   border: solid 2px var(--gunmetal);
 }
-
 .x80Y_LltA5PliUAZlphe .qHiYGQB1ZEMvrGOQoBrO {
   font-size: smaller;
-}`, "",{"version":3,"sources":["webpack://./src/components/UserLogOut/UserLogOut.module.scss"],"names":[],"mappings":"AAAA;EACI,gBAAA;EACA,yBAAA;EACA,iCAAA;EACA,kBAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,YAAA;EACA,uCAAA;EACA,wCAAA;AACJ;AACI;EACE,8BAAA;EACA,8BAAA;EACA,eAAA;EACA,YAAA;EACA,oBAAA;EACA,kBAAA;AACN;AAGI;EACE,gBAAA;AADN;AAKI;EACE,eAAA;AAHN;AAMI;EACE,gBAAA;EACA,eAAA;EACA,iCAAA;AAJN;;AASI;EACE,kBAAA;AANN","sourcesContent":[".UserLogOut {\n    font-size: 2vmin;\n    color: var(--royalPurple);\n    background-color: var(--gunmetal);\n    text-align: center;\n    border: solid 2px var(--white);\n    border-radius: 15%;\n    padding: 2rem;\n    margin: 2rem;\n    box-shadow: 2px 3px 2px var(--gunmetal);\n    font-family: 'Share Tech Mono', 'Roboto';\n\n    section {\n      background-color: var(--lilac);\n      border: solid 2px var(--white);\n      padding: .5rem;\n      margin: 1rem;\n      padding-bottom: 2rem;\n      border-radius: 15%;\n    }\n\n\n    div {\n      padding: .25rem;\n\n    }\n\n    button {\n      margin: .25rem;\n    }\n\n    button:hover {\n      box-shadow: none;\n      cursor: pointer;\n      border: solid 2px var(--gunmetal);\n    }\n\n    }\n\n    .UserLogOut .email {\n      font-size: smaller;\n    }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/UserLogOut/UserLogOut.module.scss"],"names":[],"mappings":"AAAA;EACI,gBAAA;EACA,yBAAA;EACA,iCAAA;EACA,kBAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,YAAA;EACA,uCAAA;EACA,wCAAA;AACJ;AACI;EACE,8BAAA;EACA,8BAAA;EACA,eAAA;EACA,YAAA;EACA,oBAAA;EACA,kBAAA;AACN;AAGI;EACE,gBAAA;AADN;AAKI;EACE,eAAA;AAHN;AAMI;EACE,gBAAA;EACA,eAAA;EACA,iCAAA;AAJN;AAMI;EACE,kBAAA;AAJN","sourcesContent":[".UserLogOut {\n    font-size: 2vmin;\n    color: var(--royalPurple);\n    background-color: var(--gunmetal);\n    text-align: center;\n    border: solid 2px var(--white);\n    border-radius: 15%;\n    padding: 2rem;\n    margin: 2rem;\n    box-shadow: 2px 3px 2px var(--gunmetal);\n    font-family: 'Share Tech Mono', 'Roboto';\n\n    section {\n      background-color: var(--lilac);\n      border: solid 2px var(--white);\n      padding: .5rem;\n      margin: 1rem;\n      padding-bottom: 2rem;\n      border-radius: 15%;\n    }\n\n\n    div {\n      padding: .25rem;\n\n    }\n\n    button {\n      margin: .25rem;\n    }\n\n    button:hover {\n      box-shadow: none;\n      cursor: pointer;\n      border: solid 2px var(--gunmetal);\n    }\n    .email {\n      font-size: smaller;\n    }\n    }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"UserLogOut": `x80Y_LltA5PliUAZlphe`,
@@ -2335,6 +2269,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.hROteXkOc8ax7fXzt3tU {
   display: flex;
   flex-direction: column;
   text-align: center;
+  background-color: var(--fairyTale);
+  border-radius: 2vmin;
 }
 .hROteXkOc8ax7fXzt3tU .vkw4n01Dgx1HNf75QzwO {
   background-color: var(--white);
@@ -2409,7 +2345,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.hROteXkOc8ax7fXzt3tU {
   margin: 1rem;
   width: -moz-fit-content;
   width: fit-content;
-}`, "",{"version":3,"sources":["webpack://./src/pages/AboutUsPage/AboutUsPage.module.scss"],"names":[],"mappings":"AAAA;EACI,wCAAA;EACA,aAAA;EACA,sBAAA;EACA,kBAAA;AACJ;AACI;EACI,8BAAA;EACA,aAAA;EACA,sBAAA;EACA,kBAAA;AACR;;AAGA;EACI,8BAAA;EACA,iCAAA;AAAJ;AACI;EACI,YAAA;EACA,aAAA;EACA,8BAAA;EACA,iBAAA;AACR;;AAGA;EACI,8BAAA;EACA,aAAA;EACA,YAAA;EACA,uBAAA;EACA,kBAAA;EACA,iBAAA;AAAJ;;AAEA;EACI,oCAAA;EACA,8BAAA;EACA,eAAA;EACA,uBAAA;EACA,kBAAA;EACA,uBAAA;EACA,mBAAA;AACJ;;AAEA;EACI,kCAAA;EACA,sBAAA;EACA,aAAA;EACA,YAAA;EACA,8BAAA;EACA,+BAAA;EACA,iBAAA;EACA,iBAAA;AACJ;;AAEA;EACI,aAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,sBAAA;EACA,oCAAA;AACJ;;AAEA;EACI,aAAA;EACA,YAAA;EACA,uBAAA;EACA,mBAAA;AACJ;;AAGA;EACI,oCAAA;EACA,mBAAA;EACA,8BAAA;EACA,iBAAA;EACA,aAAA;EACA,YAAA;EACA,uBAAA;EACA,kBAAA;AAAJ","sourcesContent":[".AboutUsPage {\n    font-family: 'Share Tech Mono', 'Roboto';\n    display: flex;\n    flex-direction: column;\n    text-align: center;\n\n    .title {\n        background-color: var(--white);\n        padding: 1rem;\n        color: var(--gunmetal);\n        text-align: center;\n        }\n}\n\n.column {\n    border: solid 5pt var(--lilac);\n    background-color: var(--darkness);\n    img {\n        margin: 1rem;\n        padding: 1rem;\n        border: solid 3px var(--lilac);\n        border-radius: 5%;\n    }\n}\n\n.subtitle {\n    background-color: var(--lilac);\n    padding: 1rem;\n    margin: 1rem;\n    width: -moz-fit-content;\n    width: fit-content;\n    border-radius: 5%;\n}\n.stories {\n    background-color: var(--royalPurple);\n    border: solid 2px var(--white);\n    font-size: 20pt;\n    color: var(--fairyTale);\n    text-align: center;\n    justify-content: center;\n    align-items: center;\n}\n\n.story {\n    background-color: var(--fairyTale);\n    color: var(--gunmetal);\n    padding: 1rem;\n    margin: 1rem;\n    border: solid 2px var(--lilac);\n    box-shadow: 2pt 2pt 1pt var(--);\n    border-radius: 5%;\n    font-weight: bold;\n}\n\n.titles {\n    padding: 1rem;\n    margin: 1rem;\n    border-radius: 15%;\n    background-color: var(--fairyTale);\n    color: var(--gunmetal);\n    box-shadow: 3pt 3pt 1pt var(--white);\n}\n\n.subHeader {\n    display: flex;\n    margin: 1rem;\n    justify-content: center;\n    align-items: center;\n\n}\n\n.creed {\n    background-color: var(--royalPurple);\n    color: var(--white);\n    border: solid 3px var(--white);\n    border-radius: 5%;\n    padding: 1rem;\n    margin: 1rem;\n    width: -moz-fit-content;\n    width: fit-content;\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/pages/AboutUsPage/AboutUsPage.module.scss"],"names":[],"mappings":"AAAA;EACI,wCAAA;EACA,aAAA;EACA,sBAAA;EACA,kBAAA;EACA,kCAAA;EACA,oBAAA;AACJ;AAAI;EACI,8BAAA;EACA,aAAA;EACA,sBAAA;EACA,kBAAA;AAER;;AAEA;EACI,8BAAA;EACA,iCAAA;AACJ;AACI;EACI,YAAA;EACA,aAAA;EACA,8BAAA;EACA,iBAAA;AACR;;AAGA;EACI,8BAAA;EACA,aAAA;EACA,YAAA;EACA,uBAAA;EACA,kBAAA;EACA,iBAAA;AAAJ;;AAGA;EACI,oCAAA;EACA,8BAAA;EACA,eAAA;EACA,uBAAA;EACA,kBAAA;EACA,uBAAA;EACA,mBAAA;AAAJ;;AAGA;EACI,kCAAA;EACA,sBAAA;EACA,aAAA;EACA,YAAA;EACA,8BAAA;EACA,+BAAA;EACA,iBAAA;EACA,iBAAA;AAAJ;;AAGA;EACI,aAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,sBAAA;EACA,oCAAA;AAAJ;;AAGA;EACI,aAAA;EACA,YAAA;EACA,uBAAA;EACA,mBAAA;AAAJ;;AAIA;EACI,oCAAA;EACA,mBAAA;EACA,8BAAA;EACA,iBAAA;EACA,aAAA;EACA,YAAA;EACA,uBAAA;EACA,kBAAA;AADJ","sourcesContent":[".AboutUsPage {\n    font-family: 'Share Tech Mono', 'Roboto';\n    display: flex;\n    flex-direction: column;\n    text-align: center;\n    background-color: var(--fairyTale);\n    border-radius: 2vmin;\n    .title {\n        background-color: var(--white);\n        padding: 1rem;\n        color: var(--gunmetal);\n        text-align: center;\n    }\n}\n\n.column {\n    border: solid 5pt var(--lilac);\n    background-color: var(--darkness);\n\n    img {\n        margin: 1rem;\n        padding: 1rem;\n        border: solid 3px var(--lilac);\n        border-radius: 5%;\n    }\n}\n\n.subtitle {\n    background-color: var(--lilac);\n    padding: 1rem;\n    margin: 1rem;\n    width: -moz-fit-content;\n    width: fit-content;\n    border-radius: 5%;\n}\n\n.stories {\n    background-color: var(--royalPurple);\n    border: solid 2px var(--white);\n    font-size: 20pt;\n    color: var(--fairyTale);\n    text-align: center;\n    justify-content: center;\n    align-items: center;\n}\n\n.story {\n    background-color: var(--fairyTale);\n    color: var(--gunmetal);\n    padding: 1rem;\n    margin: 1rem;\n    border: solid 2px var(--lilac);\n    box-shadow: 2pt 2pt 1pt var(--);\n    border-radius: 5%;\n    font-weight: bold;\n}\n\n.titles {\n    padding: 1rem;\n    margin: 1rem;\n    border-radius: 15%;\n    background-color: var(--fairyTale);\n    color: var(--gunmetal);\n    box-shadow: 3pt 3pt 1pt var(--white);\n}\n\n.subHeader {\n    display: flex;\n    margin: 1rem;\n    justify-content: center;\n    align-items: center;\n\n}\n\n.creed {\n    background-color: var(--royalPurple);\n    color: var(--white);\n    border: solid 3px var(--white);\n    border-radius: 5%;\n    padding: 1rem;\n    margin: 1rem;\n    width: -moz-fit-content;\n    width: fit-content;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"AboutUsPage": `hROteXkOc8ax7fXzt3tU`,

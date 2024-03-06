@@ -1,28 +1,30 @@
 .MenuListItem {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 3vmin;
     padding: 2vmin;
     color: var(--fairyTale);
     background-color: var(--gunmetal);
     border: .1vmin solid var(--lilac);
     border-radius: 1vmin;
-    font-size: 4vmin;
+    font-size: 2vmin;
     font-family: 'Share Tech Mono', 'Roboto';
     box-shadow: 1px 3px 5px var(--white);
 
   }
 
-  // must turn emoji into image
-  .MenuListItem .emoji {
-    height: 8vw;
-    width: 8vw;
-    font-size: 4vw;
-    background-color: var(--lilac);
-    border: .1vmin solid var(--royalPurple);
-    border-radius: 1vmin;
+  /*don't use view width, use hard coding to ensure image scaling. must turn emoji into image. examine this for resizing issues.
+
+  BELOW WAS THE MEGA FIX DISPLAY FLEX KILLED IT*/
+    .image {
+    margin: 0 auto;
+    height: 10vw;
+    width: 10vw;
+  }
+
+  .image>img {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
   }
 
   .MenuListItem .buy {

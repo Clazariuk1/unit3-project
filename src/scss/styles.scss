@@ -20,9 +20,6 @@ html {
 
 body {
   margin: 0;
-  // font-family: -apple-system, BlinkMacSystemFont, 'Share Tech Mono', 'Segoe UI', 'Roboto', 'Oxygen',
-  // 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  // sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--spaceCadet);
@@ -51,8 +48,7 @@ code {
   font-size: smaller;
 }
 
-// this will center the image into the allotted space
-// shifting / scaling size of images not effective, creates inconsistency. Examine site: unsplash.
+/*Play with image sizing and scaling here. */
 .flex-ctr-ctr {
   display: flex;
   justify-content: center;
@@ -84,57 +80,30 @@ code {
   font-size: 2vmin;
 }
 
-// .form-container {
-//   padding: 3vmin;
-//   background-color: var(--tan-1);
-//   border: .1vmin solid var(--tan-3);
-//   border-radius: 1vmin;
-// }
+p.error-message {
+  color: var(--gunmetal);
+  text-align: center;
+}
 
-// p.error-message {
-//   color: var(--orange);
-//   text-align: center;
-// }
+input {
+  background-image: none !important; /* prevent lastpass */
+}
 
-// form {
-//   display: grid;
-//   grid-template-columns: 1fr 3fr;
-//   gap: 1.25vmin;
-//   color: var(--text-light);
-// }
-
-// label {
-//   font-size: 2vmin;
-//   display: flex;
-//   align-items: center;
-// }
-
-// input {
-//   padding: 1vmin;
-//   font-size: 2vmin;
-//   border: .1vmin solid var(--tan-3);
-//   border-radius: .5vmin;
-//   color: var(--text-dark);
-//   background-image: none !important; /* prevent lastpass */
-//   outline: none;
-// }
-
-// input:focus {
-//   border-color: var(--orange);
-// }
+input:focus {
+  border-color: var(--lilac);
+}
 
 button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
   background-color: var(--gunmetal);
-  box-shadow: 5px 5px 1px var(--white);
   border-radius: 15%;
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: .1vmin solid var(--tan-2);
+  border: .1vmin solid var(--spaceCadet);
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
@@ -149,7 +118,7 @@ button.btn-sm {
   font-size: 15pt;
   font-weight: bold;
   border-radius: 10%;
-  box-shadow: 1px 5px 4px var(--spaceCadet);
+  box-shadow: 1px 2px 2px var(--lilac);
   font-family: 'Share Tech Mono', 'Roboto';
 }
 
@@ -171,16 +140,3 @@ button.btn-xs {
 button.btn-xs:hover {
   cursor: grab;
 }
-
-// button:disabled, form:invalid button[type="submit"] {
-//   cursor: not-allowed;
-//   background-color: var(--tan-4);
-// }
-
-// button[type="submit"] {
-//   grid-column: span 2;
-//   margin: 1vmin 0 0;
-//   font-family: 'Share Tech Mono', 'Roboto';
-//   background-color: var(--spaceCadet);
-//   border: solid 20px var(--lilac);
-// }

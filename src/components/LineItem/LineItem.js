@@ -3,7 +3,7 @@ import styles from './LineItem.module.scss';
 export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
 return (
   <div className={styles.LineItem}>
-    <div className="flex-ctr-ctr">{lineItem.item.emoji}</div>
+    <div className={styles.image + ' ' + 'flex-ctr-ctr'}><img src={lineItem.item.image} /></div>
     <div className="flex-ctr-ctr flex-col">
       <span className="align-ctr">{lineItem.item.name}</span>
     </div>

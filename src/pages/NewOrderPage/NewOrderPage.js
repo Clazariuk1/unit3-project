@@ -69,7 +69,7 @@ export default function NewOrderPage({ user, setUser }) {
     <main className={styles.NewOrderPage}>
 
       <NavBar />
-      <div class={styles.container}>
+      <div className={styles.container}>
       <aside>
         <Logo />
         <CategoryList
