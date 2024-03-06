@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     background-color: var(--fairyTale);
-    border-radius: 10%;
+    border-radius: 4vmin;
     box-shadow: 1px 1px 1px var(--gunmetal);
     border: solid 2px var(--spaceCadet);
 
@@ -13,7 +13,7 @@
         font-family: 'Share Tech Mono', 'Roboto';
         background-color: var(--spaceCadet);
         border: solid 5px var(--fairyTale);
-        border-radius: 15%;
+        border-radius: 5vmin;
         font-weight: bold;
         color: var(--fairyTale);
         padding: 2rem;
@@ -31,7 +31,7 @@
 .input {
     padding: .5rem;
     margin: 1rem;
-    border-radius: 10%;
+    border-radius: 4vmin;
     background-color: var(--fairyTale);
     font-size: 20pt;
     width: 15rem;

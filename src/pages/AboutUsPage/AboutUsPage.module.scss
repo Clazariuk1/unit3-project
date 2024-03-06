@@ -21,7 +21,7 @@
         margin: 1rem;
         padding: 1rem;
         border: solid 3px var(--lilac);
-        border-radius: 5%;
+        border-radius: 2vmin;
     }
 }
 
@@ -30,7 +30,7 @@
     padding: 1rem;
     margin: 1rem;
     width: fit-content;
-    border-radius: 5%;
+    border-radius: 2vmin;
 }
 
 .stories {
@@ -50,14 +50,14 @@
     margin: 1rem;
     border: solid 2px var(--lilac);
     box-shadow: 2pt 2pt 1pt var(--);
-    border-radius: 5%;
+    border-radius: 2vmin;
     font-weight: bold;
 }
 
 .titles {
     padding: 1rem;
     margin: 1rem;
-    border-radius: 15%;
+    border-radius: 5vmin;
     background-color: var(--fairyTale);
     color: var(--gunmetal);
     box-shadow: 3pt 3pt 1pt var(--white);
@@ -75,7 +75,7 @@
     background-color: var(--royalPurple);
     color: var(--white);
     border: solid 3px var(--white);
-    border-radius: 5%;
+    border-radius: 2vmin;
     padding: 1rem;
     margin: 1rem;
     width: fit-content;

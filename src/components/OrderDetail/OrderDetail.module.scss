@@ -1,14 +1,18 @@
 .OrderDetail {
+  display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    width: 100%;
     align-items: center;
     padding: 3vmin;
     font-size: 2vmin;
     color: var(--royalPurple);
     background-color: var(--lilac);
+    overflow-x: hidden;
   }
 
   .totalBox {
+    border-radius: 5vmin;
     display: flex;
     background-color: var(--royalPurple);
     margin: .5rem;
@@ -24,10 +28,10 @@
 
   .orderSpan {
     margin: .25rem;
-    padding: .25rem;
+    padding: .5rem;
     background-color: var(--spaceCadet);
     color: var(--fairyTale);
-    border-radius: 5%;
+    border-radius: 2vmin;
     border: solid 1px var(--white);
   }
 
@@ -43,6 +47,7 @@
   }
 
   .OrderDetail .total {
+    justify-content: center;
     width: 100%;
     display: grid;
     grid-template-columns: 18.35vw 5.75vw 5.25vw;
@@ -53,6 +58,7 @@
   }
 
   .OrderDetail .total span {
+    border-radius: 5vmin;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,11 +67,14 @@
   }
 
   .OrderDetail .total span.right {
+    border-radius: 5vmin;
     display: flex;
     justify-content: flex-end;
   }
 
   .totalWords {
+    border-radius: 5vmin;
+    padding: 1rem;
     display: flex;
     justify-content: flex-end;
     color: var(--fairyTale);
@@ -77,15 +86,16 @@
 
   .OrderDetail .hungry {
     position: absolute;
+    width: fit-content;
     top: 50vh;
     font-size: 2vmin;
     color: var(--gunmetal);
     font-weight: bold;
-    font-size: 24pt;
+    font-size: 18pt;
     font-family: 'Share Tech Mono', 'Roboto';
     background-color: var(--white);
     border: solid 2px var(--fairyTale);
-    border-radius: 15%;
+    border-radius: 5vmin;
     box-shadow: 2px 3px 1px var(--gunmetal);
     text-align: center;
     margin-right: 1rem;

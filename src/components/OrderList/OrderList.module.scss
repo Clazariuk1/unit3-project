@@ -1,6 +1,7 @@
 .OrderList {
     display: flex;
     flex-direction: column;
+    width: 80%;
     align-items: center;
     background-color: var(--royalPurple);
     border: .1vmin solid var(--fairyTale);
@@ -14,8 +15,10 @@
     .OrderList .noOrders {
     color: var(--royalPurple);
     background-color: var(--fairyTale);
-    border-radius: 15%;
-    font-size: 2vmin;
+    border-radius: 5vmin;
+    font-weight: bold;
+    padding: 2rem;
+    font-size: 18pt;
     position: absolute;
     top: calc(50vh);
     }

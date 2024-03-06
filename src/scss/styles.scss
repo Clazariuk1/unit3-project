@@ -48,7 +48,6 @@ code {
   font-size: smaller;
 }
 
-/*Play with image sizing and scaling here. */
 .flex-ctr-ctr {
   display: flex;
   justify-content: center;
@@ -98,7 +97,7 @@ button, a.button {
   padding: 1vmin;
   color: var(--white);
   background-color: var(--gunmetal);
-  border-radius: 15%;
+  border-radius: 5vmin;
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
@@ -117,7 +116,7 @@ button.btn-sm {
   color: var(--spaceCadet);
   font-size: 15pt;
   font-weight: bold;
-  border-radius: 10%;
+  border-radius: 4vmin;
   box-shadow: 1px 2px 2px var(--lilac);
   font-family: 'Share Tech Mono', 'Roboto';
 }
@@ -134,7 +133,7 @@ button.btn-xs {
   background-color: var(--lilac);
   color: var(--gunmetal);
   border: solid 1px var(--white);
-  border-radius: 5%;
+  border-radius: 2vmin;
 }
 
 button.btn-xs:hover {

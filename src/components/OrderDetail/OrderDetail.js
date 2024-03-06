@@ -24,7 +24,7 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
           }
           <span className={styles.orderSpan}>{new Date(order.updatedAt).toLocaleDateString()}</span>
         </div>
-        <div className={`${styles.lineItemContainer} flex-ctr-ctr flex-col scroll-y`}>
+        <div className={`${styles.lineItemContainer} flex-ctr-ctr flex-col`}>
           {lineItems.length ?
             <>
               {lineItems}

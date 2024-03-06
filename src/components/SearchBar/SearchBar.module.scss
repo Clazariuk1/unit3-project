@@ -15,13 +15,14 @@ label {
     border: solid 2px var(--gunmetal);
     font-size: 20pt;
     box-shadow: 1px 5px 3px var(--gunmetal);
-    border-radius: 15%;
+    border-radius: 5vmin;
 }
 
 
 
 .search {
     font-size: 14pt;
+    border-radius: 3vmin;
     background-color: var(--lilac);
     color: var(--gunmetal);
     border: solid 3px var(--gunmetal);

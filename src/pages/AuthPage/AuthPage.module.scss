@@ -3,7 +3,7 @@
   flex-direction: column;
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     background-color: var(--lilac);
     border-radius: 2vmin;
@@ -16,7 +16,7 @@
     color: var(--white);
     background-color: rgba(1, 42, 54, .5);
     border: solid 2px var(--royalPurple);
-    border-radius: 10%;
+    border-radius: 4vmin;
   }
 
   .logoButton {
@@ -33,7 +33,7 @@
       cursor: pointer;
       padding: 1rem;
       background-color: var(--gunmetal);
-      border-radius: 15%;
+      border-radius: 5vmin;
       font-size: 20pt;
       box-shadow: 1px 3px 1px var(--gunmetal);
       font-family: 'Share Tech Mono', 'Roboto';
