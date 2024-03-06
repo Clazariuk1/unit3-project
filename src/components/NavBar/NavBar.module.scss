@@ -11,11 +11,16 @@
     padding: 1rem;
     margin: 1rem;
     text-align: center;
-    background-color: var(--white);
+    background-color: var(--fairyTale);
     border-radius: 2vmin;
     color: var(--gunmetal);
     font-size: 24pt;
     font-weight: bold;
     height: 1vmin;
-    box-shadow: 3px 3px 2px var(--gunmetal);
+    box-shadow: 3px 3px 2px var(--fairyTale);
+}
+
+.navButton:hover {
+    box-shadow: none;
+    cursor: pointer;
 }

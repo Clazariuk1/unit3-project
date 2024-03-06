@@ -10,7 +10,7 @@ export default function Newsletter(
         <label>Subscribe to Our Newsletter!</label>
             <input className={styles.subscribe}
             type="text"
-            placeholder="enter email to subscribe"
+            placeholder="Email Here..."
             onChange={e => setSubscriberEmail(e.target.value)} />
         </div>
     )

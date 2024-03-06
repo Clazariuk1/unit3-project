@@ -18,10 +18,6 @@ export default function AboutUs() {
             <div className={styles.container}>
                 <div className={styles.subHeader}>
                     <Logo />
-                    <div className={styles.titles}>
-                        <h1 className={styles.title}>More About Us</h1>
-                        <h1 className={styles.title}>Humble Beginnings and Ambitious Futures</h1>
-                    </div>
                 </div>
                 <div className={styles.stories}>
                     <h3 className={styles.subtitle}>Our Mission</h3>
@@ -31,7 +27,9 @@ export default function AboutUs() {
                     <div className={styles.column}>
                         <h3 className={styles.subtitle}>Our Creed</h3>
                         <p className={styles.creed}>To the moon!</p>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAqVr51Afo4NNcealtctOEp_flIYJCEpuFuA&usqp=CAU" />
+                        <div className={styles.image}>
+                            <img src="/images/doge.jpeg" />
+                        </div>
                         <Newsletter
                             subscriberEmail={subscriberEmail}
                             setSubscriberEmail={setSubscriberEmail}

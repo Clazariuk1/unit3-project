@@ -32,11 +32,11 @@ export default function OrderDetail({ order, handleChangeQty, handleCheckout }) 
                 {order.isPaid ?
                   <span className={styles.totalWords}>ORDER TOTAL&nbsp;&nbsp;</span>
                   :
-                  <button
-                    className="btn-sm"
+                  <span
+                    className={styles.totalWords}
                     onClick={handleCheckout}
                     disabled={!lineItems.length}
-                  >CHECKOUT</button>
+                  >Click to CHECKOUT</span>
                 }
                 <div className={styles.totalBox}>
                 <span>{order.totalQty} |</span>

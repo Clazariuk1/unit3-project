@@ -358,7 +358,7 @@ function Newsletter(subscriberEmail, setSubscriberEmail) {
   }, /*#__PURE__*/React.createElement("label", null, "Subscribe to Our Newsletter!"), /*#__PURE__*/React.createElement("input", {
     className: _Newsletter_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].subscribe,
     type: "text",
-    placeholder: "enter email to subscribe",
+    placeholder: "Email Here...",
     onChange: e => setSubscriberEmail(e.target.value)
   }));
 }
@@ -432,11 +432,11 @@ function OrderDetail(_ref) {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].total
   }, order.isPaid ? /*#__PURE__*/React.createElement("span", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].totalWords
-  }, "ORDER TOTAL\xA0\xA0") : /*#__PURE__*/React.createElement("button", {
-    className: "btn-sm",
+  }, "ORDER TOTAL\xA0\xA0") : /*#__PURE__*/React.createElement("span", {
+    className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].totalWords,
     onClick: handleCheckout,
     disabled: !lineItems.length
-  }, "CHECKOUT"), /*#__PURE__*/React.createElement("div", {
+  }, "Click to CHECKOUT"), /*#__PURE__*/React.createElement("div", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].totalBox
   }, /*#__PURE__*/React.createElement("span", null, order.totalQty, "\xA0|"), /*#__PURE__*/React.createElement("span", {
     className: _OrderDetail_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].right
@@ -749,13 +749,7 @@ function AboutUs() {
     className: _AboutUsPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].container
   }, /*#__PURE__*/React.createElement("div", {
     className: _AboutUsPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].subHeader
-  }, /*#__PURE__*/React.createElement(_components_Logo_Logo__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/React.createElement("div", {
-    className: _AboutUsPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].titles
-  }, /*#__PURE__*/React.createElement("h1", {
-    className: _AboutUsPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].title
-  }, "More About Us"), /*#__PURE__*/React.createElement("h1", {
-    className: _AboutUsPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].title
-  }, "Humble Beginnings and Ambitious Futures"))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(_components_Logo_Logo__WEBPACK_IMPORTED_MODULE_2__["default"], null)), /*#__PURE__*/React.createElement("div", {
     className: _AboutUsPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].stories
   }, /*#__PURE__*/React.createElement("h3", {
     className: _AboutUsPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].subtitle
@@ -769,9 +763,11 @@ function AboutUs() {
     className: _AboutUsPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].subtitle
   }, "Our Creed"), /*#__PURE__*/React.createElement("p", {
     className: _AboutUsPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].creed
-  }, "To the moon!"), /*#__PURE__*/React.createElement("img", {
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAqVr51Afo4NNcealtctOEp_flIYJCEpuFuA&usqp=CAU"
-  }), /*#__PURE__*/React.createElement(_components_Newsletter_Newsletter__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, "To the moon!"), /*#__PURE__*/React.createElement("div", {
+    className: _AboutUsPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].image
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "/images/doge.jpeg"
+  })), /*#__PURE__*/React.createElement(_components_Newsletter_Newsletter__WEBPACK_IMPORTED_MODULE_3__["default"], {
     subscriberEmail: subscriberEmail,
     setSubscriberEmail: setSubscriberEmail
   })))));
@@ -1772,18 +1768,24 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.QpVD3qAS0nYBtoQqAYoe {
   padding: 1rem;
   margin: 1rem;
   text-align: center;
-  background-color: var(--white);
+  background-color: var(--fairyTale);
   border-radius: 2vmin;
   color: var(--gunmetal);
   font-size: 24pt;
   font-weight: bold;
   height: 1vmin;
-  box-shadow: 3px 3px 2px var(--gunmetal);
-}`, "",{"version":3,"sources":["webpack://./src/components/NavBar/NavBar.module.scss"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,WAAA;EACA,iCAAA;EACA,aAAA;AACJ;;AACA;EACI,aAAA;EACA,YAAA;EACA,kBAAA;EACA,8BAAA;EACA,oBAAA;EACA,sBAAA;EACA,eAAA;EACA,iBAAA;EACA,aAAA;EACA,uCAAA;AAEJ","sourcesContent":[".NavBar {\n    background-color: none;\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    width: 100%;\n    background-color: var(--gunmetal);\n    padding: 5rem;\n}\n.NavButton {\n    padding: 1rem;\n    margin: 1rem;\n    text-align: center;\n    background-color: var(--white);\n    border-radius: 2vmin;\n    color: var(--gunmetal);\n    font-size: 24pt;\n    font-weight: bold;\n    height: 1vmin;\n    box-shadow: 3px 3px 2px var(--gunmetal);\n}\n"],"sourceRoot":""}]);
+  box-shadow: 3px 3px 2px var(--fairyTale);
+}
+
+.O1NYqBXF_F1JmLXb_oPu:hover {
+  box-shadow: none;
+  cursor: pointer;
+}`, "",{"version":3,"sources":["webpack://./src/components/NavBar/NavBar.module.scss"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,WAAA;EACA,iCAAA;EACA,aAAA;AACJ;;AACA;EACI,aAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,oBAAA;EACA,sBAAA;EACA,eAAA;EACA,iBAAA;EACA,aAAA;EACA,wCAAA;AAEJ;;AACA;EACI,gBAAA;EACA,eAAA;AAEJ","sourcesContent":[".NavBar {\n    background-color: none;\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    width: 100%;\n    background-color: var(--gunmetal);\n    padding: 5rem;\n}\n.NavButton {\n    padding: 1rem;\n    margin: 1rem;\n    text-align: center;\n    background-color: var(--fairyTale);\n    border-radius: 2vmin;\n    color: var(--gunmetal);\n    font-size: 24pt;\n    font-weight: bold;\n    height: 1vmin;\n    box-shadow: 3px 3px 2px var(--fairyTale);\n}\n\n.navButton:hover {\n    box-shadow: none;\n    cursor: pointer;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"NavBar": `QpVD3qAS0nYBtoQqAYoe`,
-	"NavButton": `iYu2geJ6e3kwcIEgjSp7`
+	"NavButton": `iYu2geJ6e3kwcIEgjSp7`,
+	"navButton": `O1NYqBXF_F1JmLXb_oPu`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1811,19 +1813,22 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, `.pBpzkm9adPgZj6q3RmGA {
   background-color: var(--fairyTale);
   border: solid 2px var(--white);
+  border-radius: 4vmin;
   margin: 1rem;
 }
-.pBpzkm9adPgZj6q3RmGA input {
+
+.aFGIhKJ6jaSzG1WlWxwj {
   padding: 1rem;
-  border-radius: 5%;
+  border-radius: 5min;
   margin: 1rem;
   border: solid 2px var(--gunmetal);
   box-shadow: 2px 3px 1px var(--gunmetal);
   font-size: 16pt;
-}`, "",{"version":3,"sources":["webpack://./src/components/Newsletter/Newsletter.module.scss"],"names":[],"mappings":"AAAA;EACI,kCAAA;EACA,8BAAA;EACA,YAAA;AACJ;AAAI;EACI,aAAA;EACA,iBAAA;EACA,YAAA;EACA,iCAAA;EACA,uCAAA;EACA,eAAA;AAER","sourcesContent":[".newsletter {\n    background-color: var(--fairyTale);\n    border: solid 2px var(--white);\n    margin: 1rem;\n    input {\n        padding: 1rem;\n        border-radius: 5%;\n        margin: 1rem;\n        border: solid 2px var(--gunmetal);\n        box-shadow: 2px 3px 1px var(--gunmetal);\n        font-size: 16pt;\n    }\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/Newsletter/Newsletter.module.scss"],"names":[],"mappings":"AAAA;EACI,kCAAA;EACA,8BAAA;EACA,oBAAA;EACA,YAAA;AACJ;;AAEA;EACI,aAAA;EACA,mBAAA;EACA,YAAA;EACA,iCAAA;EACA,uCAAA;EACA,eAAA;AACJ","sourcesContent":[".newsletter {\n    background-color: var(--fairyTale);\n    border: solid 2px var(--white);\n    border-radius: 4vmin;\n    margin: 1rem;\n}\n\n.subscribe {\n    padding: 1rem;\n    border-radius: 5min;\n    margin: 1rem;\n    border: solid 2px var(--gunmetal);\n    box-shadow: 2px 3px 1px var(--gunmetal);\n    font-size: 16pt;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"newsletter": `pBpzkm9adPgZj6q3RmGA`
+	"newsletter": `pBpzkm9adPgZj6q3RmGA`,
+	"subscribe": `aFGIhKJ6jaSzG1WlWxwj`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1898,9 +1903,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
 .cPR75kdAXDGVxib0PszB .V5OAbv7QFHo6WglNx0m0 {
   justify-content: center;
   width: 100%;
-  display: grid;
-  grid-template-columns: 18.35vw 5.75vw 5.25vw;
-  padding: 1vmin 0;
+  display: flex;
   color: var(--royalPurple);
   border-top: 0.1vmin solid var(--fairyTale);
   font-family: "Share Tech Mono", "Roboto";
@@ -1922,14 +1925,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
 }
 
 .ZDZB7UYtkW2ycTRohGaX {
+  text-align: center;
+  margin: 0.5rem;
+  height: 64px;
   border-radius: 5vmin;
+  box-shadow: 1px 3px 1px var(--gunmetal);
   padding: 1rem;
   display: flex;
   justify-content: flex-end;
   color: var(--fairyTale);
   background-color: var(--royalPurple);
   border: solid 2px var(--white);
-  text-align: right;
+}
+
+.ZDZB7UYtkW2ycTRohGaX:hover {
+  box-shadow: none;
+  cursor: grab;
 }
 
 .cPR75kdAXDGVxib0PszB .dyrUhYTujwEUiMzpjxWX {
@@ -1949,7 +1960,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
   text-align: center;
   margin-right: 1rem;
   padding: 0.5rem;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAAA;EACE,aAAA;EACE,sBAAA;EACA,2BAAA;EACA,WAAA;EACA,mBAAA;EACA,cAAA;EACA,gBAAA;EACA,yBAAA;EACA,8BAAA;EACA,kBAAA;AACJ;;AAEE;EACE,oBAAA;EACA,aAAA;EACA,oCAAA;EACA,cAAA;EACA,uBAAA;EACA,kBAAA;EACA,8BAAA;AACJ;AAEI;EACE,eAAA;EACA,cAAA;AAAN;;AAIE;EACE,eAAA;EACA,eAAA;EACA,mCAAA;EACA,uBAAA;EACA,oBAAA;EACA,8BAAA;AADJ;;AAIE;EACE,WAAA;AADJ;;AAIE;EACE,iBAAA;EACA,2BAAA;EACA,4BAAA;EACA,WAAA;AADJ;;AAIE;EACE,uBAAA;EACA,WAAA;EACA,aAAA;EACA,4CAAA;EACA,gBAAA;EACA,yBAAA;EACA,0CAAA;EACA,wCAAA;AADJ;;AAIE;EACE,oBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;EACA,sBAAA;AADJ;;AAIE;EACE,oBAAA;EACA,aAAA;EACA,yBAAA;AADJ;;AAIE;EACE,oBAAA;EACA,aAAA;EACA,aAAA;EACA,yBAAA;EACA,uBAAA;EACA,oCAAA;EACA,8BAAA;EACA,iBAAA;AADJ;;AAKE;EACE,kBAAA;EACA,uBAAA;EACA,kBAAA;EACA,SAAA;EACA,gBAAA;EACA,sBAAA;EACA,iBAAA;EACA,eAAA;EACA,wCAAA;EACA,8BAAA;EACA,kCAAA;EACA,oBAAA;EACA,uCAAA;EACA,kBAAA;EACA,kBAAA;EACA,eAAA;AAFJ","sourcesContent":[".OrderDetail {\n  display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    width: 100%;\n    align-items: center;\n    padding: 3vmin;\n    font-size: 2vmin;\n    color: var(--royalPurple);\n    background-color: var(--lilac);\n    overflow-x: hidden;\n  }\n\n  .totalBox {\n    border-radius: 5vmin;\n    display: flex;\n    background-color: var(--royalPurple);\n    margin: .5rem;\n    width: -moz-fit-content;\n    width: fit-content;\n    border: solid 2px var(--white);\n\n\n    span {\n      padding: .5rem;\n      margin: .5rem;\n    }\n  }\n\n  .orderSpan {\n    margin: .25rem;\n    padding: .5rem;\n    background-color: var(--spaceCadet);\n    color: var(--fairyTale);\n    border-radius: 2vmin;\n    border: solid 1px var(--white);\n  }\n\n  .OrderDetail .sectionHeading {\n    width: 100%\n  }\n\n  .OrderDetail .lineItemContainer {\n    margin-top: 3vmin;\n    justify-content: flex-start;\n    height: calc(100vh - 18vmin);\n    width: 100%;\n  }\n\n  .OrderDetail .total {\n    justify-content: center;\n    width: 100%;\n    display: grid;\n    grid-template-columns: 18.35vw 5.75vw 5.25vw;\n    padding: 1vmin 0;\n    color: var(--royalPurple);\n    border-top: .1vmin solid var(--fairyTale);\n    font-family: 'Share Tech Mono', 'Roboto';\n  }\n\n  .OrderDetail .total span {\n    border-radius: 5vmin;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 1.5vw;\n    color: var(--gunmetal);\n  }\n\n  .OrderDetail .total span.right {\n    border-radius: 5vmin;\n    display: flex;\n    justify-content: flex-end;\n  }\n\n  .totalWords {\n    border-radius: 5vmin;\n    padding: 1rem;\n    display: flex;\n    justify-content: flex-end;\n    color: var(--fairyTale);\n    background-color: var(--royalPurple);\n    border: solid 2px var(--white);\n    text-align: right;\n\n  }\n\n  .OrderDetail .hungry {\n    position: absolute;\n    width: -moz-fit-content;\n    width: fit-content;\n    top: 50vh;\n    font-size: 2vmin;\n    color: var(--gunmetal);\n    font-weight: bold;\n    font-size: 18pt;\n    font-family: 'Share Tech Mono', 'Roboto';\n    background-color: var(--white);\n    border: solid 2px var(--fairyTale);\n    border-radius: 5vmin;\n    box-shadow: 2px 3px 1px var(--gunmetal);\n    text-align: center;\n    margin-right: 1rem;\n    padding: .5rem;\n  }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAAA;EACE,aAAA;EACE,sBAAA;EACA,2BAAA;EACA,WAAA;EACA,mBAAA;EACA,cAAA;EACA,gBAAA;EACA,yBAAA;EACA,8BAAA;EACA,kBAAA;AACJ;;AAEE;EACE,oBAAA;EACA,aAAA;EACA,oCAAA;EACA,cAAA;EACA,uBAAA;EACA,kBAAA;EACA,8BAAA;AACJ;AAEI;EACE,eAAA;EACA,cAAA;AAAN;;AAIE;EACE,eAAA;EACA,eAAA;EACA,mCAAA;EACA,uBAAA;EACA,oBAAA;EACA,8BAAA;AADJ;;AAIE;EACE,WAAA;AADJ;;AAIE;EACE,iBAAA;EACA,2BAAA;EACA,4BAAA;EACA,WAAA;AADJ;;AAIE;EACE,uBAAA;EACA,WAAA;EACA,aAAA;EACA,yBAAA;EACA,0CAAA;EACA,wCAAA;AADJ;;AAIE;EACE,oBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;EACA,sBAAA;AADJ;;AAIE;EACE,oBAAA;EACA,aAAA;EACA,yBAAA;AADJ;;AAIE;EACE,kBAAA;EACA,cAAA;EACA,YAAA;EACA,oBAAA;EACA,uCAAA;EACA,aAAA;EACA,aAAA;EACA,yBAAA;EACA,uBAAA;EACA,oCAAA;EACA,8BAAA;AADJ;;AAIE;EACE,gBAAA;EACA,YAAA;AADJ;;AAIE;EACE,kBAAA;EACA,uBAAA;EACA,kBAAA;EACA,SAAA;EACA,gBAAA;EACA,sBAAA;EACA,iBAAA;EACA,eAAA;EACA,wCAAA;EACA,8BAAA;EACA,kCAAA;EACA,oBAAA;EACA,uCAAA;EACA,kBAAA;EACA,kBAAA;EACA,eAAA;AADJ","sourcesContent":[".OrderDetail {\n  display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    width: 100%;\n    align-items: center;\n    padding: 3vmin;\n    font-size: 2vmin;\n    color: var(--royalPurple);\n    background-color: var(--lilac);\n    overflow-x: hidden;\n  }\n\n  .totalBox {\n    border-radius: 5vmin;\n    display: flex;\n    background-color: var(--royalPurple);\n    margin: .5rem;\n    width: -moz-fit-content;\n    width: fit-content;\n    border: solid 2px var(--white);\n\n\n    span {\n      padding: .5rem;\n      margin: .5rem;\n    }\n  }\n\n  .orderSpan {\n    margin: .25rem;\n    padding: .5rem;\n    background-color: var(--spaceCadet);\n    color: var(--fairyTale);\n    border-radius: 2vmin;\n    border: solid 1px var(--white);\n  }\n\n  .OrderDetail .sectionHeading {\n    width: 100%\n  }\n\n  .OrderDetail .lineItemContainer {\n    margin-top: 3vmin;\n    justify-content: flex-start;\n    height: calc(100vh - 18vmin);\n    width: 100%;\n  }\n\n  .OrderDetail .total {\n    justify-content: center;\n    width: 100%;\n    display: flex;\n    color: var(--royalPurple);\n    border-top: .1vmin solid var(--fairyTale);\n    font-family: 'Share Tech Mono', 'Roboto';\n  }\n\n  .OrderDetail .total span {\n    border-radius: 5vmin;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 1.5vw;\n    color: var(--gunmetal);\n  }\n\n  .OrderDetail .total span.right {\n    border-radius: 5vmin;\n    display: flex;\n    justify-content: flex-end;\n  }\n\n  .totalWords {\n    text-align: center;\n    margin: .5rem;\n    height: 64px;\n    border-radius: 5vmin;\n    box-shadow: 1px 3px 1px var(--gunmetal);\n    padding: 1rem;\n    display: flex;\n    justify-content: flex-end;\n    color: var(--fairyTale);\n    background-color: var(--royalPurple);\n    border: solid 2px var(--white);\n  }\n\n  .totalWords:hover {\n    box-shadow: none;\n    cursor: grab;\n  }\n\n  .OrderDetail .hungry {\n    position: absolute;\n    width: -moz-fit-content;\n    width: fit-content;\n    top: 50vh;\n    font-size: 2vmin;\n    color: var(--gunmetal);\n    font-weight: bold;\n    font-size: 18pt;\n    font-family: 'Share Tech Mono', 'Roboto';\n    background-color: var(--white);\n    border: solid 2px var(--fairyTale);\n    border-radius: 5vmin;\n    box-shadow: 2px 3px 1px var(--gunmetal);\n    text-align: center;\n    margin-right: 1rem;\n    padding: .5rem;\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderDetail": `cPR75kdAXDGVxib0PszB`,
@@ -2290,26 +2301,36 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.hROteXkOc8ax7fXzt3tU {
   font-family: "Share Tech Mono", "Roboto";
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   background-color: var(--fairyTale);
   border-radius: 2vmin;
 }
-.hROteXkOc8ax7fXzt3tU .vkw4n01Dgx1HNf75QzwO {
-  background-color: var(--white);
-  padding: 1rem;
-  color: var(--gunmetal);
-  text-align: center;
-}
 
 .RAmn43pTCFQrpR559OtT {
+  display: flex;
+  padding: 5rem;
+  flex-direction: column;
   border: solid 5pt var(--lilac);
-  background-color: var(--darkness);
+  background-color: var(--gunmetal);
+  justify-content: center;
+  align-items: center;
+  border-radius: 5vmin;
 }
-.RAmn43pTCFQrpR559OtT img {
-  margin: 1rem;
+
+.vOK3HJSR2IJkYk6QHGao {
+  height: 450px;
+  width: 450px;
   padding: 1rem;
-  border: solid 3px var(--lilac);
-  border-radius: 2vmin;
+}
+
+.vOK3HJSR2IJkYk6QHGao > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 .n7c7NHZ8NGWVKLwvLM0y {
@@ -2319,9 +2340,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.hROteXkOc8ax7fXzt3tU {
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 2vmin;
+  text-align: center;
+  align-self: center;
+  justify-content: center;
 }
 
 .cGx6hTy3R8JWROeuAPKA {
+  display: flex;
+  flex-direction: column;
   background-color: var(--royalPurple);
   border: solid 2px var(--white);
   font-size: 20pt;
@@ -2367,12 +2393,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.hROteXkOc8ax7fXzt3tU {
   margin: 1rem;
   width: -moz-fit-content;
   width: fit-content;
-}`, "",{"version":3,"sources":["webpack://./src/pages/AboutUsPage/AboutUsPage.module.scss"],"names":[],"mappings":"AAAA;EACI,wCAAA;EACA,aAAA;EACA,sBAAA;EACA,kBAAA;EACA,kCAAA;EACA,oBAAA;AACJ;AAAI;EACI,8BAAA;EACA,aAAA;EACA,sBAAA;EACA,kBAAA;AAER;;AAEA;EACI,8BAAA;EACA,iCAAA;AACJ;AACI;EACI,YAAA;EACA,aAAA;EACA,8BAAA;EACA,oBAAA;AACR;;AAGA;EACI,8BAAA;EACA,aAAA;EACA,YAAA;EACA,uBAAA;EACA,kBAAA;EACA,oBAAA;AAAJ;;AAGA;EACI,oCAAA;EACA,8BAAA;EACA,eAAA;EACA,uBAAA;EACA,kBAAA;EACA,uBAAA;EACA,mBAAA;AAAJ;;AAGA;EACI,kCAAA;EACA,sBAAA;EACA,aAAA;EACA,YAAA;EACA,8BAAA;EACA,+BAAA;EACA,oBAAA;EACA,iBAAA;AAAJ;;AAGA;EACI,aAAA;EACA,YAAA;EACA,oBAAA;EACA,kCAAA;EACA,sBAAA;EACA,oCAAA;AAAJ;;AAGA;EACI,aAAA;EACA,YAAA;EACA,uBAAA;EACA,mBAAA;AAAJ;;AAIA;EACI,oCAAA;EACA,mBAAA;EACA,8BAAA;EACA,oBAAA;EACA,aAAA;EACA,YAAA;EACA,uBAAA;EACA,kBAAA;AADJ","sourcesContent":[".AboutUsPage {\n    font-family: 'Share Tech Mono', 'Roboto';\n    display: flex;\n    flex-direction: column;\n    text-align: center;\n    background-color: var(--fairyTale);\n    border-radius: 2vmin;\n    .title {\n        background-color: var(--white);\n        padding: 1rem;\n        color: var(--gunmetal);\n        text-align: center;\n    }\n}\n\n.column {\n    border: solid 5pt var(--lilac);\n    background-color: var(--darkness);\n\n    img {\n        margin: 1rem;\n        padding: 1rem;\n        border: solid 3px var(--lilac);\n        border-radius: 2vmin;\n    }\n}\n\n.subtitle {\n    background-color: var(--lilac);\n    padding: 1rem;\n    margin: 1rem;\n    width: -moz-fit-content;\n    width: fit-content;\n    border-radius: 2vmin;\n}\n\n.stories {\n    background-color: var(--royalPurple);\n    border: solid 2px var(--white);\n    font-size: 20pt;\n    color: var(--fairyTale);\n    text-align: center;\n    justify-content: center;\n    align-items: center;\n}\n\n.story {\n    background-color: var(--fairyTale);\n    color: var(--gunmetal);\n    padding: 1rem;\n    margin: 1rem;\n    border: solid 2px var(--lilac);\n    box-shadow: 2pt 2pt 1pt var(--);\n    border-radius: 2vmin;\n    font-weight: bold;\n}\n\n.titles {\n    padding: 1rem;\n    margin: 1rem;\n    border-radius: 5vmin;\n    background-color: var(--fairyTale);\n    color: var(--gunmetal);\n    box-shadow: 3pt 3pt 1pt var(--white);\n}\n\n.subHeader {\n    display: flex;\n    margin: 1rem;\n    justify-content: center;\n    align-items: center;\n\n}\n\n.creed {\n    background-color: var(--royalPurple);\n    color: var(--white);\n    border: solid 3px var(--white);\n    border-radius: 2vmin;\n    padding: 1rem;\n    margin: 1rem;\n    width: -moz-fit-content;\n    width: fit-content;\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/pages/AboutUsPage/AboutUsPage.module.scss"],"names":[],"mappings":"AAAA;EACI,wCAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;EACA,kCAAA;EACA,oBAAA;AACJ;;AAEA;EACI,aAAA;EACA,aAAA;EACA,sBAAA;EACA,8BAAA;EACA,iCAAA;EACA,uBAAA;EACA,mBAAA;EACA,oBAAA;AACJ;;AAEA;EACI,aAAA;EACA,YAAA;EACA,aAAA;AACJ;;AAEA;EACI,YAAA;EACA,WAAA;EACA,kBAAA;EACA,sBAAA;EACG,mBAAA;AACP;;AAEA;EACI,8BAAA;EACA,aAAA;EACA,YAAA;EACA,uBAAA;EACA,kBAAA;EACA,oBAAA;EACA,kBAAA;EACA,kBAAA;EACA,uBAAA;AACJ;;AAEA;EACI,aAAA;EACA,sBAAA;EACA,oCAAA;EACA,8BAAA;EACA,eAAA;EACA,uBAAA;EACA,kBAAA;EACA,uBAAA;EACA,mBAAA;AACJ;;AAEA;EACI,kCAAA;EACA,sBAAA;EACA,aAAA;EACA,YAAA;EACA,8BAAA;EACA,+BAAA;EACA,oBAAA;EACA,iBAAA;AACJ;;AAEA;EACI,aAAA;EACA,YAAA;EACA,oBAAA;EACA,kCAAA;EACA,sBAAA;EACA,oCAAA;AACJ;;AAEA;EACI,aAAA;EACA,YAAA;EACA,uBAAA;EACA,mBAAA;AACJ;;AAGA;EACI,oCAAA;EACA,mBAAA;EACA,8BAAA;EACA,oBAAA;EACA,aAAA;EACA,YAAA;EACA,uBAAA;EACA,kBAAA;AAAJ","sourcesContent":[".AboutUsPage {\n    font-family: 'Share Tech Mono', 'Roboto';\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    text-align: center;\n    background-color: var(--fairyTale);\n    border-radius: 2vmin;\n}\n\n.column {\n    display: flex;\n    padding: 5rem;\n    flex-direction: column;\n    border: solid 5pt var(--lilac);\n    background-color: var(--gunmetal);\n    justify-content: center;\n    align-items: center;\n    border-radius: 5vmin;\n}\n\n.image {\n    height: 450px;\n    width: 450px;\n    padding: 1rem;\n  }\n\n.image>img {\n    height: 100%;\n    width: 100%;\n    border-radius: 50%;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n\n.subtitle {\n    background-color: var(--lilac);\n    padding: 1rem;\n    margin: 1rem;\n    width: -moz-fit-content;\n    width: fit-content;\n    border-radius: 2vmin;\n    text-align: center;\n    align-self: center;\n    justify-content: center;\n}\n\n.stories {\n    display: flex;\n    flex-direction: column;\n    background-color: var(--royalPurple);\n    border: solid 2px var(--white);\n    font-size: 20pt;\n    color: var(--fairyTale);\n    text-align: center;\n    justify-content: center;\n    align-items: center;\n}\n\n.story {\n    background-color: var(--fairyTale);\n    color: var(--gunmetal);\n    padding: 1rem;\n    margin: 1rem;\n    border: solid 2px var(--lilac);\n    box-shadow: 2pt 2pt 1pt var(--);\n    border-radius: 2vmin;\n    font-weight: bold;\n}\n\n.titles {\n    padding: 1rem;\n    margin: 1rem;\n    border-radius: 5vmin;\n    background-color: var(--fairyTale);\n    color: var(--gunmetal);\n    box-shadow: 3pt 3pt 1pt var(--white);\n}\n\n.subHeader {\n    display: flex;\n    margin: 1rem;\n    justify-content: center;\n    align-items: center;\n\n}\n\n.creed {\n    background-color: var(--royalPurple);\n    color: var(--white);\n    border: solid 3px var(--white);\n    border-radius: 2vmin;\n    padding: 1rem;\n    margin: 1rem;\n    width: -moz-fit-content;\n    width: fit-content;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"AboutUsPage": `hROteXkOc8ax7fXzt3tU`,
-	"title": `vkw4n01Dgx1HNf75QzwO`,
 	"column": `RAmn43pTCFQrpR559OtT`,
+	"image": `vOK3HJSR2IJkYk6QHGao`,
 	"subtitle": `n7c7NHZ8NGWVKLwvLM0y`,
 	"stories": `cGx6hTy3R8JWROeuAPKA`,
 	"story": `absKnCOnjKMvEqozecIX`,

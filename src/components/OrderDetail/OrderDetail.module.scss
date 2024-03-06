@@ -49,9 +49,7 @@
   .OrderDetail .total {
     justify-content: center;
     width: 100%;
-    display: grid;
-    grid-template-columns: 18.35vw 5.75vw 5.25vw;
-    padding: 1vmin 0;
+    display: flex;
     color: var(--royalPurple);
     border-top: .1vmin solid var(--fairyTale);
     font-family: 'Share Tech Mono', 'Roboto';
@@ -73,15 +71,22 @@
   }
 
   .totalWords {
+    text-align: center;
+    margin: .5rem;
+    height: 64px;
     border-radius: 5vmin;
+    box-shadow: 1px 3px 1px var(--gunmetal);
     padding: 1rem;
     display: flex;
     justify-content: flex-end;
     color: var(--fairyTale);
     background-color: var(--royalPurple);
     border: solid 2px var(--white);
-    text-align: right;
+  }
 
+  .totalWords:hover {
+    box-shadow: none;
+    cursor: grab;
   }
 
   .OrderDetail .hungry {
