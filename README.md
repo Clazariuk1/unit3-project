@@ -55,7 +55,10 @@ Open up the project by typing 'code .' in the terminal while in the project fold
 <img src='/images/OrderPage.png'>
 <br>
 <h4>Past Orders Page</h4>
+![image](/images/PastOrderPage.png)
+![image]('/images/PastOrderPage.png')
+
 <img src='/images/PastOrderPage.png' >
 <br>
 <h4>About Us Page</h4>
-<img src='/images/AboutUsPage.png' >
+<img src='/public/images/AboutUsPage.png' >
