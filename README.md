@@ -6,14 +6,17 @@ How to install this app on their local machine<br>
 What global installations they need and what files do they need to create that didn't come in the github repo<br>
 How to start the app in dev mode<br>
 How to run tests<br>
-How to start the app without dev mode.<br>
 
 <h1>Dev Dependency</h1>
 <h2>a Freelance SaaS shoppe</h2>
-<h3>Christopher Lazariuk, General Assembly Unit 2</h3>
+<h3>Christopher Lazariuk, General Assembly Unit 3</h3>
 <h4>Customer User Story: As a user, I want to make an account on the Dev Dependency website, browse their available products and services, find out more about the company and it's values, and ultimately purchase the goods that interest me via the cart-based order and check-out system.</h4>
 <br>
 <h3>Initial Setup Instructions</h3>
+
+Not technologically adept or too lazy to clone the repo? Check out the live link right here! <br>
+ecommerce.christopherlazariuk.me<br>
+<h3>~Locally cloned instructions~</h3>
 <p>After successfully cloning into your desired local folder location from github, navigate to project folder via terminal command line.
 <br>
 type 'touch .env' to create a new env file. The two sets of data you must then enter are below, along with directions on what to insert within brackets: <br>
@@ -38,52 +41,21 @@ npm i
 
 <h6>Time to rock 'n roll!</h6>
 <br>
+Before startup, type 'npm run seed' in command line while in project folder. This will plant pre-set inventory and categories into your database for easier testing and demo purposes.
+<br>
 Open up the project by typing 'code .' in the terminal while in the project folder if you haven't done so already. Then open terminal on project folder location within VS code.
 <br><br>
-Before initial rounds of testing, or to reset database per needs, type 'npm run seed' in command line while in project folder. This will plant pre-set inventory and categories into your database for easier testing and demo purposes.
-<br>
-Once you've grown tired of exploring the code, type 'npm run test' in terminal after verifying you're in the project's folder to run back-end testing. The test files in the tests folder will execute and return the corresponding results.
 </p>
 <br>
-*awaiting insertion of front-end testing materials. Must expand.
-
-
-## Steps
-
-**Install Gulp Globally**
-```bash
-npm i -g gulp-cli
-```
-
-**Start the dev server**
-```bash
-npm run dev
-```
-### or
-```bash
-yarn dev
-```
-
-**Start the dev server with proxy**
-```bash
-npm run proxy
-```
-
-**Build files for production**
-```bash
-yarn build
-```
-### or
-
-```bash
-npm run build
-```
-
-**Deploy for production script**
-```bash
-npm start
-```
-### or
-```bash
-yarn start
-```
+<h3>Deployment Screenshots</h3>
+<h4>Sign Up Form</h4>
+<img src='/Users/Chris/software_homework/unit_3/unit3-project/public/images/DevSignUpPage.png'>
+<br>
+<h4>Order Page</h4>
+<img src='/Users/Chris/software_homework/unit_3/unit3-project/public/images/OrderPage.png'>
+<br>
+<h4>Past Orders Page</h4>
+<img src='/Users/Chris/software_homework/unit_3/unit3-project/public/images/PastOrderPage.png' >
+<br>
+<h4>About Us Page</h4>
+<img src='/Users/Chris/software_homework/unit_3/unit3-project/public/images/AboutUsPage.png' >

@@ -30,10 +30,7 @@ export default function AboutUs() {
                         <div className={styles.image}>
                             <img src="/images/doge.jpeg" />
                         </div>
-                        <Newsletter
-                            subscriberEmail={subscriberEmail}
-                            setSubscriberEmail={setSubscriberEmail}
-                        />
+                        <Newsletter />
                     </div>
                 </div>
             </div>

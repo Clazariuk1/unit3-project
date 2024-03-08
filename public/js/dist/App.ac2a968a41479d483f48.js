@@ -767,10 +767,7 @@ function AboutUs() {
     className: _AboutUsPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].image
   }, /*#__PURE__*/React.createElement("img", {
     src: "/images/doge.jpeg"
-  })), /*#__PURE__*/React.createElement(_components_Newsletter_Newsletter__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    subscriberEmail: subscriberEmail,
-    setSubscriberEmail: setSubscriberEmail
-  })))));
+  })), /*#__PURE__*/React.createElement(_components_Newsletter_Newsletter__WEBPACK_IMPORTED_MODULE_3__["default"], null)))));
 }
 
 /***/ }),
