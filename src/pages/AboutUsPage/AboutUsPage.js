@@ -2,7 +2,6 @@ import { useState } from 'react'
 import styles from './AboutUsPage.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../components/Logo/Logo';
-import Newsletter from '../../components/Newsletter/Newsletter';
 import NavBar from '../../components/NavBar/NavBar'
 
 
@@ -30,7 +29,6 @@ export default function AboutUs() {
                         <div className={styles.image}>
                             <img src="/images/doge.jpeg" />
                         </div>
-                        <Newsletter />
                     </div>
                 </div>
             </div>
