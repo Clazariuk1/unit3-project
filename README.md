@@ -49,13 +49,13 @@ Open up the project by typing 'code .' in the terminal while in the project fold
 <br>
 <h3>Deployment Screenshots</h3>
 <h4>Sign Up Form</h4>
-<img src='/Users/Chris/software_homework/unit_3/unit3-project/public/images/DevSignUpPage.png'>
+<img src='/images/DevSignUpPage.png'>
 <br>
 <h4>Order Page</h4>
-<img src='/Users/Chris/software_homework/unit_3/unit3-project/public/images/OrderPage.png'>
+<img src='/images/OrderPage.png'>
 <br>
 <h4>Past Orders Page</h4>
-<img src='/Users/Chris/software_homework/unit_3/unit3-project/public/images/PastOrderPage.png' >
+<img src='/images/PastOrderPage.png' >
 <br>
 <h4>About Us Page</h4>
-<img src='/Users/Chris/software_homework/unit_3/unit3-project/public/images/AboutUsPage.png' >
+<img src='/images/AboutUsPage.png' >
