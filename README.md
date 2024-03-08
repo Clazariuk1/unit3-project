@@ -49,16 +49,13 @@ Open up the project by typing 'code .' in the terminal while in the project fold
 <br>
 <h3>Deployment Screenshots</h3>
 <h4>Sign Up Form</h4>
-<img src='/images/DevSignUpPage.png'>
+<img src='/public/images/DevSignUpPage.png'>
 <br>
 <h4>Order Page</h4>
-<img src='/images/OrderPage.png'>
+<img src='/public/images/OrderPage.png'>
 <br>
 <h4>Past Orders Page</h4>
-![image](/images/PastOrderPage.png)
-![image]('/images/PastOrderPage.png')
-
-<img src='/images/PastOrderPage.png' >
+<img src='/public/images/PastOrderPage.png' >
 <br>
 <h4>About Us Page</h4>
 <img src='/public/images/AboutUsPage.png' >
