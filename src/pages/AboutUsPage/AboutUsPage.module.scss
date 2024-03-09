@@ -14,7 +14,7 @@
     padding: 5rem;
     flex-direction: column;
     border: solid 5pt var(--lilac);
-    background-color: var(--royalPurpleTransparent);
+    background-color: var(--gunmetalTransparent);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -37,6 +37,7 @@
 
 .subtitle {
     background-color: var(--lilac);
+    color: var(--gunmetal);
     padding: 1rem;
     margin: 1rem;
     width: fit-content;
@@ -89,7 +90,7 @@
 }
 
 .creed {
-    background-color: var(--royalPurple);
+    background-color: var(--gunmetal);
     color: var(--white);
     border: solid 3px var(--white);
     border-radius: 2vmin;

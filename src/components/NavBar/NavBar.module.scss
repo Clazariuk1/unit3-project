@@ -5,8 +5,12 @@
     width: 100%;
     padding: 5rem;
     border-radius: 5vmin;
+    button:hover {
+        color: var(--white);
+    }
 }
 .NavButton {
+    text-decoration: none;
     padding: 1rem;
     margin: 1rem;
     text-align: center;
@@ -16,9 +20,11 @@
     font-size: 24pt;
     font-weight: bold;
     height: 1vmin;
+    box-shadow: 6px 4px 6px var(--gunmetalTransparent);
 }
 
 .navButton:hover {
     box-shadow: none;
     cursor: pointer;
+    color: var(--white);
 }

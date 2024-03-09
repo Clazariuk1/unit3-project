@@ -15,6 +15,7 @@ function MatrixBackground({ timeout = 50 }) {
         context.fillRect(0, 0, width, height);
 
         const columns = Math.floor(width / 20) + 1;
+        // Lining up the array - column system from which characters will drop. Zen stuff there, dude.
         const yPositions = Array.from({ length: columns }).fill(0);
 
         context.fillStyle = '#000';
@@ -25,9 +26,10 @@ function MatrixBackground({ timeout = 50 }) {
             context.fillRect(0, 0, width, height);
 
             context.fillStyle = '#0f0';
-            context.font = '15pt monospace';
+            context.font = '15pt Share Tech Mono';
 
             yPositions.forEach((y, index) => {
+                // This below is where you declare the character in question using the ASCII numbers to string
                 const text = String.fromCharCode(Math.random() * 128);
                 const x = index * 20;
                 context.fillText(text, x, y);
@@ -54,6 +56,7 @@ function MatrixBackground({ timeout = 50 }) {
                 position: 'fixed',
                 height: '100%',
                 width: '100%',
+                // Most significant factor, Z-Index allows layering it into a SPECIFIC background layer, to allow visibity to other sections.
                 zIndex: -1,
                 left: '0',
                 top: '0',

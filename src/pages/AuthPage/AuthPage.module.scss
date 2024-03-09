@@ -8,15 +8,17 @@
     background-color: var(--lilacTransparent);
     border-radius: 2vmin;
     padding: 3rem;
+    font-family: 'Share Tech Mono', 'Roboto';
   }
 
   h1 {
     padding: 1rem;
     margin: 1rem;
-    color: var(--fairyTale);
+    color: var(--white);
     background-color: var(--royalPurple);
     border: solid 2px var(--fairyTale);
     border-radius: 4vmin;
+    font-family: 'Share Tech Mono', 'Roboto';
   }
 
   .logoButton {
@@ -25,7 +27,9 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: var(--white);
     h3 {
+      color: var(--white);
       border: solid 2px var(--fairyTale);
       margin-top: 4vmin;
       text-align: center;

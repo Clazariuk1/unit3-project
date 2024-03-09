@@ -228,6 +228,7 @@ function MatrixBackground(_ref) {
     context.fillStyle = '#000';
     context.fillRect(0, 0, width, height);
     const columns = Math.floor(width / 20) + 1;
+    // Lining up the array - column system from which characters will drop. Zen stuff there, dude.
     const yPositions = Array.from({
       length: columns
     }).fill(0);
@@ -237,8 +238,9 @@ function MatrixBackground(_ref) {
       context.fillStyle = '#0001';
       context.fillRect(0, 0, width, height);
       context.fillStyle = '#0f0';
-      context.font = '15pt monospace';
+      context.font = '15pt Share Tech Mono';
       yPositions.forEach((y, index) => {
+        // This below is where you declare the character in question using the ASCII numbers to string
         const text = String.fromCharCode(Math.random() * 128);
         const x = index * 20;
         context.fillText(text, x, y);
@@ -261,6 +263,7 @@ function MatrixBackground(_ref) {
       position: 'fixed',
       height: '100%',
       width: '100%',
+      // Most significant factor, Z-Index allows layering it into a SPECIFIC background layer, to allow visibity to other sections.
       zIndex: -1,
       left: '0',
       top: '0'
@@ -1387,10 +1390,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.HOxDM1MnhDHdRljxLXHP {
   text-align: center;
   border: solid 1px var(--white);
   background-color: var(--gunmetal);
-  color: var(--lilac);
+  color: var(--white);
   font-weight: bold;
   border-radius: 2vmin;
-}`, "",{"version":3,"sources":["webpack://./src/components/ItemDescription/ItemDescription.module.scss"],"names":[],"mappings":"AAEA;EACI,eAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;EACA,8BAAA;EACA,iCAAA;EACA,mBAAA;EACA,iBAAA;EACA,oBAAA;AADJ","sourcesContent":["\n\n.description {\n    font-size: 16pt;\n    margin: 2rem;\n    padding: 1rem;\n    text-align: center;\n    border: solid 1px var(--white);\n    background-color: var(--gunmetal);\n    color: var(--lilac);\n    font-weight: bold;\n    border-radius: 2vmin;\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/ItemDescription/ItemDescription.module.scss"],"names":[],"mappings":"AAEA;EACI,eAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;EACA,8BAAA;EACA,iCAAA;EACA,mBAAA;EACA,iBAAA;EACA,oBAAA;AADJ","sourcesContent":["\n\n.description {\n    font-size: 16pt;\n    margin: 2rem;\n    padding: 1rem;\n    text-align: center;\n    border: solid 1px var(--white);\n    background-color: var(--gunmetal);\n    color: var(--white);\n    font-weight: bold;\n    border-radius: 2vmin;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"description": `HOxDM1MnhDHdRljxLXHP`
@@ -1424,7 +1427,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.ZeRW57PNaWpYVsw6JlaC {
   display: grid;
   grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;
   padding: 1vmin 0;
-  color: var(--fairyTale);
+  color: var(--white);
   background-color: rgb(126, 82, 160);
   border-top: 0.1vmin solid var(--spaceCadet);
   font-size: 1.5vw;
@@ -1467,7 +1470,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.ZeRW57PNaWpYVsw6JlaC {
 
 .ZeRW57PNaWpYVsw6JlaC button {
   margin: 0;
-}`, "",{"version":3,"sources":["webpack://./src/components/LineItem/LineItem.module.scss"],"names":[],"mappings":"AAAA;EACI,UAAA;EACA,uBAAA;EACA,aAAA;EACA,gDAAA;EACA,gBAAA;EACA,uBAAA;EACA,mCAAA;EACA,2CAAA;EACA,gBAAA;EACA,iCAAA;EACA,oBAAA;EACA,cAAA;EACA,wCAAA;EACA,kBAAA;AACJ;;AAEI;EACI,cAAA;EACA,WAAA;EACA,YAAA;AACR;;AAEI;EACI,WAAA;EACA,YAAA;EACA,kBAAA;AACR;;AAGI;EACA,8CAAA;AAAJ;;AAGI;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,gBAAA;AAAJ;;AAGI;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,cAAA;AAAJ;;AAGI;EACA,SAAA;AAAJ","sourcesContent":[".LineItem {\n    width: 80%;\n    justify-content: center;\n    display: grid;\n    grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;\n    padding: 1vmin 0;\n    color: var(--fairyTale);\n    background-color: rgb(126, 82, 160);\n    border-top: .1vmin solid var(--spaceCadet);\n    font-size: 1.5vw;\n    border: solid 1px var(--gunmetal);\n    border-radius: 2vmin;\n    margin: .5rem;\n    font-family: 'Share Tech Mono', 'Roboto';\n    overflow-x: hidden;\n    }\n\n    .image {\n        margin: 0 auto;\n        width: 40px;\n        height: 40px;\n    }\n\n    .image>img {\n        width: 100%;\n        height: 100%;\n        border-radius: 50%;\n    }\n\n\n    .LineItem:last-child {\n    border-bottom: .1vmin solid var(--spaceCadet);\n    }\n\n    .LineItem .qty {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    font-size: 1.3vw;\n    }\n\n    .LineItem .extPrice {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    font-size: 1vw;\n    }\n\n    .LineItem button {\n    margin: 0;\n    }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/LineItem/LineItem.module.scss"],"names":[],"mappings":"AAAA;EACI,UAAA;EACA,uBAAA;EACA,aAAA;EACA,gDAAA;EACA,gBAAA;EACA,mBAAA;EACA,mCAAA;EACA,2CAAA;EACA,gBAAA;EACA,iCAAA;EACA,oBAAA;EACA,cAAA;EACA,wCAAA;EACA,kBAAA;AACJ;;AAEI;EACI,cAAA;EACA,WAAA;EACA,YAAA;AACR;;AAEI;EACI,WAAA;EACA,YAAA;EACA,kBAAA;AACR;;AAGI;EACA,8CAAA;AAAJ;;AAGI;EACA,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,gBAAA;AAAJ;;AAGI;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,cAAA;AAAJ;;AAGI;EACA,SAAA;AAAJ","sourcesContent":[".LineItem {\n    width: 80%;\n    justify-content: center;\n    display: grid;\n    grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;\n    padding: 1vmin 0;\n    color: var(--white);\n    background-color: rgb(126, 82, 160);\n    border-top: .1vmin solid var(--spaceCadet);\n    font-size: 1.5vw;\n    border: solid 1px var(--gunmetal);\n    border-radius: 2vmin;\n    margin: .5rem;\n    font-family: 'Share Tech Mono', 'Roboto';\n    overflow-x: hidden;\n    }\n\n    .image {\n        margin: 0 auto;\n        width: 40px;\n        height: 40px;\n    }\n\n    .image>img {\n        width: 100%;\n        height: 100%;\n        border-radius: 50%;\n    }\n\n\n    .LineItem:last-child {\n    border-bottom: .1vmin solid var(--spaceCadet);\n    }\n\n    .LineItem .qty {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    font-size: 1.3vw;\n    }\n\n    .LineItem .extPrice {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n    font-size: 1vw;\n    }\n\n    .LineItem button {\n    margin: 0;\n    }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"LineItem": `ZeRW57PNaWpYVsw6JlaC`,
@@ -1515,7 +1518,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.O2NCX3pelTmVHMEJzuh5 {
   border: solid 5px var(--fairyTale);
   border-radius: 5vmin;
   font-weight: bold;
-  color: var(--fairyTale);
+  color: var(--white);
   padding: 2rem;
   margin: 2rem;
   font-size: 20pt;
@@ -1538,7 +1541,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.O2NCX3pelTmVHMEJzuh5 {
   color: var(--darkness);
   border: solid 5px var(--lilac);
   box-shadow: 1px 2px 2px var(--darkness);
-}`, "",{"version":3,"sources":["webpack://./src/components/LoginForm/LoginForm.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,wCAAA;EACA,mBAAA;EACA,uBAAA;EACA,6CAAA;EACA,oBAAA;EACA,uCAAA;EACA,mCAAA;AACJ;AACI;EACI,wCAAA;EACA,mCAAA;EACA,kCAAA;EACA,oBAAA;EACA,iBAAA;EACA,uBAAA;EACA,aAAA;EACA,YAAA;EACA,eAAA;EACA,uBAAA;EACA,kBAAA;EACA,uCAAA;AACR;AACI;EACI,YAAA;EACA,gBAAA;AACR;;AAGA;EACI,eAAA;EACA,YAAA;EACA,oBAAA;EACA,kCAAA;EACA,eAAA;EACA,YAAA;EACA,sBAAA;EACA,8BAAA;EACA,uCAAA;AAAJ","sourcesContent":[".form {\n    display: flex;\n    flex-direction: column;\n    font-family: 'Share Tech Mono', 'Roboto';\n    align-items: center;\n    justify-content: center;\n    background-color: var(--fairyTaleTransparent);\n    border-radius: 4vmin;\n    box-shadow: 1px 1px 1px var(--gunmetal);\n    border: solid 2px var(--spaceCadet);\n\n    .submit {\n        font-family: 'Share Tech Mono', 'Roboto';\n        background-color: var(--spaceCadet);\n        border: solid 5px var(--fairyTale);\n        border-radius: 5vmin;\n        font-weight: bold;\n        color: var(--fairyTale);\n        padding: 2rem;\n        margin: 2rem;\n        font-size: 20pt;\n        width: -moz-fit-content;\n        width: fit-content;\n        box-shadow: 2px 3px 3px var(--darkness);\n    }\n    .submit:hover {\n        cursor: grab;\n        box-shadow: none;\n    }\n}\n\n.input {\n    padding: .5rem;\n    margin: 1rem;\n    border-radius: 4vmin;\n    background-color: var(--fairyTale);\n    font-size: 20pt;\n    width: 15rem;\n    color: var(--darkness);\n    border: solid 5px var(--lilac);\n    box-shadow: 1px 2px 2px var(--darkness);\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/LoginForm/LoginForm.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,wCAAA;EACA,mBAAA;EACA,uBAAA;EACA,6CAAA;EACA,oBAAA;EACA,uCAAA;EACA,mCAAA;AACJ;AACI;EACI,wCAAA;EACA,mCAAA;EACA,kCAAA;EACA,oBAAA;EACA,iBAAA;EACA,mBAAA;EACA,aAAA;EACA,YAAA;EACA,eAAA;EACA,uBAAA;EACA,kBAAA;EACA,uCAAA;AACR;AACI;EACI,YAAA;EACA,gBAAA;AACR;;AAGA;EACI,eAAA;EACA,YAAA;EACA,oBAAA;EACA,kCAAA;EACA,eAAA;EACA,YAAA;EACA,sBAAA;EACA,8BAAA;EACA,uCAAA;AAAJ","sourcesContent":[".form {\n    display: flex;\n    flex-direction: column;\n    font-family: 'Share Tech Mono', 'Roboto';\n    align-items: center;\n    justify-content: center;\n    background-color: var(--fairyTaleTransparent);\n    border-radius: 4vmin;\n    box-shadow: 1px 1px 1px var(--gunmetal);\n    border: solid 2px var(--spaceCadet);\n\n    .submit {\n        font-family: 'Share Tech Mono', 'Roboto';\n        background-color: var(--spaceCadet);\n        border: solid 5px var(--fairyTale);\n        border-radius: 5vmin;\n        font-weight: bold;\n        color: var(--white);\n        padding: 2rem;\n        margin: 2rem;\n        font-size: 20pt;\n        width: -moz-fit-content;\n        width: fit-content;\n        box-shadow: 2px 3px 3px var(--darkness);\n    }\n    .submit:hover {\n        cursor: grab;\n        box-shadow: none;\n    }\n}\n\n.input {\n    padding: .5rem;\n    margin: 1rem;\n    border-radius: 4vmin;\n    background-color: var(--fairyTale);\n    font-size: 20pt;\n    width: 15rem;\n    color: var(--darkness);\n    border: solid 5px var(--lilac);\n    box-shadow: 1px 2px 2px var(--darkness);\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"form": `O2NCX3pelTmVHMEJzuh5`,
@@ -1584,10 +1587,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@keyframes syTn_Dhu4rE4xL33QPMf {
   justify-content: center;
   align-items: center;
   border-radius: 10px 200px/100px;
-  background-color: var(--royalPurple);
-  color: var(--lilac);
+  background-color: var(--royalPurpleTransparent);
+  color: var(--white);
   font-size: 2.7vmin;
-  border: 0.6vmin solid var(--fairyTale);
+  border: 0.6vmin solid var(--white);
   font-family: "Share Tech Mono", "Roboto";
   padding: 2rem;
   margin-right: 3rem;
@@ -1603,7 +1606,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@keyframes syTn_Dhu4rE4xL33QPMf {
   scale: 2;
   box-shadow: none;
   transition: 0.5s;
-}`, "",{"version":3,"sources":["webpack://./src/components/Logo/Logo.module.scss"],"names":[],"mappings":"AAAA;EACI;IACI,uBAAA;EACN;EACE;IACI,yBAAA;EACN;AACF;AAEA;EACI,uBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,+BAAA;EACA,oCAAA;EACA,mBAAA;EACA,kBAAA;EACA,sCAAA;EACA,wCAAA;EACA,aAAA;EACA,kBAAA;EACA,iBAAA;EACA,eAAA;EACA,uCAAA;EACA,QAAA;EACA,gBAAA;AAAJ;;AAGA;EACI,yCAAA;EACA,QAAA;EACA,gBAAA;EACA,gBAAA;AAAJ","sourcesContent":["@keyframes spin {\n    from {\n        transform: rotate(0deg);\n    }\n    to {\n        transform: rotate(360deg);\n    }\n}\n\n.Logo {\n    width: -moz-fit-content;\n    width: fit-content;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    border-radius: 10px 200px / 100px;\n    background-color: var(--royalPurple);\n    color: var(--lilac);\n    font-size: 2.7vmin;\n    border: .6vmin solid var(--fairyTale);\n    font-family: 'Share Tech Mono', 'Roboto';\n    padding: 2rem;\n    margin-right: 3rem;\n    font-weight: bold;\n    font-size: 24pt;\n    box-shadow: 3px 5px 2px var(--gunmetal);\n    scale: 1;\n    transition: .5s;\n    }\n\n.Logo:hover {\n    animation: spin 1s linear;\n    scale: 2;\n    box-shadow: none;\n    transition: .5s;\n    }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/Logo/Logo.module.scss"],"names":[],"mappings":"AAAA;EACI;IACI,uBAAA;EACN;EACE;IACI,yBAAA;EACN;AACF;AAEA;EACI,uBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,+BAAA;EACA,+CAAA;EACA,mBAAA;EACA,kBAAA;EACA,kCAAA;EACA,wCAAA;EACA,aAAA;EACA,kBAAA;EACA,iBAAA;EACA,eAAA;EACA,uCAAA;EACA,QAAA;EACA,gBAAA;AAAJ;;AAGA;EACI,yCAAA;EACA,QAAA;EACA,gBAAA;EACA,gBAAA;AAAJ","sourcesContent":["@keyframes spin {\n    from {\n        transform: rotate(0deg);\n    }\n    to {\n        transform: rotate(360deg);\n    }\n}\n\n.Logo {\n    width: -moz-fit-content;\n    width: fit-content;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    border-radius: 10px 200px / 100px;\n    background-color: var(--royalPurpleTransparent);\n    color: var(--white);\n    font-size: 2.7vmin;\n    border: .6vmin solid var(--white);\n    font-family: 'Share Tech Mono', 'Roboto';\n    padding: 2rem;\n    margin-right: 3rem;\n    font-weight: bold;\n    font-size: 24pt;\n    box-shadow: 3px 5px 2px var(--gunmetal);\n    scale: 1;\n    transition: .5s;\n    }\n\n.Logo:hover {\n    animation: spin 1s linear;\n    scale: 2;\n    box-shadow: none;\n    transition: .5s;\n    }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"Logo": `EDeinQzfS2N2rVW_Z1GP`,
@@ -1649,11 +1652,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.eBz5FvD9TgyIgfFi1MdG {
   font-size: 14pt;
   border: solid 2px var(--lilac);
   background-color: var(--gunmetal);
-  color: var(--fairyTale);
+  color: var(--white);
   padding: 1rem;
   margin: 1rem;
   border-radius: 2vmin;
-}`, "",{"version":3,"sources":["webpack://./src/components/MenuList/MenuList.module.scss"],"names":[],"mappings":"AAAA;EACI,+CAAA;EACA,sCAAA;EACA,UAAA;EACA,oBAAA;EACA,eAAA;EACA,kBAAA;EACA,cAAA;EACA,kBAAA;AACJ;;AAEI;EACI,kBAAA;EACA,iBAAA;EACA,eAAA;EACA,8BAAA;EACA,iCAAA;EACA,uBAAA;EACA,aAAA;EACA,YAAA;EACA,oBAAA;AACR","sourcesContent":[".MenuList {\n    background-color: var(--royalPurpleTransparent);\n    border: .1vmin solid var(--fairyTale);\n    width: 60%;\n    border-radius: 2vmin;\n    margin: 3vmin 0;\n    margin-right: 1rem;\n    padding: 3vmin;\n    overflow-y: scroll;\n    }\n\n    .catDescription {\n        text-align: center;\n        font-weight: bold;\n        font-size: 14pt;\n        border: solid 2px var(--lilac);\n        background-color: var(--gunmetal);\n        color: var(--fairyTale);\n        padding: 1rem;\n        margin: 1rem;\n        border-radius: 2vmin;\n      }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/MenuList/MenuList.module.scss"],"names":[],"mappings":"AAAA;EACI,+CAAA;EACA,sCAAA;EACA,UAAA;EACA,oBAAA;EACA,eAAA;EACA,kBAAA;EACA,cAAA;EACA,kBAAA;AACJ;;AAEI;EACI,kBAAA;EACA,iBAAA;EACA,eAAA;EACA,8BAAA;EACA,iCAAA;EACA,mBAAA;EACA,aAAA;EACA,YAAA;EACA,oBAAA;AACR","sourcesContent":[".MenuList {\n    background-color: var(--royalPurpleTransparent);\n    border: .1vmin solid var(--fairyTale);\n    width: 60%;\n    border-radius: 2vmin;\n    margin: 3vmin 0;\n    margin-right: 1rem;\n    padding: 3vmin;\n    overflow-y: scroll;\n    }\n\n    .catDescription {\n        text-align: center;\n        font-weight: bold;\n        font-size: 14pt;\n        border: solid 2px var(--lilac);\n        background-color: var(--gunmetal);\n        color: var(--white);\n        padding: 1rem;\n        margin: 1rem;\n        border-radius: 2vmin;\n      }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"MenuList": `eBz5FvD9TgyIgfFi1MdG`,
@@ -1716,15 +1719,15 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.X4tFBfG4MKknHvd01CKE {
   margin-bottom: 0.5rem;
   font-size: 1.7vw;
   text-align: center;
-  color: var(--fairyTale);
+  color: var(--white);
 }
 
 .X4tFBfG4MKknHvd01CKE .VR1OCl60qOXrRx1IzVEa {
   padding: 0.25rem;
   font-size: 2vw;
   text-align: center;
-  color: var(--fairyTale);
-}`, "",{"version":3,"sources":["webpack://./src/components/MenuListItem/MenuListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,oBAAA;EACA,cAAA;EACA,uBAAA;EACA,iCAAA;EACA,kCAAA;EACA,oBAAA;EACA,gBAAA;EACA,wCAAA;EACA,oCAAA;AACJ;;AAGI;EACA,cAAA;EACA,YAAA;EACA,WAAA;AAAJ;;AAGE;EACI,YAAA;EACA,WAAA;EACA,kBAAA;AAAN;;AAGE;EACE,aAAA;EACA,sBAAA;AAAJ;;AAGE;EACE,qBAAA;EACA,gBAAA;EACA,kBAAA;EACA,uBAAA;AAAJ;;AAGE;EACE,gBAAA;EACA,cAAA;EACA,kBAAA;EACA,uBAAA;AAAJ","sourcesContent":[".MenuListItem {\n    width: 100%;\n    margin-bottom: 3vmin;\n    padding: 2vmin;\n    color: var(--fairyTale);\n    background-color: var(--gunmetal);\n    border: .1vmin solid var(--lilac);\n    border-radius: 2vmin;\n    font-size: 2vmin;\n    font-family: 'Share Tech Mono', 'Roboto';\n    box-shadow: 1px 3px 5px var(--white);\n\n  }\n\n    .image {\n    margin: 0 auto;\n    height: 10vw;\n    width: 10vw;\n  }\n\n  .image>img {\n      height: 100%;\n      width: 100%;\n      border-radius: 50%;\n  }\n\n  .MenuListItem .buy {\n    display: flex;\n    flex-direction: column;\n  }\n\n  .MenuListItem .buy span {\n    margin-bottom: .5rem;\n    font-size: 1.7vw;\n    text-align: center;\n    color: var(--fairyTale);\n  }\n\n  .MenuListItem .name {\n    padding: .25rem;\n    font-size: 2vw;\n    text-align: center;\n    color: var(--fairyTale);\n  }\n"],"sourceRoot":""}]);
+  color: var(--white);
+}`, "",{"version":3,"sources":["webpack://./src/components/MenuListItem/MenuListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,oBAAA;EACA,cAAA;EACA,uBAAA;EACA,iCAAA;EACA,kCAAA;EACA,oBAAA;EACA,gBAAA;EACA,wCAAA;EACA,oCAAA;AACJ;;AAGI;EACA,cAAA;EACA,YAAA;EACA,WAAA;AAAJ;;AAGE;EACI,YAAA;EACA,WAAA;EACA,kBAAA;AAAN;;AAGE;EACE,aAAA;EACA,sBAAA;AAAJ;;AAGE;EACE,qBAAA;EACA,gBAAA;EACA,kBAAA;EACA,mBAAA;AAAJ;;AAGE;EACE,gBAAA;EACA,cAAA;EACA,kBAAA;EACA,mBAAA;AAAJ","sourcesContent":[".MenuListItem {\n    width: 100%;\n    margin-bottom: 3vmin;\n    padding: 2vmin;\n    color: var(--fairyTale);\n    background-color: var(--gunmetal);\n    border: .1vmin solid var(--lilac);\n    border-radius: 2vmin;\n    font-size: 2vmin;\n    font-family: 'Share Tech Mono', 'Roboto';\n    box-shadow: 1px 3px 5px var(--white);\n\n  }\n\n    .image {\n    margin: 0 auto;\n    height: 10vw;\n    width: 10vw;\n  }\n\n  .image>img {\n      height: 100%;\n      width: 100%;\n      border-radius: 50%;\n  }\n\n  .MenuListItem .buy {\n    display: flex;\n    flex-direction: column;\n  }\n\n  .MenuListItem .buy span {\n    margin-bottom: .5rem;\n    font-size: 1.7vw;\n    text-align: center;\n    color: var(--white);\n  }\n\n  .MenuListItem .name {\n    padding: .25rem;\n    font-size: 2vw;\n    text-align: center;\n    color: var(--white);\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"MenuListItem": `X4tFBfG4MKknHvd01CKE`,
@@ -1763,8 +1766,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.QpVD3qAS0nYBtoQqAYoe {
   padding: 5rem;
   border-radius: 5vmin;
 }
+.QpVD3qAS0nYBtoQqAYoe button:hover {
+  color: var(--white);
+}
 
 .iYu2geJ6e3kwcIEgjSp7 {
+  text-decoration: none;
   padding: 1rem;
   margin: 1rem;
   text-align: center;
@@ -1774,12 +1781,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.QpVD3qAS0nYBtoQqAYoe {
   font-size: 24pt;
   font-weight: bold;
   height: 1vmin;
+  box-shadow: 6px 4px 6px var(--gunmetalTransparent);
 }
 
 .O1NYqBXF_F1JmLXb_oPu:hover {
   box-shadow: none;
   cursor: pointer;
-}`, "",{"version":3,"sources":["webpack://./src/components/NavBar/NavBar.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,WAAA;EACA,aAAA;EACA,oBAAA;AACJ;;AACA;EACI,aAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,oBAAA;EACA,sBAAA;EACA,eAAA;EACA,iBAAA;EACA,aAAA;AAEJ;;AACA;EACI,gBAAA;EACA,eAAA;AAEJ","sourcesContent":[".NavBar {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    width: 100%;\n    padding: 5rem;\n    border-radius: 5vmin;\n}\n.NavButton {\n    padding: 1rem;\n    margin: 1rem;\n    text-align: center;\n    background-color: var(--fairyTale);\n    border-radius: 2vmin;\n    color: var(--gunmetal);\n    font-size: 24pt;\n    font-weight: bold;\n    height: 1vmin;\n}\n\n.navButton:hover {\n    box-shadow: none;\n    cursor: pointer;\n}\n"],"sourceRoot":""}]);
+  color: var(--white);
+}`, "",{"version":3,"sources":["webpack://./src/components/NavBar/NavBar.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,WAAA;EACA,aAAA;EACA,oBAAA;AACJ;AAAI;EACI,mBAAA;AAER;;AACA;EACI,qBAAA;EACA,aAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,oBAAA;EACA,sBAAA;EACA,eAAA;EACA,iBAAA;EACA,aAAA;EACA,kDAAA;AAEJ;;AACA;EACI,gBAAA;EACA,eAAA;EACA,mBAAA;AAEJ","sourcesContent":[".NavBar {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    width: 100%;\n    padding: 5rem;\n    border-radius: 5vmin;\n    button:hover {\n        color: var(--white);\n    }\n}\n.NavButton {\n    text-decoration: none;\n    padding: 1rem;\n    margin: 1rem;\n    text-align: center;\n    background-color: var(--fairyTale);\n    border-radius: 2vmin;\n    color: var(--gunmetal);\n    font-size: 24pt;\n    font-weight: bold;\n    height: 1vmin;\n    box-shadow: 6px 4px 6px var(--gunmetalTransparent);\n}\n\n.navButton:hover {\n    box-shadow: none;\n    cursor: pointer;\n    color: var(--white);\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"NavBar": `QpVD3qAS0nYBtoQqAYoe`,
@@ -1849,6 +1858,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
 
 .cPR75kdAXDGVxib0PszB .ap70fWT3eETsAtLlRQKl {
   width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .cPR75kdAXDGVxib0PszB .vVkqXbRqxMYDCnUttflb {
@@ -1918,7 +1930,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.cPR75kdAXDGVxib0PszB {
   text-align: center;
   margin-right: 1rem;
   padding: 0.5rem;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAAA;EACG,gBAAA;EACC,aAAA;EACA,sBAAA;EACA,2BAAA;EACA,WAAA;EACA,mBAAA;EACA,cAAA;EACA,gBAAA;EACA,yBAAA;EACA,6CAAA;EACA,kBAAA;EACA,oBAAA;AACJ;;AAEE;EACE,oBAAA;EACA,aAAA;EACA,oCAAA;EACA,cAAA;EACA,uBAAA;EACA,kBAAA;EACA,8BAAA;AACJ;AAEI;EACE,eAAA;EACA,cAAA;AAAN;;AAIE;EACE,eAAA;EACA,eAAA;EACA,mCAAA;EACA,uBAAA;EACA,oBAAA;EACA,8BAAA;AADJ;;AAIE;EACE,WAAA;AADJ;;AAIE;EACE,iBAAA;EACA,2BAAA;EACA,4BAAA;EACA,WAAA;AADJ;;AAIE;EACE,uBAAA;EACA,WAAA;EACA,aAAA;EACA,yBAAA;EACA,0CAAA;EACA,wCAAA;AADJ;;AAIE;EACE,oBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;EACA,sBAAA;AADJ;;AAIE;EACE,oBAAA;EACA,aAAA;EACA,yBAAA;AADJ;;AAIE;EACE,kBAAA;EACA,cAAA;EACA,YAAA;EACA,oBAAA;EACA,uCAAA;EACA,aAAA;EACA,aAAA;EACA,yBAAA;EACA,uBAAA;EACA,oCAAA;EACA,8BAAA;AADJ;;AAIE;EACE,gBAAA;EACA,YAAA;AADJ;;AAIE;EACE,kBAAA;EACA,uBAAA;EACA,kBAAA;EACA,SAAA;EACA,gBAAA;EACA,sBAAA;EACA,iBAAA;EACA,eAAA;EACA,wCAAA;EACA,8BAAA;EACA,kCAAA;EACA,oBAAA;EACA,uCAAA;EACA,kBAAA;EACA,kBAAA;EACA,eAAA;AADJ","sourcesContent":[".OrderDetail {\n   margin-top: 2rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    width: 100%;\n    align-items: center;\n    padding: 3vmin;\n    font-size: 2vmin;\n    color: var(--royalPurple);\n    background-color: var(--fairyTaleTransparent);\n    overflow-x: hidden;\n    border-radius: 2vmin;\n  }\n\n  .totalBox {\n    border-radius: 5vmin;\n    display: flex;\n    background-color: var(--royalPurple);\n    margin: .5rem;\n    width: -moz-fit-content;\n    width: fit-content;\n    border: solid 2px var(--white);\n\n\n    span {\n      padding: .5rem;\n      margin: .5rem;\n    }\n  }\n\n  .orderSpan {\n    margin: .25rem;\n    padding: .5rem;\n    background-color: var(--spaceCadet);\n    color: var(--fairyTale);\n    border-radius: 2vmin;\n    border: solid 1px var(--white);\n  }\n\n  .OrderDetail .sectionHeading {\n    width: 100%\n  }\n\n  .OrderDetail .lineItemContainer {\n    margin-top: 3vmin;\n    justify-content: flex-start;\n    height: calc(100vh - 18vmin);\n    width: 100%;\n  }\n\n  .OrderDetail .total {\n    justify-content: center;\n    width: 100%;\n    display: flex;\n    color: var(--royalPurple);\n    border-top: .1vmin solid var(--fairyTale);\n    font-family: 'Share Tech Mono', 'Roboto';\n  }\n\n  .OrderDetail .total span {\n    border-radius: 5vmin;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 1.5vw;\n    color: var(--gunmetal);\n  }\n\n  .OrderDetail .total span.right {\n    border-radius: 5vmin;\n    display: flex;\n    justify-content: flex-end;\n  }\n\n  .totalWords {\n    text-align: center;\n    margin: .5rem;\n    height: 64px;\n    border-radius: 5vmin;\n    box-shadow: 1px 3px 1px var(--gunmetal);\n    padding: 1rem;\n    display: flex;\n    justify-content: flex-end;\n    color: var(--fairyTale);\n    background-color: var(--royalPurple);\n    border: solid 2px var(--white);\n  }\n\n  .totalWords:hover {\n    box-shadow: none;\n    cursor: grab;\n  }\n\n  .OrderDetail .hungry {\n    position: absolute;\n    width: -moz-fit-content;\n    width: fit-content;\n    top: 50vh;\n    font-size: 2vmin;\n    color: var(--gunmetal);\n    font-weight: bold;\n    font-size: 18pt;\n    font-family: 'Share Tech Mono', 'Roboto';\n    background-color: var(--white);\n    border: solid 2px var(--fairyTale);\n    border-radius: 5vmin;\n    box-shadow: 2px 3px 1px var(--gunmetal);\n    text-align: center;\n    margin-right: 1rem;\n    padding: .5rem;\n  }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderDetail/OrderDetail.module.scss"],"names":[],"mappings":"AAAA;EACG,gBAAA;EACC,aAAA;EACA,sBAAA;EACA,2BAAA;EACA,WAAA;EACA,mBAAA;EACA,cAAA;EACA,gBAAA;EACA,yBAAA;EACA,6CAAA;EACA,kBAAA;EACA,oBAAA;AACJ;;AAEE;EACE,oBAAA;EACA,aAAA;EACA,oCAAA;EACA,cAAA;EACA,uBAAA;EACA,kBAAA;EACA,8BAAA;AACJ;AAEI;EACE,eAAA;EACA,cAAA;AAAN;;AAIE;EACE,eAAA;EACA,eAAA;EACA,mCAAA;EACA,uBAAA;EACA,oBAAA;EACA,8BAAA;AADJ;;AAIE;EACE,WAAA;EACA,kBAAA;EACA,mBAAA;EACA,uBAAA;AADJ;;AAIE;EACE,iBAAA;EACA,2BAAA;EACA,4BAAA;EACA,WAAA;AADJ;;AAIE;EACE,uBAAA;EACA,WAAA;EACA,aAAA;EACA,yBAAA;EACA,0CAAA;EACA,wCAAA;AADJ;;AAIE;EACE,oBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;EACA,sBAAA;AADJ;;AAIE;EACE,oBAAA;EACA,aAAA;EACA,yBAAA;AADJ;;AAIE;EACE,kBAAA;EACA,cAAA;EACA,YAAA;EACA,oBAAA;EACA,uCAAA;EACA,aAAA;EACA,aAAA;EACA,yBAAA;EACA,uBAAA;EACA,oCAAA;EACA,8BAAA;AADJ;;AAIE;EACE,gBAAA;EACA,YAAA;AADJ;;AAIE;EACE,kBAAA;EACA,uBAAA;EACA,kBAAA;EACA,SAAA;EACA,gBAAA;EACA,sBAAA;EACA,iBAAA;EACA,eAAA;EACA,wCAAA;EACA,8BAAA;EACA,kCAAA;EACA,oBAAA;EACA,uCAAA;EACA,kBAAA;EACA,kBAAA;EACA,eAAA;AADJ","sourcesContent":[".OrderDetail {\n   margin-top: 2rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    width: 100%;\n    align-items: center;\n    padding: 3vmin;\n    font-size: 2vmin;\n    color: var(--royalPurple);\n    background-color: var(--fairyTaleTransparent);\n    overflow-x: hidden;\n    border-radius: 2vmin;\n  }\n\n  .totalBox {\n    border-radius: 5vmin;\n    display: flex;\n    background-color: var(--royalPurple);\n    margin: .5rem;\n    width: -moz-fit-content;\n    width: fit-content;\n    border: solid 2px var(--white);\n\n\n    span {\n      padding: .5rem;\n      margin: .5rem;\n    }\n  }\n\n  .orderSpan {\n    margin: .25rem;\n    padding: .5rem;\n    background-color: var(--spaceCadet);\n    color: var(--fairyTale);\n    border-radius: 2vmin;\n    border: solid 1px var(--white);\n  }\n\n  .OrderDetail .sectionHeading {\n    width: 100%;\n    text-align: center;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .OrderDetail .lineItemContainer {\n    margin-top: 3vmin;\n    justify-content: flex-start;\n    height: calc(100vh - 18vmin);\n    width: 100%;\n  }\n\n  .OrderDetail .total {\n    justify-content: center;\n    width: 100%;\n    display: flex;\n    color: var(--royalPurple);\n    border-top: .1vmin solid var(--fairyTale);\n    font-family: 'Share Tech Mono', 'Roboto';\n  }\n\n  .OrderDetail .total span {\n    border-radius: 5vmin;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    font-size: 1.5vw;\n    color: var(--gunmetal);\n  }\n\n  .OrderDetail .total span.right {\n    border-radius: 5vmin;\n    display: flex;\n    justify-content: flex-end;\n  }\n\n  .totalWords {\n    text-align: center;\n    margin: .5rem;\n    height: 64px;\n    border-radius: 5vmin;\n    box-shadow: 1px 3px 1px var(--gunmetal);\n    padding: 1rem;\n    display: flex;\n    justify-content: flex-end;\n    color: var(--fairyTale);\n    background-color: var(--royalPurple);\n    border: solid 2px var(--white);\n  }\n\n  .totalWords:hover {\n    box-shadow: none;\n    cursor: grab;\n  }\n\n  .OrderDetail .hungry {\n    position: absolute;\n    width: -moz-fit-content;\n    width: fit-content;\n    top: 50vh;\n    font-size: 2vmin;\n    color: var(--gunmetal);\n    font-weight: bold;\n    font-size: 18pt;\n    font-family: 'Share Tech Mono', 'Roboto';\n    background-color: var(--white);\n    border: solid 2px var(--fairyTale);\n    border-radius: 5vmin;\n    box-shadow: 2px 3px 1px var(--gunmetal);\n    text-align: center;\n    margin-right: 1rem;\n    padding: .5rem;\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderDetail": `cPR75kdAXDGVxib0PszB`,
@@ -2141,7 +2153,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.z46LtMWJNGdkU_17AlVX {
   border: solid 5px var(--fairyTale);
   border-radius: 5vmin;
   font-weight: bold;
-  color: var(--fairyTale);
+  color: var(--white);
   padding: 2rem;
   margin: 2rem;
   font-size: 20pt;
@@ -2164,7 +2176,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.z46LtMWJNGdkU_17AlVX {
   color: var(--darkness);
   border: solid 5px var(--lilac);
   box-shadow: 1px 2px 2px var(--darkness);
-}`, "",{"version":3,"sources":["webpack://./src/components/SignUpForm/signUpForm.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,wCAAA;EACA,mBAAA;EACA,uBAAA;EACA,6CAAA;EACA,oBAAA;EACA,uCAAA;EACA,mCAAA;AACJ;AACI;EACI,wCAAA;EACA,mCAAA;EACA,kCAAA;EACA,oBAAA;EACA,iBAAA;EACA,uBAAA;EACA,aAAA;EACA,YAAA;EACA,eAAA;EACA,uBAAA;EACA,kBAAA;EACA,uCAAA;AACR;AACI;EACI,YAAA;EACA,gBAAA;AACR;;AAGA;EACI,eAAA;EACA,YAAA;EACA,oBAAA;EACA,kCAAA;EACA,eAAA;EACA,YAAA;EACA,sBAAA;EACA,8BAAA;EACA,uCAAA;AAAJ","sourcesContent":[".form {\n    display: flex;\n    flex-direction: column;\n    font-family: 'Share Tech Mono', 'Roboto';\n    align-items: center;\n    justify-content: center;\n    background-color: var(--fairyTaleTransparent);\n    border-radius: 4vmin;\n    box-shadow: 1px 1px 1px var(--gunmetal);\n    border: solid 2px var(--spaceCadet);\n\n    .submit {\n        font-family: 'Share Tech Mono', 'Roboto';\n        background-color: var(--spaceCadet);\n        border: solid 5px var(--fairyTale);\n        border-radius: 5vmin;\n        font-weight: bold;\n        color: var(--fairyTale);\n        padding: 2rem;\n        margin: 2rem;\n        font-size: 20pt;\n        width: -moz-fit-content;\n        width: fit-content;\n        box-shadow: 2px 3px 3px var(--darkness);\n    }\n    .submit:hover {\n        cursor: grab;\n        box-shadow: none;\n    }\n}\n\n.input {\n    padding: .5rem;\n    margin: 1rem;\n    border-radius: 4vmin;\n    background-color: var(--fairyTale);\n    font-size: 20pt;\n    width: 15rem;\n    color: var(--darkness);\n    border: solid 5px var(--lilac);\n    box-shadow: 1px 2px 2px var(--darkness);\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/SignUpForm/signUpForm.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,wCAAA;EACA,mBAAA;EACA,uBAAA;EACA,6CAAA;EACA,oBAAA;EACA,uCAAA;EACA,mCAAA;AACJ;AACI;EACI,wCAAA;EACA,mCAAA;EACA,kCAAA;EACA,oBAAA;EACA,iBAAA;EACA,mBAAA;EACA,aAAA;EACA,YAAA;EACA,eAAA;EACA,uBAAA;EACA,kBAAA;EACA,uCAAA;AACR;AACI;EACI,YAAA;EACA,gBAAA;AACR;;AAGA;EACI,eAAA;EACA,YAAA;EACA,oBAAA;EACA,kCAAA;EACA,eAAA;EACA,YAAA;EACA,sBAAA;EACA,8BAAA;EACA,uCAAA;AAAJ","sourcesContent":[".form {\n    display: flex;\n    flex-direction: column;\n    font-family: 'Share Tech Mono', 'Roboto';\n    align-items: center;\n    justify-content: center;\n    background-color: var(--fairyTaleTransparent);\n    border-radius: 4vmin;\n    box-shadow: 1px 1px 1px var(--gunmetal);\n    border: solid 2px var(--spaceCadet);\n\n    .submit {\n        font-family: 'Share Tech Mono', 'Roboto';\n        background-color: var(--spaceCadet);\n        border: solid 5px var(--fairyTale);\n        border-radius: 5vmin;\n        font-weight: bold;\n        color: var(--white);\n        padding: 2rem;\n        margin: 2rem;\n        font-size: 20pt;\n        width: -moz-fit-content;\n        width: fit-content;\n        box-shadow: 2px 3px 3px var(--darkness);\n    }\n    .submit:hover {\n        cursor: grab;\n        box-shadow: none;\n    }\n}\n\n.input {\n    padding: .5rem;\n    margin: 1rem;\n    border-radius: 4vmin;\n    background-color: var(--fairyTale);\n    font-size: 20pt;\n    width: 15rem;\n    color: var(--darkness);\n    border: solid 5px var(--lilac);\n    box-shadow: 1px 2px 2px var(--darkness);\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"form": `z46LtMWJNGdkU_17AlVX`,
@@ -2272,7 +2284,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.hROteXkOc8ax7fXzt3tU {
   padding: 5rem;
   flex-direction: column;
   border: solid 5pt var(--lilac);
-  background-color: var(--royalPurpleTransparent);
+  background-color: var(--gunmetalTransparent);
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -2295,6 +2307,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.hROteXkOc8ax7fXzt3tU {
 
 .n7c7NHZ8NGWVKLwvLM0y {
   background-color: var(--lilac);
+  color: var(--gunmetal);
   padding: 1rem;
   margin: 1rem;
   width: -moz-fit-content;
@@ -2348,7 +2361,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.hROteXkOc8ax7fXzt3tU {
 }
 
 .zxRcIph8NVgn3cumSDz9 {
-  background-color: var(--royalPurple);
+  background-color: var(--gunmetal);
   color: var(--white);
   border: solid 3px var(--white);
   border-radius: 2vmin;
@@ -2356,7 +2369,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.hROteXkOc8ax7fXzt3tU {
   margin: 1rem;
   width: -moz-fit-content;
   width: fit-content;
-}`, "",{"version":3,"sources":["webpack://./src/pages/AboutUsPage/AboutUsPage.module.scss"],"names":[],"mappings":"AAAA;EACI,wCAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;EACD,uCAAA;EACC,oBAAA;AACJ;;AAEA;EACI,aAAA;EACA,aAAA;EACA,sBAAA;EACA,8BAAA;EACA,+CAAA;EACA,uBAAA;EACA,mBAAA;EACA,kBAAA;EACA,oBAAA;AACJ;;AAEA;EACI,aAAA;EACA,YAAA;EACA,aAAA;AACJ;;AAGA;EACI,YAAA;EACA,WAAA;EACA,kBAAA;EACA,sBAAA;EACG,mBAAA;AAAP;;AAGA;EACI,8BAAA;EACA,aAAA;EACA,YAAA;EACA,uBAAA;EACA,kBAAA;EACA,oBAAA;EACA,kBAAA;EACA,kBAAA;EACA,uBAAA;AAAJ;;AAGA;EACI,aAAA;EACA,sBAAA;EACA,0CAAA;EACA,oCAAA;EACA,eAAA;EACA,uBAAA;EACA,kBAAA;EACA,uBAAA;EACA,mBAAA;AAAJ;;AAGA;EACI,kCAAA;EACA,UAAA;EACA,uBAAA;EACA,mBAAA;EACA,sBAAA;EACA,aAAA;EACA,YAAA;EACA,8BAAA;EACA,+BAAA;EACA,oBAAA;EACA,iBAAA;AAAJ;;AAGA;EACI,aAAA;EACA,YAAA;EACA,oBAAA;EACA,kCAAA;EACA,sBAAA;EACA,oCAAA;AAAJ;;AAGA;EACI,aAAA;EACA,YAAA;EACA,uBAAA;EACA,mBAAA;AAAJ;;AAGA;EACI,oCAAA;EACA,mBAAA;EACA,8BAAA;EACA,oBAAA;EACA,aAAA;EACA,YAAA;EACA,uBAAA;EACA,kBAAA;AAAJ","sourcesContent":[".AboutUsPage {\n    font-family: 'Share Tech Mono', 'Roboto';\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    text-align: center;\n   /* background-color: var(--fairyTale);*/\n    border-radius: 2vmin;\n}\n\n.column {\n    display: flex;\n    padding: 5rem;\n    flex-direction: column;\n    border: solid 5pt var(--lilac);\n    background-color: var(--royalPurpleTransparent);\n    justify-content: center;\n    align-items: center;\n    text-align: center;\n    border-radius: 5vmin;\n}\n\n.image {\n    height: 450px;\n    width: 450px;\n    padding: 1rem;\n\n  }\n\n.image>img {\n    height: 100%;\n    width: 100%;\n    border-radius: 50%;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n\n.subtitle {\n    background-color: var(--lilac);\n    padding: 1rem;\n    margin: 1rem;\n    width: -moz-fit-content;\n    width: fit-content;\n    border-radius: 2vmin;\n    text-align: center;\n    align-self: center;\n    justify-content: center;\n}\n\n.stories {\n    display: flex;\n    flex-direction: column;\n    /* background-color: var(--royalPurple); */\n    /* border: solid 2px var(--white); */\n    font-size: 20pt;\n    color: var(--fairyTale);\n    text-align: center;\n    justify-content: center;\n    align-items: center;\n}\n\n.story {\n    background-color: var(--fairyTale);\n    width: 60%;\n    justify-content: center;\n    align-items: center;\n    color: var(--gunmetal);\n    padding: 1rem;\n    margin: 1rem;\n    border: solid 2px var(--lilac);\n    box-shadow: 2pt 2pt 1pt var(--);\n    border-radius: 2vmin;\n    font-weight: bold;\n}\n\n.titles {\n    padding: 1rem;\n    margin: 1rem;\n    border-radius: 5vmin;\n    background-color: var(--fairyTale);\n    color: var(--gunmetal);\n    box-shadow: 3pt 3pt 1pt var(--white);\n}\n\n.subHeader {\n    display: flex;\n    margin: 1rem;\n    justify-content: center;\n    align-items: center;\n}\n\n.creed {\n    background-color: var(--royalPurple);\n    color: var(--white);\n    border: solid 3px var(--white);\n    border-radius: 2vmin;\n    padding: 1rem;\n    margin: 1rem;\n    width: -moz-fit-content;\n    width: fit-content;\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/pages/AboutUsPage/AboutUsPage.module.scss"],"names":[],"mappings":"AAAA;EACI,wCAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;EACD,uCAAA;EACC,oBAAA;AACJ;;AAEA;EACI,aAAA;EACA,aAAA;EACA,sBAAA;EACA,8BAAA;EACA,4CAAA;EACA,uBAAA;EACA,mBAAA;EACA,kBAAA;EACA,oBAAA;AACJ;;AAEA;EACI,aAAA;EACA,YAAA;EACA,aAAA;AACJ;;AAGA;EACI,YAAA;EACA,WAAA;EACA,kBAAA;EACA,sBAAA;EACG,mBAAA;AAAP;;AAGA;EACI,8BAAA;EACA,sBAAA;EACA,aAAA;EACA,YAAA;EACA,uBAAA;EACA,kBAAA;EACA,oBAAA;EACA,kBAAA;EACA,kBAAA;EACA,uBAAA;AAAJ;;AAGA;EACI,aAAA;EACA,sBAAA;EACA,0CAAA;EACA,oCAAA;EACA,eAAA;EACA,uBAAA;EACA,kBAAA;EACA,uBAAA;EACA,mBAAA;AAAJ;;AAGA;EACI,kCAAA;EACA,UAAA;EACA,uBAAA;EACA,mBAAA;EACA,sBAAA;EACA,aAAA;EACA,YAAA;EACA,8BAAA;EACA,+BAAA;EACA,oBAAA;EACA,iBAAA;AAAJ;;AAGA;EACI,aAAA;EACA,YAAA;EACA,oBAAA;EACA,kCAAA;EACA,sBAAA;EACA,oCAAA;AAAJ;;AAGA;EACI,aAAA;EACA,YAAA;EACA,uBAAA;EACA,mBAAA;AAAJ;;AAGA;EACI,iCAAA;EACA,mBAAA;EACA,8BAAA;EACA,oBAAA;EACA,aAAA;EACA,YAAA;EACA,uBAAA;EACA,kBAAA;AAAJ","sourcesContent":[".AboutUsPage {\n    font-family: 'Share Tech Mono', 'Roboto';\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    text-align: center;\n   /* background-color: var(--fairyTale);*/\n    border-radius: 2vmin;\n}\n\n.column {\n    display: flex;\n    padding: 5rem;\n    flex-direction: column;\n    border: solid 5pt var(--lilac);\n    background-color: var(--gunmetalTransparent);\n    justify-content: center;\n    align-items: center;\n    text-align: center;\n    border-radius: 5vmin;\n}\n\n.image {\n    height: 450px;\n    width: 450px;\n    padding: 1rem;\n\n  }\n\n.image>img {\n    height: 100%;\n    width: 100%;\n    border-radius: 50%;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n\n.subtitle {\n    background-color: var(--lilac);\n    color: var(--gunmetal);\n    padding: 1rem;\n    margin: 1rem;\n    width: -moz-fit-content;\n    width: fit-content;\n    border-radius: 2vmin;\n    text-align: center;\n    align-self: center;\n    justify-content: center;\n}\n\n.stories {\n    display: flex;\n    flex-direction: column;\n    /* background-color: var(--royalPurple); */\n    /* border: solid 2px var(--white); */\n    font-size: 20pt;\n    color: var(--fairyTale);\n    text-align: center;\n    justify-content: center;\n    align-items: center;\n}\n\n.story {\n    background-color: var(--fairyTale);\n    width: 60%;\n    justify-content: center;\n    align-items: center;\n    color: var(--gunmetal);\n    padding: 1rem;\n    margin: 1rem;\n    border: solid 2px var(--lilac);\n    box-shadow: 2pt 2pt 1pt var(--);\n    border-radius: 2vmin;\n    font-weight: bold;\n}\n\n.titles {\n    padding: 1rem;\n    margin: 1rem;\n    border-radius: 5vmin;\n    background-color: var(--fairyTale);\n    color: var(--gunmetal);\n    box-shadow: 3pt 3pt 1pt var(--white);\n}\n\n.subHeader {\n    display: flex;\n    margin: 1rem;\n    justify-content: center;\n    align-items: center;\n}\n\n.creed {\n    background-color: var(--gunmetal);\n    color: var(--white);\n    border: solid 3px var(--white);\n    border-radius: 2vmin;\n    padding: 1rem;\n    margin: 1rem;\n    width: -moz-fit-content;\n    width: fit-content;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"AboutUsPage": `hROteXkOc8ax7fXzt3tU`,
@@ -2402,15 +2415,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.RygkJgZmBHTETlLP3C3i {
   background-color: var(--lilacTransparent);
   border-radius: 2vmin;
   padding: 3rem;
+  font-family: "Share Tech Mono", "Roboto";
 }
 
 h1 {
   padding: 1rem;
   margin: 1rem;
-  color: var(--fairyTale);
+  color: var(--white);
   background-color: var(--royalPurple);
   border: solid 2px var(--fairyTale);
   border-radius: 4vmin;
+  font-family: "Share Tech Mono", "Roboto";
 }
 
 .xz_RCVZIfvL4Y7V6NMdH {
@@ -2419,8 +2434,10 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: var(--white);
 }
 .xz_RCVZIfvL4Y7V6NMdH h3 {
+  color: var(--white);
   border: solid 2px var(--fairyTale);
   margin-top: 4vmin;
   text-align: center;
@@ -2436,7 +2453,7 @@ h1 {
 .xz_RCVZIfvL4Y7V6NMdH h3:hover {
   cursor: grab;
   box-shadow: none;
-}`, "",{"version":3,"sources":["webpack://./src/pages/AuthPage/AuthPage.module.scss"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,sBAAA;EACE,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,yCAAA;EACA,oBAAA;EACA,aAAA;AACJ;;AAEE;EACE,aAAA;EACA,YAAA;EACA,uBAAA;EACA,oCAAA;EACA,kCAAA;EACA,oBAAA;AACJ;;AAEE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,kBAAA;AACJ;AAAI;EACE,kCAAA;EACA,iBAAA;EACA,kBAAA;EACA,mBAAA;EACA,eAAA;EACA,aAAA;EACA,iCAAA;EACA,oBAAA;EACA,eAAA;EACA,uCAAA;EACA,wCAAA;AAEN;AACI;EACE,YAAA;EACA,gBAAA;AACN","sourcesContent":[".AuthPage {\n  display: flex;\n  flex-direction: column;\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: var(--lilacTransparent);\n    border-radius: 2vmin;\n    padding: 3rem;\n  }\n\n  h1 {\n    padding: 1rem;\n    margin: 1rem;\n    color: var(--fairyTale);\n    background-color: var(--royalPurple);\n    border: solid 2px var(--fairyTale);\n    border-radius: 4vmin;\n  }\n\n  .logoButton {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    text-align: center;\n    h3 {\n      border: solid 2px var(--fairyTale);\n      margin-top: 4vmin;\n      text-align: center;\n      color: var(--lilac);\n      cursor: pointer;\n      padding: 1rem;\n      background-color: var(--gunmetal);\n      border-radius: 5vmin;\n      font-size: 20pt;\n      box-shadow: 1px 3px 1px var(--gunmetal);\n      font-family: 'Share Tech Mono', 'Roboto';\n    }\n\n    h3:hover {\n      cursor: grab;\n      box-shadow: none;\n    }\n  }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/pages/AuthPage/AuthPage.module.scss"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,sBAAA;EACE,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,yCAAA;EACA,oBAAA;EACA,aAAA;EACA,wCAAA;AACJ;;AAEE;EACE,aAAA;EACA,YAAA;EACA,mBAAA;EACA,oCAAA;EACA,kCAAA;EACA,oBAAA;EACA,wCAAA;AACJ;;AAEE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,kBAAA;EACA,mBAAA;AACJ;AAAI;EACE,mBAAA;EACA,kCAAA;EACA,iBAAA;EACA,kBAAA;EACA,mBAAA;EACA,eAAA;EACA,aAAA;EACA,iCAAA;EACA,oBAAA;EACA,eAAA;EACA,uCAAA;EACA,wCAAA;AAEN;AACI;EACE,YAAA;EACA,gBAAA;AACN","sourcesContent":[".AuthPage {\n  display: flex;\n  flex-direction: column;\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: var(--lilacTransparent);\n    border-radius: 2vmin;\n    padding: 3rem;\n    font-family: 'Share Tech Mono', 'Roboto';\n  }\n\n  h1 {\n    padding: 1rem;\n    margin: 1rem;\n    color: var(--white);\n    background-color: var(--royalPurple);\n    border: solid 2px var(--fairyTale);\n    border-radius: 4vmin;\n    font-family: 'Share Tech Mono', 'Roboto';\n  }\n\n  .logoButton {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    text-align: center;\n    color: var(--white);\n    h3 {\n      color: var(--white);\n      border: solid 2px var(--fairyTale);\n      margin-top: 4vmin;\n      text-align: center;\n      color: var(--lilac);\n      cursor: pointer;\n      padding: 1rem;\n      background-color: var(--gunmetal);\n      border-radius: 5vmin;\n      font-size: 20pt;\n      box-shadow: 1px 3px 1px var(--gunmetal);\n      font-family: 'Share Tech Mono', 'Roboto';\n    }\n\n    h3:hover {\n      cursor: grab;\n      box-shadow: none;\n    }\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"AuthPage": `RygkJgZmBHTETlLP3C3i`,
