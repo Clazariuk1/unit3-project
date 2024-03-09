@@ -3,12 +3,14 @@ import styles from './AuthPage.module.scss';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import Logo from '../../components/Logo/Logo';
+import MatrixBackground from '../../components/MatrixBackground';
 
 export default function AuthPage({ setUser }) {
   const [showLogin, setShowLogin] = useState(true);
 
   return (
     <main className={styles.AuthPage}>
+      <MatrixBackground />
       <h1 className={styles.heading}>Hire an Affordable Dev Team Today for All Your Software Needs!</h1>
       <div className={styles.logoButton}>
         <Logo />

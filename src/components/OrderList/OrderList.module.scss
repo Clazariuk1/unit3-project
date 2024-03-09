@@ -3,10 +3,11 @@
     flex-direction: column;
     width: 80%;
     align-items: center;
-    background-color: var(--royalPurple);
+    background-color: var(--royalPurpleTransparent);
     border: .1vmin solid var(--fairyTale);
     border-radius: 2vmin;
     margin: 3vmin 0;
+    margin-right: 1rem;
     padding: 3vmin;
     overflow-y: scroll;
     font-family: 'Share Tech Mono', 'Roboto';
@@ -14,7 +15,7 @@
 
     .OrderList .noOrders {
     color: var(--royalPurple);
-    background-color: var(--fairyTale);
+    background-color: var(--fairyTaleTransparent);
     border-radius: 5vmin;
     font-weight: bold;
     padding: 2rem;

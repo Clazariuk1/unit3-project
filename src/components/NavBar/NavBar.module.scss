@@ -1,11 +1,10 @@
 .NavBar {
-    background-color: none;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    background-color: var(--gunmetal);
     padding: 5rem;
+    border-radius: 5vmin;
 }
 .NavButton {
     padding: 1rem;

@@ -1,5 +1,6 @@
 .OrderDetail {
-  display: flex;
+   margin-top: 2rem;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
@@ -7,8 +8,9 @@
     padding: 3vmin;
     font-size: 2vmin;
     color: var(--royalPurple);
-    background-color: var(--lilac);
+    background-color: var(--fairyTaleTransparent);
     overflow-x: hidden;
+    border-radius: 2vmin;
   }
 
   .totalBox {

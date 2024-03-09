@@ -1,10 +1,15 @@
 :root {
   --white: ghostwhite;
   --gunmetal: rgb(1, 42, 54);
+  --gunmetalTransparent: rgba(1, 42, 54, .5);
   --spaceCadet: rgb(41, 39, 76);
+  --spaceCadetTransparent: rgba(41, 39, 76, .5);
   --royalPurple: rgb(126, 82, 160);
+  --royalPurpleTransparent: rgba(126, 82, 160, .5);
   --lilac: rgb(210, 149, 191);
+  --lilacTransparant: rgba(210, 149, 191, .5);
   --fairyTale: rgb(230, 188, 205);
+  --fairyTaleTransparent: rgba(230, 188, 205, .5);
   --darkness: black;
 }
 
@@ -13,7 +18,7 @@
 }
 
 html {
-  background-color: var(--gunmetal);
+  /* background-color: var(--gunmetal); */
   font-size: 12pt;
 
 }
@@ -96,13 +101,11 @@ button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--gunmetal);
-  border-radius: 5vmin;
-  font-size: 2vmin;
+  background-color: rgba(1, 42, 54, .2);
+  border-radius: 2vmin;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: .1vmin solid var(--spaceCadet);
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;

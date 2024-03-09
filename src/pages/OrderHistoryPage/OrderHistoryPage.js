@@ -7,6 +7,7 @@ import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import OrderList from '../../components/OrderList/OrderList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import NavBar from '../../components/NavBar/NavBar'
+import MatrixBackground from '../../components/MatrixBackground';
 
 export default function OrderHistoryPage({ user, setUser }) {
   /*--- State --- */
@@ -33,8 +34,9 @@ export default function OrderHistoryPage({ user, setUser }) {
   /*--- Rendered UI --- */
   return (
     <main className={styles.OrderHistoryPage}>
+      <MatrixBackground />
       <NavBar />
-      <div class={styles.container}>
+      <div className={styles.container}>
       <aside className={styles.aside}>
         <Logo />
         <Link to="/orders/new" className="button btn-sm">NEW ORDER</Link>

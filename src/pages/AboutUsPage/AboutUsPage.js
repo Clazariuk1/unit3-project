@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import styles from './AboutUsPage.module.scss';
+import styles from './AboutUsPage.module.scss'
 import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../../components/Logo/Logo';
+import Logo from '../../components/Logo/Logo'
 import NavBar from '../../components/NavBar/NavBar'
+import MatrixBackground from '../../components/MatrixBackground'
 
 
 const handleSubscribe = () => {
@@ -13,6 +14,7 @@ export default function AboutUs() {
     const [subscriberEmail, setSubscriberEmail] = useState('')
     return (
         <main className={styles.AboutUsPage}>
+            <MatrixBackground />
             <NavBar />
             <div className={styles.container}>
                 <div className={styles.subHeader}>

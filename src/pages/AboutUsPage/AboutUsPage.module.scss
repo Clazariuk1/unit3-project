@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: var(--fairyTale);
+   /* background-color: var(--fairyTale);*/
     border-radius: 2vmin;
 }
 
@@ -14,9 +14,10 @@
     padding: 5rem;
     flex-direction: column;
     border: solid 5pt var(--lilac);
-    background-color: var(--gunmetal);
+    background-color: var(--royalPurpleTransparent);
     justify-content: center;
     align-items: center;
+    text-align: center;
     border-radius: 5vmin;
 }
 
@@ -24,6 +25,7 @@
     height: 450px;
     width: 450px;
     padding: 1rem;
+
   }
 
 .image>img {
@@ -47,8 +49,8 @@
 .stories {
     display: flex;
     flex-direction: column;
-    background-color: var(--royalPurple);
-    border: solid 2px var(--white);
+    /* background-color: var(--royalPurple); */
+    /* border: solid 2px var(--white); */
     font-size: 20pt;
     color: var(--fairyTale);
     text-align: center;
@@ -58,6 +60,9 @@
 
 .story {
     background-color: var(--fairyTale);
+    width: 60%;
+    justify-content: center;
+    align-items: center;
     color: var(--gunmetal);
     padding: 1rem;
     margin: 1rem;
@@ -81,7 +86,6 @@
     margin: 1rem;
     justify-content: center;
     align-items: center;
-
 }
 
 .creed {

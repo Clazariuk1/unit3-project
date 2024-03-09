@@ -10,6 +10,7 @@ import OrderDetail from '../../components/OrderDetail/OrderDetail';
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import NavBar from '../../components/NavBar/NavBar'
+import MatrixBackground from '../../components/MatrixBackground';
 
 
 export default function NewOrderPage({ user, setUser }) {
@@ -67,7 +68,7 @@ export default function NewOrderPage({ user, setUser }) {
 
   return (
     <main className={styles.NewOrderPage}>
-
+      <MatrixBackground />
       <NavBar />
       <div className={styles.container}>
       <aside>
