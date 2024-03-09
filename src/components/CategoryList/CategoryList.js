@@ -5,8 +5,6 @@ export default function CategoryList({ categories, activeCat, setActiveCat }) {
     <li
       key={cat.name}
       className={cat.name === activeCat.name ? styles.active : ''}
-      // FYI, the below will also work, but will give a warning
-      // className={cat === activeCat && 'active'}
       onClick={() => setActiveCat(cat)}
     >
       {cat.name}

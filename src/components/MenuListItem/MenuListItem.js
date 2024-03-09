@@ -18,5 +18,3 @@ export default function MenuListItem({ menuItem, handleAddToOrder }) {
     </div>
   );
 }
-
-// must update images to reflect better situation

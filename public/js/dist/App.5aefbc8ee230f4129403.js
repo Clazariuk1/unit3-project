@@ -22,10 +22,7 @@ function CategoryList(_ref) {
   } = _ref;
   const cats = categories.map(cat => /*#__PURE__*/React.createElement("li", {
     key: cat.name,
-    className: cat.name === activeCat.name ? _CategoryList_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].active : ''
-    // FYI, the below will also work, but will give a warning
-    // className={cat === activeCat && 'active'}
-    ,
+    className: cat.name === activeCat.name ? _CategoryList_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].active : '',
     onClick: () => setActiveCat(cat)
   }, cat.name));
   return /*#__PURE__*/React.createElement("ul", {
@@ -354,8 +351,6 @@ function MenuListItem(_ref) {
     onClick: () => handleAddToOrder(menuItem._id)
   }, "ADD")));
 }
-
-// must update images to reflect better situation
 
 /***/ }),
 
@@ -1386,7 +1381,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.HOxDM1MnhDHdRljxLXHP {
-  font-size: 10pt;
+  font-size: 16pt;
   margin: 2rem;
   padding: 1rem;
   text-align: center;
@@ -1395,7 +1390,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.HOxDM1MnhDHdRljxLXHP {
   color: var(--lilac);
   font-weight: bold;
   border-radius: 2vmin;
-}`, "",{"version":3,"sources":["webpack://./src/components/ItemDescription/ItemDescription.module.scss"],"names":[],"mappings":"AAEA;EACI,eAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;EACA,8BAAA;EACA,iCAAA;EACA,mBAAA;EACA,iBAAA;EACA,oBAAA;AADJ","sourcesContent":["\n\n.description {\n    font-size: 10pt;\n    margin: 2rem;\n    padding: 1rem;\n    text-align: center;\n    border: solid 1px var(--white);\n    background-color: var(--gunmetal);\n    color: var(--lilac);\n    font-weight: bold;\n    border-radius: 2vmin;\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/ItemDescription/ItemDescription.module.scss"],"names":[],"mappings":"AAEA;EACI,eAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;EACA,8BAAA;EACA,iCAAA;EACA,mBAAA;EACA,iBAAA;EACA,oBAAA;AADJ","sourcesContent":["\n\n.description {\n    font-size: 16pt;\n    margin: 2rem;\n    padding: 1rem;\n    text-align: center;\n    border: solid 1px var(--white);\n    background-color: var(--gunmetal);\n    color: var(--lilac);\n    font-weight: bold;\n    border-radius: 2vmin;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"description": `HOxDM1MnhDHdRljxLXHP`
@@ -1700,9 +1695,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.X4tFBfG4MKknHvd01CKE {
   box-shadow: 1px 3px 5px var(--white);
 }
 
-/*don't use view width, use hard coding to ensure image scaling. must turn emoji into image. examine this for resizing issues.
-
-BELOW WAS THE MEGA FIX DISPLAY FLEX KILLED IT*/
 .dTwdG1Vxh_kNAcuyMLbz {
   margin: 0 auto;
   height: 10vw;
@@ -1732,7 +1724,7 @@ BELOW WAS THE MEGA FIX DISPLAY FLEX KILLED IT*/
   font-size: 2vw;
   text-align: center;
   color: var(--fairyTale);
-}`, "",{"version":3,"sources":["webpack://./src/components/MenuListItem/MenuListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,oBAAA;EACA,cAAA;EACA,uBAAA;EACA,iCAAA;EACA,kCAAA;EACA,oBAAA;EACA,gBAAA;EACA,wCAAA;EACA,oCAAA;AACJ;;AAGE;;8CAAA;AAGE;EACA,cAAA;EACA,YAAA;EACA,WAAA;AAAJ;;AAGE;EACI,YAAA;EACA,WAAA;EACA,kBAAA;AAAN;;AAGE;EACE,aAAA;EACA,sBAAA;AAAJ;;AAGE;EACE,qBAAA;EACA,gBAAA;EACA,kBAAA;EACA,uBAAA;AAAJ;;AAGE;EACE,gBAAA;EACA,cAAA;EACA,kBAAA;EACA,uBAAA;AAAJ","sourcesContent":[".MenuListItem {\n    width: 100%;\n    margin-bottom: 3vmin;\n    padding: 2vmin;\n    color: var(--fairyTale);\n    background-color: var(--gunmetal);\n    border: .1vmin solid var(--lilac);\n    border-radius: 2vmin;\n    font-size: 2vmin;\n    font-family: 'Share Tech Mono', 'Roboto';\n    box-shadow: 1px 3px 5px var(--white);\n\n  }\n\n  /*don't use view width, use hard coding to ensure image scaling. must turn emoji into image. examine this for resizing issues.\n\n  BELOW WAS THE MEGA FIX DISPLAY FLEX KILLED IT*/\n    .image {\n    margin: 0 auto;\n    height: 10vw;\n    width: 10vw;\n  }\n\n  .image>img {\n      height: 100%;\n      width: 100%;\n      border-radius: 50%;\n  }\n\n  .MenuListItem .buy {\n    display: flex;\n    flex-direction: column;\n  }\n\n  .MenuListItem .buy span {\n    margin-bottom: .5rem;\n    font-size: 1.7vw;\n    text-align: center;\n    color: var(--fairyTale);\n  }\n\n  .MenuListItem .name {\n    padding: .25rem;\n    font-size: 2vw;\n    text-align: center;\n    color: var(--fairyTale);\n  }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/MenuListItem/MenuListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,oBAAA;EACA,cAAA;EACA,uBAAA;EACA,iCAAA;EACA,kCAAA;EACA,oBAAA;EACA,gBAAA;EACA,wCAAA;EACA,oCAAA;AACJ;;AAGI;EACA,cAAA;EACA,YAAA;EACA,WAAA;AAAJ;;AAGE;EACI,YAAA;EACA,WAAA;EACA,kBAAA;AAAN;;AAGE;EACE,aAAA;EACA,sBAAA;AAAJ;;AAGE;EACE,qBAAA;EACA,gBAAA;EACA,kBAAA;EACA,uBAAA;AAAJ;;AAGE;EACE,gBAAA;EACA,cAAA;EACA,kBAAA;EACA,uBAAA;AAAJ","sourcesContent":[".MenuListItem {\n    width: 100%;\n    margin-bottom: 3vmin;\n    padding: 2vmin;\n    color: var(--fairyTale);\n    background-color: var(--gunmetal);\n    border: .1vmin solid var(--lilac);\n    border-radius: 2vmin;\n    font-size: 2vmin;\n    font-family: 'Share Tech Mono', 'Roboto';\n    box-shadow: 1px 3px 5px var(--white);\n\n  }\n\n    .image {\n    margin: 0 auto;\n    height: 10vw;\n    width: 10vw;\n  }\n\n  .image>img {\n      height: 100%;\n      width: 100%;\n      border-radius: 50%;\n  }\n\n  .MenuListItem .buy {\n    display: flex;\n    flex-direction: column;\n  }\n\n  .MenuListItem .buy span {\n    margin-bottom: .5rem;\n    font-size: 1.7vw;\n    text-align: center;\n    color: var(--fairyTale);\n  }\n\n  .MenuListItem .name {\n    padding: .25rem;\n    font-size: 2vw;\n    text-align: center;\n    color: var(--fairyTale);\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"MenuListItem": `X4tFBfG4MKknHvd01CKE`,
@@ -1782,13 +1774,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.QpVD3qAS0nYBtoQqAYoe {
   font-size: 24pt;
   font-weight: bold;
   height: 1vmin;
-  box-shadow: 3px 3px 2px var(--fairyTale);
 }
 
 .O1NYqBXF_F1JmLXb_oPu:hover {
   box-shadow: none;
   cursor: pointer;
-}`, "",{"version":3,"sources":["webpack://./src/components/NavBar/NavBar.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,WAAA;EACA,aAAA;EACA,oBAAA;AACJ;;AACA;EACI,aAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,oBAAA;EACA,sBAAA;EACA,eAAA;EACA,iBAAA;EACA,aAAA;EACA,wCAAA;AAEJ;;AACA;EACI,gBAAA;EACA,eAAA;AAEJ","sourcesContent":[".NavBar {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    width: 100%;\n    padding: 5rem;\n    border-radius: 5vmin;\n}\n.NavButton {\n    padding: 1rem;\n    margin: 1rem;\n    text-align: center;\n    background-color: var(--fairyTale);\n    border-radius: 2vmin;\n    color: var(--gunmetal);\n    font-size: 24pt;\n    font-weight: bold;\n    height: 1vmin;\n    box-shadow: 3px 3px 2px var(--fairyTale);\n}\n\n.navButton:hover {\n    box-shadow: none;\n    cursor: pointer;\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/NavBar/NavBar.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,WAAA;EACA,aAAA;EACA,oBAAA;AACJ;;AACA;EACI,aAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,oBAAA;EACA,sBAAA;EACA,eAAA;EACA,iBAAA;EACA,aAAA;AAEJ;;AACA;EACI,gBAAA;EACA,eAAA;AAEJ","sourcesContent":[".NavBar {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    width: 100%;\n    padding: 5rem;\n    border-radius: 5vmin;\n}\n.NavButton {\n    padding: 1rem;\n    margin: 1rem;\n    text-align: center;\n    background-color: var(--fairyTale);\n    border-radius: 2vmin;\n    color: var(--gunmetal);\n    font-size: 24pt;\n    font-weight: bold;\n    height: 1vmin;\n}\n\n.navButton:hover {\n    box-shadow: none;\n    cursor: pointer;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"NavBar": `QpVD3qAS0nYBtoQqAYoe`,
@@ -2523,7 +2514,6 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, `.U7F51i6q23MB43wS4GeC {
   display: flex;
   flex-direction: column;
-  /* background-color: var(--fairyTale); */
   border-radius: 2vmin;
 }
 
@@ -2537,7 +2527,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.U7F51i6q23MB43wS4GeC {
 
 .JolqMw04lMIhG6qtW4vH {
   display: flex;
-}`, "",{"version":3,"sources":["webpack://./src/pages/OrderHistoryPage/OrderHistoryPage.module.scss"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,sBAAA;EACA,wCAAA;EACA,oBAAA;AACF;;AAEE;EACE,aAAA;EACA,sBAAA;EACA,8BAAA;EACA,mBAAA;EACA,mBAAA;AACJ;;AAEA;EACE,aAAA;AACF","sourcesContent":[".OrderHistoryPage {\n  display: flex;\n  flex-direction: column;\n  /* background-color: var(--fairyTale); */\n  border-radius: 2vmin;\n}\n\n  .OrderHistoryPage .aside {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    align-items: center;\n    margin: 3vmin 2vmin;\n  }\n\n.container {\n  display: flex;\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/pages/OrderHistoryPage/OrderHistoryPage.module.scss"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,sBAAA;EACA,oBAAA;AACF;;AAEE;EACE,aAAA;EACA,sBAAA;EACA,8BAAA;EACA,mBAAA;EACA,mBAAA;AACJ;;AAEA;EACE,aAAA;AACF","sourcesContent":[".OrderHistoryPage {\n  display: flex;\n  flex-direction: column;\n  border-radius: 2vmin;\n}\n\n  .OrderHistoryPage .aside {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    align-items: center;\n    margin: 3vmin 2vmin;\n  }\n\n.container {\n  display: flex;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderHistoryPage": `U7F51i6q23MB43wS4GeC`,
