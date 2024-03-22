@@ -40,13 +40,13 @@ Open up the project by typing 'code .' in the terminal while in the project fold
 <br>
 <h3>Deployment Screenshots</h3>
 <h4>Sign Up Form</h4>
-<img src='/public/images/DevSignUpPage.png'>
+<img src='/public/images/DevDependencyLogin.png' />
 <br>
 <h4>Order Page</h4>
-<img src='/public/images/OrderPage.png'>
+<img src='/public/images/DevDependencyPurchasePage.png' />
 <br>
 <h4>Past Orders Page</h4>
-<img src='/public/images/PastOrderPage.png' >
+<img src='/public/images/DevDependencyPastOrderPage.png' />
 <br>
 <h4>About Us Page</h4>
-<img src='/public/images/AboutUsPage.png' >
+<img src='/public/images/DevDependencyAboutUs.png' />
