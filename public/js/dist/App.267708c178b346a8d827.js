@@ -374,7 +374,10 @@ function MenuListItem(_ref) {
 function NavBar() {
   return /*#__PURE__*/React.createElement("nav", {
     className: _NavBar_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].NavBar
-  }, /*#__PURE__*/React.createElement("button", null, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, /*#__PURE__*/React.createElement("button", null, /*#__PURE__*/React.createElement("a", {
+    className: _NavBar_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].portfolioLink,
+    href: "https://portfolio.christopherlazariuk.me"
+  }, "Portfolio Home"), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
     to: "/about",
     className: _NavBar_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].NavButton
   }, "ABOUT US"), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
@@ -815,7 +818,10 @@ function AuthPage(_ref) {
     setUser: setUser
   }) : /*#__PURE__*/React.createElement(_components_SignUpForm_SignUpForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
     setUser: setUser
-  }));
+  }), /*#__PURE__*/React.createElement("a", {
+    className: _AuthPage_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].portfolioLink,
+    href: "https://portfolio.christopherlazariuk.me"
+  }, "Portfolio Home"));
 }
 
 /***/ }),
@@ -1727,7 +1733,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.X4tFBfG4MKknHvd01CKE {
   font-size: 2vw;
   text-align: center;
   color: var(--white);
-}`, "",{"version":3,"sources":["webpack://./src/components/MenuListItem/MenuListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,oBAAA;EACA,cAAA;EACA,uBAAA;EACA,iCAAA;EACA,kCAAA;EACA,oBAAA;EACA,gBAAA;EACA,wCAAA;EACA,oCAAA;AACJ;;AAGI;EACA,cAAA;EACA,YAAA;EACA,WAAA;AAAJ;;AAGE;EACI,YAAA;EACA,WAAA;EACA,kBAAA;AAAN;;AAGE;EACE,aAAA;EACA,sBAAA;AAAJ;;AAGE;EACE,qBAAA;EACA,gBAAA;EACA,kBAAA;EACA,mBAAA;AAAJ;;AAGE;EACE,gBAAA;EACA,cAAA;EACA,kBAAA;EACA,mBAAA;AAAJ","sourcesContent":[".MenuListItem {\n    width: 100%;\n    margin-bottom: 3vmin;\n    padding: 2vmin;\n    color: var(--fairyTale);\n    background-color: var(--gunmetal);\n    border: .1vmin solid var(--lilac);\n    border-radius: 2vmin;\n    font-size: 2vmin;\n    font-family: 'Share Tech Mono', 'Roboto';\n    box-shadow: 1px 3px 5px var(--white);\n\n  }\n\n    .image {\n    margin: 0 auto;\n    height: 10vw;\n    width: 10vw;\n  }\n\n  .image>img {\n      height: 100%;\n      width: 100%;\n      border-radius: 50%;\n  }\n\n  .MenuListItem .buy {\n    display: flex;\n    flex-direction: column;\n  }\n\n  .MenuListItem .buy span {\n    margin-bottom: .5rem;\n    font-size: 1.7vw;\n    text-align: center;\n    color: var(--white);\n  }\n\n  .MenuListItem .name {\n    padding: .25rem;\n    font-size: 2vw;\n    text-align: center;\n    color: var(--white);\n  }\n"],"sourceRoot":""}]);
+}
+
+.X4tFBfG4MKknHvd01CKE .VR1OCl60qOXrRx1IzVEa:hover {
+  cursor: pointer;
+}`, "",{"version":3,"sources":["webpack://./src/components/MenuListItem/MenuListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,oBAAA;EACA,cAAA;EACA,uBAAA;EACA,iCAAA;EACA,kCAAA;EACA,oBAAA;EACA,gBAAA;EACA,wCAAA;EACA,oCAAA;AACJ;;AAGI;EACA,cAAA;EACA,YAAA;EACA,WAAA;AAAJ;;AAGE;EACI,YAAA;EACA,WAAA;EACA,kBAAA;AAAN;;AAGE;EACE,aAAA;EACA,sBAAA;AAAJ;;AAGE;EACE,qBAAA;EACA,gBAAA;EACA,kBAAA;EACA,mBAAA;AAAJ;;AAGE;EACE,gBAAA;EACA,cAAA;EACA,kBAAA;EACA,mBAAA;AAAJ;;AAGE;EACE,eAAA;AAAJ","sourcesContent":[".MenuListItem {\n    width: 100%;\n    margin-bottom: 3vmin;\n    padding: 2vmin;\n    color: var(--fairyTale);\n    background-color: var(--gunmetal);\n    border: .1vmin solid var(--lilac);\n    border-radius: 2vmin;\n    font-size: 2vmin;\n    font-family: 'Share Tech Mono', 'Roboto';\n    box-shadow: 1px 3px 5px var(--white);\n\n  }\n\n    .image {\n    margin: 0 auto;\n    height: 10vw;\n    width: 10vw;\n  }\n\n  .image>img {\n      height: 100%;\n      width: 100%;\n      border-radius: 50%;\n  }\n\n  .MenuListItem .buy {\n    display: flex;\n    flex-direction: column;\n  }\n\n  .MenuListItem .buy span {\n    margin-bottom: .5rem;\n    font-size: 1.7vw;\n    text-align: center;\n    color: var(--white);\n  }\n\n  .MenuListItem .name {\n    padding: .25rem;\n    font-size: 2vw;\n    text-align: center;\n    color: var(--white);\n  }\n\n  .MenuListItem .name:hover {\n    cursor: pointer;\n  }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"MenuListItem": `X4tFBfG4MKknHvd01CKE`,
@@ -1788,12 +1798,26 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.QpVD3qAS0nYBtoQqAYoe {
   box-shadow: none;
   cursor: pointer;
   color: var(--white);
-}`, "",{"version":3,"sources":["webpack://./src/components/NavBar/NavBar.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,WAAA;EACA,aAAA;EACA,oBAAA;AACJ;AAAI;EACI,mBAAA;AAER;;AACA;EACI,qBAAA;EACA,aAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,oBAAA;EACA,sBAAA;EACA,eAAA;EACA,iBAAA;EACA,aAAA;EACA,kDAAA;AAEJ;;AACA;EACI,gBAAA;EACA,eAAA;EACA,mBAAA;AAEJ","sourcesContent":[".NavBar {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    width: 100%;\n    padding: 5rem;\n    border-radius: 5vmin;\n    button:hover {\n        color: var(--white);\n    }\n}\n.NavButton {\n    text-decoration: none;\n    padding: 1rem;\n    margin: 1rem;\n    text-align: center;\n    background-color: var(--fairyTale);\n    border-radius: 2vmin;\n    color: var(--gunmetal);\n    font-size: 24pt;\n    font-weight: bold;\n    height: 1vmin;\n    box-shadow: 6px 4px 6px var(--gunmetalTransparent);\n}\n\n.navButton:hover {\n    box-shadow: none;\n    cursor: pointer;\n    color: var(--white);\n}\n"],"sourceRoot":""}]);
+}
+
+.AOMACL4SDY1iPBz0Uc1w {
+  text-decoration: none;
+  background: #1b476f;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 2vmin;
+  text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: white;
+  border: 1px solid white;
+}`, "",{"version":3,"sources":["webpack://./src/components/NavBar/NavBar.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,WAAA;EACA,aAAA;EACA,oBAAA;AACJ;AAAI;EACI,mBAAA;AAER;;AACA;EACI,qBAAA;EACA,aAAA;EACA,YAAA;EACA,kBAAA;EACA,kCAAA;EACA,oBAAA;EACA,sBAAA;EACA,eAAA;EACA,iBAAA;EACA,aAAA;EACA,kDAAA;AAEJ;;AACA;EACI,gBAAA;EACA,eAAA;EACA,mBAAA;AAEJ;;AAEA;EACI,qBAAA;EACA,mBAAA;EACA,eAAA;EACA,cAAA;EACA,oBAAA;EACA,kBAAA;EACA,wBAAA;EACA,mBAAA;EACA,YAAA;EACA,uBAAA;AACJ","sourcesContent":[".NavBar {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    width: 100%;\n    padding: 5rem;\n    border-radius: 5vmin;\n    button:hover {\n        color: var(--white);\n    }\n}\n.NavButton {\n    text-decoration: none;\n    padding: 1rem;\n    margin: 1rem;\n    text-align: center;\n    background-color: var(--fairyTale);\n    border-radius: 2vmin;\n    color: var(--gunmetal);\n    font-size: 24pt;\n    font-weight: bold;\n    height: 1vmin;\n    box-shadow: 6px 4px 6px var(--gunmetalTransparent);\n}\n\n.navButton:hover {\n    box-shadow: none;\n    cursor: pointer;\n    color: var(--white);\n}\n\n\n.portfolioLink {\n    text-decoration: none;\n    background: #1b476f;\n    padding: .5rem;\n    margin: .5rem;\n    border-radius: 2vmin;\n    text-align: center;\n    height: -moz-fit-content;\n    height: fit-content;\n    color: white;\n    border: 1px solid white;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"NavBar": `QpVD3qAS0nYBtoQqAYoe`,
 	"NavButton": `iYu2geJ6e3kwcIEgjSp7`,
-	"navButton": `O1NYqBXF_F1JmLXb_oPu`
+	"navButton": `O1NYqBXF_F1JmLXb_oPu`,
+	"portfolioLink": `AOMACL4SDY1iPBz0Uc1w`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1982,7 +2006,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.l6Ner7C7O5I4V69HVVgW {
 }
 
 .l6Ner7C7O5I4V69HVVgW .zqVYKU3SzotKremHzxQ_ {
-  color: var(--royalPurple);
+  color: var(--white);
   background-color: var(--fairyTaleTransparent);
   border-radius: 5vmin;
   font-weight: bold;
@@ -1990,7 +2014,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.l6Ner7C7O5I4V69HVVgW {
   font-size: 18pt;
   position: absolute;
   top: 50vh;
-}`, "",{"version":3,"sources":["webpack://./src/components/OrderList/OrderList.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,UAAA;EACA,mBAAA;EACA,+CAAA;EACA,sCAAA;EACA,oBAAA;EACA,eAAA;EACA,kBAAA;EACA,cAAA;EACA,kBAAA;EACA,wCAAA;AACJ;;AAEI;EACA,yBAAA;EACA,6CAAA;EACA,oBAAA;EACA,iBAAA;EACA,aAAA;EACA,eAAA;EACA,kBAAA;EACA,SAAA;AACJ","sourcesContent":[".OrderList {\n    display: flex;\n    flex-direction: column;\n    width: 80%;\n    align-items: center;\n    background-color: var(--royalPurpleTransparent);\n    border: .1vmin solid var(--fairyTale);\n    border-radius: 2vmin;\n    margin: 3vmin 0;\n    margin-right: 1rem;\n    padding: 3vmin;\n    overflow-y: scroll;\n    font-family: 'Share Tech Mono', 'Roboto';\n    }\n\n    .OrderList .noOrders {\n    color: var(--royalPurple);\n    background-color: var(--fairyTaleTransparent);\n    border-radius: 5vmin;\n    font-weight: bold;\n    padding: 2rem;\n    font-size: 18pt;\n    position: absolute;\n    top: calc(50vh);\n    }\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/OrderList/OrderList.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,UAAA;EACA,mBAAA;EACA,+CAAA;EACA,sCAAA;EACA,oBAAA;EACA,eAAA;EACA,kBAAA;EACA,cAAA;EACA,kBAAA;EACA,wCAAA;AACJ;;AAEI;EACA,mBAAA;EACA,6CAAA;EACA,oBAAA;EACA,iBAAA;EACA,aAAA;EACA,eAAA;EACA,kBAAA;EACA,SAAA;AACJ","sourcesContent":[".OrderList {\n    display: flex;\n    flex-direction: column;\n    width: 80%;\n    align-items: center;\n    background-color: var(--royalPurpleTransparent);\n    border: .1vmin solid var(--fairyTale);\n    border-radius: 2vmin;\n    margin: 3vmin 0;\n    margin-right: 1rem;\n    padding: 3vmin;\n    overflow-y: scroll;\n    font-family: 'Share Tech Mono', 'Roboto';\n    }\n\n    .OrderList .noOrders {\n    color: var(--white);\n    background-color: var(--fairyTaleTransparent);\n    border-radius: 5vmin;\n    font-weight: bold;\n    padding: 2rem;\n    font-size: 18pt;\n    position: absolute;\n    top: calc(50vh);\n    }\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"OrderList": `l6Ner7C7O5I4V69HVVgW`,
@@ -2453,11 +2477,25 @@ h1 {
 .xz_RCVZIfvL4Y7V6NMdH h3:hover {
   cursor: grab;
   box-shadow: none;
-}`, "",{"version":3,"sources":["webpack://./src/pages/AuthPage/AuthPage.module.scss"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,sBAAA;EACE,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,yCAAA;EACA,oBAAA;EACA,aAAA;EACA,wCAAA;AACJ;;AAEE;EACE,aAAA;EACA,YAAA;EACA,mBAAA;EACA,oCAAA;EACA,kCAAA;EACA,oBAAA;EACA,wCAAA;AACJ;;AAEE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,kBAAA;EACA,mBAAA;AACJ;AAAI;EACE,mBAAA;EACA,kCAAA;EACA,iBAAA;EACA,kBAAA;EACA,mBAAA;EACA,eAAA;EACA,aAAA;EACA,iCAAA;EACA,oBAAA;EACA,eAAA;EACA,uCAAA;EACA,wCAAA;AAEN;AACI;EACE,YAAA;EACA,gBAAA;AACN","sourcesContent":[".AuthPage {\n  display: flex;\n  flex-direction: column;\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: var(--lilacTransparent);\n    border-radius: 2vmin;\n    padding: 3rem;\n    font-family: 'Share Tech Mono', 'Roboto';\n  }\n\n  h1 {\n    padding: 1rem;\n    margin: 1rem;\n    color: var(--white);\n    background-color: var(--royalPurple);\n    border: solid 2px var(--fairyTale);\n    border-radius: 4vmin;\n    font-family: 'Share Tech Mono', 'Roboto';\n  }\n\n  .logoButton {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    text-align: center;\n    color: var(--white);\n    h3 {\n      color: var(--white);\n      border: solid 2px var(--fairyTale);\n      margin-top: 4vmin;\n      text-align: center;\n      color: var(--lilac);\n      cursor: pointer;\n      padding: 1rem;\n      background-color: var(--gunmetal);\n      border-radius: 5vmin;\n      font-size: 20pt;\n      box-shadow: 1px 3px 1px var(--gunmetal);\n      font-family: 'Share Tech Mono', 'Roboto';\n    }\n\n    h3:hover {\n      cursor: grab;\n      box-shadow: none;\n    }\n  }\n"],"sourceRoot":""}]);
+}
+
+.i6GW6wyR09CK3V61QSdi {
+  text-decoration: none;
+  background: #1b476f;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 2vmin;
+  text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: white;
+  border: 1px solid white;
+}`, "",{"version":3,"sources":["webpack://./src/pages/AuthPage/AuthPage.module.scss"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,sBAAA;EACE,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,yCAAA;EACA,oBAAA;EACA,aAAA;EACA,wCAAA;AACJ;;AAEE;EACE,aAAA;EACA,YAAA;EACA,mBAAA;EACA,oCAAA;EACA,kCAAA;EACA,oBAAA;EACA,wCAAA;AACJ;;AAEE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,kBAAA;EACA,mBAAA;AACJ;AAAI;EACE,mBAAA;EACA,kCAAA;EACA,iBAAA;EACA,kBAAA;EACA,mBAAA;EACA,eAAA;EACA,aAAA;EACA,iCAAA;EACA,oBAAA;EACA,eAAA;EACA,uCAAA;EACA,wCAAA;AAEN;AACI;EACE,YAAA;EACA,gBAAA;AACN;;AAGE;EACE,qBAAA;EACA,mBAAA;EACA,eAAA;EACA,cAAA;EACA,oBAAA;EACA,kBAAA;EACA,wBAAA;EACA,mBAAA;EACA,YAAA;EACA,uBAAA;AAAJ","sourcesContent":[".AuthPage {\n  display: flex;\n  flex-direction: column;\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: var(--lilacTransparent);\n    border-radius: 2vmin;\n    padding: 3rem;\n    font-family: 'Share Tech Mono', 'Roboto';\n  }\n\n  h1 {\n    padding: 1rem;\n    margin: 1rem;\n    color: var(--white);\n    background-color: var(--royalPurple);\n    border: solid 2px var(--fairyTale);\n    border-radius: 4vmin;\n    font-family: 'Share Tech Mono', 'Roboto';\n  }\n\n  .logoButton {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    text-align: center;\n    color: var(--white);\n    h3 {\n      color: var(--white);\n      border: solid 2px var(--fairyTale);\n      margin-top: 4vmin;\n      text-align: center;\n      color: var(--lilac);\n      cursor: pointer;\n      padding: 1rem;\n      background-color: var(--gunmetal);\n      border-radius: 5vmin;\n      font-size: 20pt;\n      box-shadow: 1px 3px 1px var(--gunmetal);\n      font-family: 'Share Tech Mono', 'Roboto';\n    }\n\n    h3:hover {\n      cursor: grab;\n      box-shadow: none;\n    }\n  }\n\n  .portfolioLink {\n    text-decoration: none;\n    background: #1b476f;\n    padding: .5rem;\n    margin: .5rem;\n    border-radius: 2vmin;\n    text-align: center;\n    height: -moz-fit-content;\n    height: fit-content;\n    color: white;\n    border: 1px solid white;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"AuthPage": `RygkJgZmBHTETlLP3C3i`,
-	"logoButton": `xz_RCVZIfvL4Y7V6NMdH`
+	"logoButton": `xz_RCVZIfvL4Y7V6NMdH`,
+	"portfolioLink": `i6GW6wyR09CK3V61QSdi`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

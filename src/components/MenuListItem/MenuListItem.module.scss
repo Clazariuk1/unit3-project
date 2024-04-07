@@ -42,3 +42,7 @@
     text-align: center;
     color: var(--white);
   }
+
+  .MenuListItem .name:hover {
+    cursor: pointer;
+  }

@@ -48,3 +48,15 @@
       box-shadow: none;
     }
   }
+
+  .portfolioLink {
+    text-decoration: none;
+    background: #1b476f;
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: 2vmin;
+    text-align: center;
+    height: fit-content;
+    color: white;
+    border: 1px solid white;
+}
